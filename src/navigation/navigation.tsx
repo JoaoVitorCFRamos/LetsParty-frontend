@@ -1,19 +1,34 @@
-import * as React from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import LandingPage from "../pages/LandingPage/LandingPage";
-import Login from "../pages/Login/Login";
-import Register from "../pages/Register/Register";
+import ProtectedRoute from "../components/ProtectedRoute";
+import TestCompanyComponent from "../components/TestCompanyComponent";
+import TestCustomerComponent from "../components/TestCustomerComponent";
+import { useAuth } from "../contexts/AuthContext";
+import LandingPage from "../pages/LandingPage";
+import LoginCompany from "../pages/LoginCompany";
+import LoginCustomer from "../pages/LoginCustomer";
+import Register from "../pages/Register";
 
 export const Navigation = () => {
+  const { loading } = useAuth();
+
+  if(loading) {
+    return <div>Carregando....</div>
+  }
+
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        {/* <Route path="/" element={<Login />}></Route> */}
-      </Routes>
-    </div>
+    <Routes>
+      <Route index element={<LandingPage />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<LoginCustomer />} />
+      <Route path="/login-business" element={<LoginCompany /> } />
+      <Route element={<ProtectedRoute roleRequired="CUSTOMER" />} >
+        <Route path="/platform" element={<TestCustomerComponent />} />
+      </Route>
+      <Route element={<ProtectedRoute roleRequired="COMPANY" />} >
+        <Route path="/dashboard" element={<TestCompanyComponent />} />
+      </Route>
+    </Routes>
   );
 };
 

@@ -1,0 +1,84 @@
+.login-mainDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.login-leftSide {
+  width: 49%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.login-divTexts {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-labelsHeader {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 1vh;
+  text-align: center;
+}
+
+.login-labelSubtitle {
+  font-size: 30px;
+  text-align: center;
+}
+
+.login-labelsParagraph {
+  font-size: 20px;
+  text-align: center;
+}
+
+.login-division {
+  border: 1px solid #00a3ff;
+  height: 80vh;
+  margin-top: 10vh;
+}
+
+.login-rightSide {
+  width: 49%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.login-rightSide input {
+  width: 18vw;
+  padding: 3%;
+  margin-bottom: 5vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.login-loginButton {
+  width: 19vw;
+  background-color: #00a3ff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 2vh 5vw;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 3vh;
+  margin-bottom: 6vh !important;
+}
+
+.login-link {
+  text-decoration: none;
+  color: Blue;
+  cursor: pointer;
+}

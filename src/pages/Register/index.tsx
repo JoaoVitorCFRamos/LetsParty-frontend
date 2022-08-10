@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./style.css"
-import axios from "axios";
 
 export const Register = () => {
   return (
@@ -36,7 +35,7 @@ export const Register = () => {
           <input type="text" />
           <button className="register-registerButton ">Cadastrar</button>
         </div>
-        <label>Já possui cadastro? <Link className="register-link" to="/Login">Fazer Login </Link></label>
+        <label>Já possui cadastro? <Link className="register-link" to="/login">Fazer Login </Link></label>
       </div>
     </div>
   );

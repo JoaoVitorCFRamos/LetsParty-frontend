@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
-import axios from "axios";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
+import { useAuth } from "../../contexts/AuthContext";
 
-export const Login = () => {
+export const LoginCompany = () => {
   const [fields, setFields] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
+  const { signInCompany, signed, user } = useAuth();
 
   const onChangeField =
     (field: string) =>
@@ -15,23 +17,16 @@ export const Login = () => {
       setFields({ ...fields, [field]: event.target.value });
     };
 
-  const Login = (response: any) => {
-    axios
-      .post(
-        "https://lets-party-api-development.herokuapp.com/auth/customer",
-        fields
-        // { withCredentials: true }
-      )
-      .then((response) => {
-        console.log(response.status);
-        window.location.href = "http://localhost:3000/Register";
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    console.log(fields.password);
+  const handleLogin = async () => {
+    await signInCompany(fields);
+    navigate('/dashboard')
   };
+
+  useEffect(() => {
+    if(signed && user?.role === 'COMPANY') {
+      navigate('/dashboard')
+    }
+  }, [signed, navigate, user?.role])
 
   return (
     <div className="login-mainDiv">
@@ -67,10 +62,10 @@ export const Login = () => {
           onChange={onChangeField("password")}
           value={fields.password}
         />
-        <button className="login-loginButton" onClick={Login}>
+        <button className="login-loginButton" onClick={handleLogin}>
           Entrar
         </button>
-        <Link className="login-link" to="/Register">
+        <Link className="login-link" to="/register">
           <label>Cadastre-se</label>
         </Link>
       </div>
@@ -78,4 +73,4 @@ export const Login = () => {
   );
 };
 
-export default Login;
+export default LoginCompany;
