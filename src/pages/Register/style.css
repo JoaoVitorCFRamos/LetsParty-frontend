@@ -1,0 +1,110 @@
+.register-mainDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+
+/*  Css lado de registro de Usuário */
+
+.register-leftSide {
+    width: 49%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10vh;
+
+}
+
+.register-divFormUser {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.register-divFormUser input {
+    width: 90%;
+    padding: 5%;
+    border-radius: 6px;
+    border: 1px solid black;
+    margin-bottom: 3%;
+
+}
+
+.register-divFormUser label {
+    font-weight: 500;
+    margin-top: 2%;
+    font-size: 15px;
+}
+
+/*  Css Barra de divisão Usuário/Estabelecimento */
+
+.register-division {
+    border: 1px solid #00A3FF;
+    height: 80vh;
+    margin-top: 10vh;
+}
+
+/*  Css lado de registro de estabelecimentos */
+
+.register-rightSide {
+    width: 49%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10vh;
+
+}
+
+.register-divFormEstablishment {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.register-divFormEstablishment input {
+    width: 90%;
+    padding: 5%;
+    border-radius: 6px;
+    border: 1px solid black;
+    margin-bottom: 3%;
+}
+
+.register-divFormEstablishment label {
+    font-weight: 500;
+    margin-top: 2%;
+    font-size: 15px;
+}
+
+/* */
+
+.register-labelSubtitle {
+    font-size: 30px;
+    text-align: center;
+}
+
+.register-registerButton {
+    width: 19vw;
+    background-color: #00A3FF;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 4%;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 3vh;
+    margin-bottom: 6vh !important;
+    text-align: center;
+}
+
+
+.register-link {
+    text-decoration: none;
+    color: Blue
+}
