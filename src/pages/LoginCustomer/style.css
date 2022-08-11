@@ -65,14 +65,16 @@
 }
 
 .loginCustomer-divPasswordInput {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  /* border: 1px solid black; */
 }
 
 .loginCustomer-divPasswordInput input {
-  width: 15vw;
-  padding: 6%;
+  width: 27%;
+  padding: 3%;
   border: 1px solid black;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -81,13 +83,14 @@
 }
 
 .loginCustomer-divIcon {
-  width: 3vw;
+  width: 3%;
   display: flex;
   align-items: center;
-  padding: 8%;
+  padding: 3%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
+  border-left: 0px;
   background-color: #aaaaaa;
   cursor: pointer;
 }
