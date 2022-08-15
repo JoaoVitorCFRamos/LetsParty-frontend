@@ -11,20 +11,34 @@ export const Register = () => {
     email: "",
     password: "",
     cpf: "",
+  });
+
+  const [fieldsCompany, setFieldsCompany] = useState({
     name: "",
-    emailCompany: "",
-    passwordCompany: "",
     cnpj: "",
+    email: "",
+    password: "",
     endereco: "",
   });
+
+
 
   const navigate = useNavigate();
 
   const onChangeFields =
     (field: string) =>
-    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFields({ ...fields, [field]: event.target.value });
-    };
+      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFields({ ...fields, [field]: event.target.value });
+      };
+
+  const onChangeFieldsCompany =
+    (field: string) =>
+      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFieldsCompany({ ...fieldsCompany, [field]: event.target.value });
+      };
+
+
+
 
   const registerCustomer = () => {
     api.post("/customers", fields);
@@ -86,32 +100,32 @@ export const Register = () => {
         <div className="register-divFormEstablishment">
           <label>Nome:</label>
           <input
-            onChange={onChangeFields("name")}
-            value={fields.name}
+            onChange={onChangeFieldsCompany("name")}
+            value={fieldsCompany.name}
             type="text"
           />
           <label>Email:</label>
           <input
-            onChange={onChangeFields("emailCompany")}
-            value={fields.emailCompany}
+            onChange={onChangeFieldsCompany("email")}
+            value={fieldsCompany.email}
             type="text"
           />
           <label>Senha:</label>
           <input
-            onChange={onChangeFields("passwordCompany")}
-            value={fields.passwordCompany}
+            onChange={onChangeFieldsCompany("password")}
+            value={fieldsCompany.password}
             type="password"
           />
           <label>CNPJ:</label>
           <input
-            onChange={onChangeFields("cnpj")}
-            value={fields.cnpj}
+            onChange={onChangeFieldsCompany("cnpj")}
+            value={fieldsCompany.cnpj}
             type="text"
           />
           <label>Endereço:</label>
           <input
-            onChange={onChangeFields("endereco")}
-            value={fields.endereco}
+            onChange={onChangeFieldsCompany("endereco")}
+            value={fieldsCompany.endereco}
             type="text"
           />
           <button className="register-registerButton" onClick={registerCompany}>

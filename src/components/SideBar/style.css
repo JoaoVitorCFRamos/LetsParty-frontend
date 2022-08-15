@@ -1,0 +1,67 @@
+.sideBar-mainDiv {
+    width: 13vw;
+    height: 100%;
+    background-color: white;
+    border-top-right-radius: 15px;
+    border-Bottom-right-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sideBar-divMenu {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid black */
+}
+
+.sideBar-labelName {
+    width: auto;
+    text-align: center;
+    font-weight: 700;
+}
+
+
+.sideBar-divOptions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.sideBar-divOptions div {
+    display: flex;
+    justify-content: flex-start;
+    padding: 6%;
+    padding-left: 12%;
+    cursor: pointer;
+}
+
+
+.sideBar-divOptions div:hover {
+    background-color: #EBEBEB;
+}
+
+.sideBar-divOptions div label {
+    margin-left: 10%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.sideBar-divLogOut {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 11%;
+    border-Bottom-right-radius: 15px;
+    cursor: pointer;
+}
+
+.sideBar-divLogOut label {
+    font-weight: 500;
+    margin-left: 1vw;
+    cursor: pointer;
+}
