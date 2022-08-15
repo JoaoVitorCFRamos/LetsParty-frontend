@@ -1,0 +1,8 @@
+.chatCustomer-mainDiv {
+  display: flex;
+  background-color: #ebebeb;
+}
+
+.chatCustomer-sideBar {
+  height: 100vh;
+}

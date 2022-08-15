@@ -5,10 +5,10 @@ import { ChangeEvent, useEffect, useState } from "react";
 
 //Pages
 import "./style.css";
-import { useAuth } from "../../contexts/AuthContext";
 
 //icons
 import { FaEye } from "react-icons/fa";
+import { useAuth } from "../../../contexts/AuthContext";
 
 export const LoginCustomer = () => {
   //hooks

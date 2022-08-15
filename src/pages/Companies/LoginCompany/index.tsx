@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { ChangeEvent, useEffect, useState } from "react";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../../contexts/AuthContext";
 
 export const LoginCompany = () => {
   const [fields, setFields] = useState({
@@ -19,14 +19,14 @@ export const LoginCompany = () => {
 
   const handleLogin = async () => {
     await signInCompany(fields);
-    navigate('/dashboard')
+    navigate("/dashboard");
   };
 
   useEffect(() => {
-    if(signed && user?.role === 'COMPANY') {
-      navigate('/dashboard')
+    if (signed && user?.role === "COMPANY") {
+      navigate("/dashboard");
     }
-  }, [signed, navigate, user?.role])
+  }, [signed, navigate, user?.role]);
 
   return (
     <div className="login-mainDiv">

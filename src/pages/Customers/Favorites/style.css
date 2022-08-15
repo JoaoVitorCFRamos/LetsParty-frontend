@@ -1,0 +1,8 @@
+.favorites-mainDiv {
+  display: flex;
+  background-color: #ebebeb;
+}
+
+.favorites-sideBar {
+  height: 100vh;
+}

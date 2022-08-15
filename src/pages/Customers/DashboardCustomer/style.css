@@ -1,0 +1,8 @@
+.dashboardCustomer-mainDiv {
+  display: flex;
+  background-color: #ebebeb;
+}
+
+.dashboardCustomer-sideBar {
+  height: 100vh;
+}
