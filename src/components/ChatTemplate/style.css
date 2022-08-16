@@ -1,0 +1,47 @@
+.chatTemplate-mainDiv {
+  width: 98%;
+  height: 15vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3%;
+  margin-top: 2%;
+  cursor: pointer;
+}
+
+.chatTemplate-nameAndMessage {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 3%;
+}
+
+.chatTemplate-nameCompany {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chatTemplate-lastMessage {
+  font-size: 16px;
+  padding-top: 3%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(85, 84, 84);
+  cursor: pointer;
+}
+
+.chatTemplate-logoCompany {
+  border-radius: 100%;
+  width: 90px;
+  height: 80px;
+  border: 1px solid black;
+  background: url(../../assets/BuffetInfantil.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

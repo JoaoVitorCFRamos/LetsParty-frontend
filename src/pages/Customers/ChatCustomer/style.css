@@ -5,8 +5,6 @@
   background-color: #ebebeb;
   position: absolute;
   right: 0%;
-  height: 100%;
-
 }
 
 .chatCustomer-sideBar {
@@ -14,9 +12,20 @@
   position: fixed;
   top: 0;
   left: 0;
-
 }
 
 .chatCustomer-content {
-  padding-left: 3%;
+  width: 100%;
+  padding: 3% 1%;
+}
+
+.chatCustomer-header {
+  font-size: 28px;
+  font-weight: 500;
+  padding: 3%;
+}
+
+.chatCustomer-chats {
+  display: flex;
+  flex-direction: column;
 }

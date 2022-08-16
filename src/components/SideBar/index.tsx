@@ -10,11 +10,11 @@ import { BsFillChatSquareFill } from "react-icons/bs";
 import { MdFavorite } from "react-icons/md";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const SideBar = () => {
-  const [customer, setCustomer] = useState([]);
+  const [customer, setCustomer] = useState({});
 
   const { signOut } = useAuth();
 
@@ -22,18 +22,19 @@ export const SideBar = () => {
     signOut();
   }
 
-  // const GetCustomer = () => {
-  //   api.get("/customers/me");
-  //   setCustomer(response.data);
-  // };
+  const getCustomer = () => {
+    axios
+      .get("https://lets-party-api-development.herokuapp.com/customer/me")
+      .then(function (response) {
+        setCustomer(response.data);
+      });
+  };
 
-  // const getCustomer = () => {
-  //   axios
-  //     .get("https://lets-party-api-development.herokuapp.com/customer/me")
-  //     .then(function (response) {
-  //       setCustomer(response.data);
-  //     });
-  // };
+  useEffect(() => {
+    getCustomer();
+  });
+
+  console.log(customer);
 
   return (
     <div className="sideBar-mainDiv">
@@ -41,7 +42,8 @@ export const SideBar = () => {
         <div className="sideBar-divLogo">
           <label>Lets Party</label>
         </div>
-        <label className="sideBar-labelName">José da Silva</label>
+
+        <label className="sideBar-labelName">José da silva</label>
         <div className="sideBar-divOptions">
           <Link className="sideBar-links" to="/platform">
             <div>

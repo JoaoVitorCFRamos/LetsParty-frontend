@@ -21,24 +21,19 @@ export const Register = () => {
     endereco: "",
   });
 
-
-
   const navigate = useNavigate();
 
   const onChangeFields =
     (field: string) =>
-      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFields({ ...fields, [field]: event.target.value });
-      };
+    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFields({ ...fields, [field]: event.target.value });
+    };
 
   const onChangeFieldsCompany =
     (field: string) =>
-      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFieldsCompany({ ...fieldsCompany, [field]: event.target.value });
-      };
-
-
-
+    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFieldsCompany({ ...fieldsCompany, [field]: event.target.value });
+    };
 
   const registerCustomer = () => {
     api.post("/customers", fields);
@@ -46,7 +41,7 @@ export const Register = () => {
   };
 
   const registerCompany = () => {
-    api.post("/companies", fields);
+    api.post("/companies", fieldsCompany);
   };
 
   return (
@@ -134,7 +129,7 @@ export const Register = () => {
         </div>
         <label>
           Já possui cadastro?{" "}
-          <Link className="register-link" to="/login">
+          <Link className="register-link" to="/login-business">
             Fazer Login{" "}
           </Link>
         </label>

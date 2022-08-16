@@ -86,7 +86,6 @@ export const LoginCustomer = () => {
             <FaEye size={20} />
           </div>
         </div>
-        {/* <label onClick={togglePassword}> mostrar senha Teste</label> */}
         <button className="login-loginButton" onClick={handleLogin}>
           Entrar
         </button>
