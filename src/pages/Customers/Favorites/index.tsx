@@ -1,6 +1,7 @@
 //Components
 import "./style.css";
 import SideBar from "../../../components/SideBar";
+import BuffetCard from "../../../components/BuffetCard";
 
 export const Favorites = () => {
   return (
@@ -9,7 +10,19 @@ export const Favorites = () => {
         <SideBar></SideBar>
       </div>
       <div className="favorites-content">
-        <h1>Teste</h1>
+        <div className="favorites-divHigher">
+          <label>Seus Buffets favoritos</label>
+        </div>
+        <div className="favorites-divBottom">
+          <BuffetCard />
+          <BuffetCard />
+          <BuffetCard />
+          <BuffetCard />
+          <BuffetCard />
+          <BuffetCard />
+
+
+        </div>
       </div>
     </div>
   );
