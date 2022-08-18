@@ -23,16 +23,14 @@ export const SideBar = () => {
   }
 
   const getCustomer = () => {
-    axios
-      .get("https://lets-party-api-development.herokuapp.com/customer/me")
-      .then(function (response) {
-        setCustomer(response.data);
-      });
+    api.get("/customers/me").then((response) => {
+      setCustomer(response.data);
+    });
   };
 
   useEffect(() => {
     getCustomer();
-  });
+  }, []);
 
   console.log(customer);
 
