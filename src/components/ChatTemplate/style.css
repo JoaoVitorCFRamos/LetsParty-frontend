@@ -1,5 +1,5 @@
 .chatTemplate-mainDiv {
-  width: 98%;
+  width: 97%;
   height: 15vh;
   background-color: white;
   display: flex;
@@ -8,6 +8,7 @@
   padding-left: 3%;
   margin-top: 2%;
   cursor: pointer;
+  /* border: 1px solid black; */
 }
 
 .chatTemplate-nameAndMessage {

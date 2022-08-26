@@ -12,7 +12,7 @@ export const BuffetProfile = () => {
   return (
     <div className="buffetProfile-mainDiv">
       <div className="buffetProfile-sideBar">
-        <SideBar />
+        <SideBar email="asdsad" />
       </div>
       <div className="buffetProfile-content">
         <div className="buffetProfile-topContent">

@@ -4,24 +4,20 @@ import { FaPowerOff } from "react-icons/fa";
 import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
 import { MdFavorite } from "react-icons/md";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
 import api from "../../services/api";
 import { useEffect, useState } from "react";
-=======
 import { useAuth } from "../../hooks/useAuth";
->>>>>>> 7175b7b9a2a529e53f36ef8ae0e5d9bcacf54061
 
 type Props = {
   email: string;
-}
+};
 
 const SideBar = ({ email }: Props) => {
   const { signOut } = useAuth();
 
   const handleSignOut = () => {
     signOut();
-  }
+  };
 
   return (
     <div className="sideBar-mainDiv">
@@ -29,13 +25,8 @@ const SideBar = ({ email }: Props) => {
         <div className="sideBar-divLogo">
           <label>Lets Party</label>
         </div>
-
-<<<<<<< HEAD
         <label className="sideBar-labelName"></label>
-=======
-        <label>{ email }</label>
-
->>>>>>> 7175b7b9a2a529e53f36ef8ae0e5d9bcacf54061
+        <label>{email}</label>
         <div className="sideBar-divOptions">
           <Link className="sideBar-links" to="/app">
             <div>

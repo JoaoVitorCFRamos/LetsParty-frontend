@@ -3,10 +3,8 @@ import ChatTemplate from "../../../components/ChatTemplate";
 
 const ChatCustomer = () => {
   return (
-    <>
-      <label className="chatCustomer-header">
-        Suas conversas com Buffets
-      </label>
+    <div className="chatCustomer-content">
+      <label className="chatCustomer-header">Suas conversas com Buffets</label>
       <div className="chatCustomer-chats">
         <ChatTemplate />
         <ChatTemplate />
@@ -18,7 +16,7 @@ const ChatCustomer = () => {
         <ChatTemplate />
         <ChatTemplate />
       </div>
-    </>
+    </div>
   );
 };
 

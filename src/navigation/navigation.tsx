@@ -8,13 +8,10 @@ import LoginCustomer from "../pages/Customers/LoginCustomer";
 import Register from "../pages/Register";
 import Favorites from "../pages/Customers/Favorites";
 import ChatCustomer from "../pages/Customers/ChatCustomer";
-<<<<<<< HEAD
 import BuffetProfile from "../pages/Customers/BuffetProfile";
-=======
 import CustomerLayout from "../components/CustomerLayout";
 import CompanyLayout from "../components/CompanyLayout";
 import NotFound from "../components/NotFound";
->>>>>>> 7175b7b9a2a529e53f36ef8ae0e5d9bcacf54061
 
 const Navigation = () => {
   return (
