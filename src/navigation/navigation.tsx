@@ -12,6 +12,7 @@ import LoginCustomer from "../pages/Customers/LoginCustomer";
 import Register from "../pages/Register";
 import Favorites from "../pages/Customers/Favorites";
 import ChatCustomer from "../pages/Customers/ChatCustomer";
+import BuffetProfile from "../pages/Customers/BuffetProfile";
 
 export const Navigation = () => {
   const { loading } = useAuth();
@@ -30,6 +31,7 @@ export const Navigation = () => {
         <Route path="/platform" element={<DashboardCustomer />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/chat" element={<ChatCustomer />} />
+        <Route path="/buffetProfile" element={<BuffetProfile />} />
       </Route>
       <Route element={<ProtectedRoute roleRequired="COMPANY" />}>
         <Route path="/dashboard" element={<TestCompanyComponent />} />

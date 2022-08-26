@@ -1,0 +1,84 @@
+.buffetProfile-mainDiv {
+  width: 88vw;
+  display: flex;
+  flex-direction: row;
+  background-color: #ebebeb;
+  position: absolute;
+  right: 0%;
+}
+
+.buffetProfile-sideBar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.buffetProfile-content {
+  width: 100%;
+  padding: 3%;
+}
+
+.buffetProfile-topContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buffetProfile-buffetsInfos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buffetProfile-nameLocalDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.buffetProfile-budgetFavDiv {
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
+  cursor: pointer;
+  justify-content: space-around;
+}
+
+.buffetProfile-budgetDiv {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 8vw;
+  border: 1px solid #0fa958;
+  border-radius: 8px;
+  color: #0fa958;
+}
+
+.buffetProfile-budgetDiv label {
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.buffetProfile-favoriteDiv {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 8vw;
+  border: 1px solid #f21e1e;
+  border-radius: 8px;
+  color: #f21e1e;
+  margin-left: 10px;
+}
+
+.buffetProfile-favoriteDiv label {
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+}

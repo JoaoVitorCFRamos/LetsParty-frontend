@@ -11,7 +11,6 @@ import { MdFavorite } from "react-icons/md";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 export const SideBar = () => {
   const [customer, setCustomer] = useState({});
@@ -41,7 +40,7 @@ export const SideBar = () => {
           <label>Lets Party</label>
         </div>
 
-        <label className="sideBar-labelName">José da silva</label>
+        <label className="sideBar-labelName"></label>
         <div className="sideBar-divOptions">
           <Link className="sideBar-links" to="/platform">
             <div>
