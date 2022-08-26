@@ -1,38 +1,21 @@
-import { useAuth } from "../../contexts/AuthContext";
-
-//Pages
 import "./style.css";
-
-//icons
+import { Link } from "react-router-dom";
 import { FaPowerOff } from "react-icons/fa";
 import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
 import { MdFavorite } from "react-icons/md";
-import { Link } from "react-router-dom";
-import api from "../../services/api";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useAuth } from "../../hooks/useAuth";
 
-export const SideBar = () => {
-  const [customer, setCustomer] = useState({});
+type Props = {
+  email: string;
+}
 
+const SideBar = ({ email }: Props) => {
   const { signOut } = useAuth();
 
-  function handleSignOut() {
+  const handleSignOut = () => {
     signOut();
   }
-
-  const getCustomer = () => {
-    api.get("/customers/me").then((response) => {
-      setCustomer(response.data);
-    });
-  };
-
-  useEffect(() => {
-    getCustomer();
-  }, []);
-
-  console.log(customer);
 
   return (
     <div className="sideBar-mainDiv">
@@ -41,9 +24,10 @@ export const SideBar = () => {
           <label>Lets Party</label>
         </div>
 
-        <label className="sideBar-labelName">José da silva</label>
+        <label>{ email }</label>
+
         <div className="sideBar-divOptions">
-          <Link className="sideBar-links" to="/platform">
+          <Link className="sideBar-links" to="/app">
             <div>
               <BsHouseFill color="#F24E1E" size={23} />
               <label>Buffets</label>
