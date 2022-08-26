@@ -1,0 +1,21 @@
+.dashboardCompany-mainDiv {
+  width: 88vw;
+  display: flex;
+  flex-direction: row;
+  background-color: #ebebeb;
+  position: absolute;
+  right: 0%;
+  /* height: 100%; */
+}
+
+.dashboardCompany-sideBar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.dashboardCompany-content {
+  width: 100%;
+  padding-left: 3%;
+}

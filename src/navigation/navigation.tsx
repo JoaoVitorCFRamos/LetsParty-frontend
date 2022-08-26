@@ -1,9 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ProtectedRoute from "../components/ProtectedRoute";
-import { useAuth } from "../contexts/AuthContext";
-
-//Pages
 import TestCompanyComponent from "../components/TestCompanyComponent";
 import DashboardCustomer from "../pages/Customers/DashboardCustomer";
 import LandingPage from "../pages/LandingPage";
@@ -12,30 +8,31 @@ import LoginCustomer from "../pages/Customers/LoginCustomer";
 import Register from "../pages/Register";
 import Favorites from "../pages/Customers/Favorites";
 import ChatCustomer from "../pages/Customers/ChatCustomer";
+<<<<<<< HEAD
 import BuffetProfile from "../pages/Customers/BuffetProfile";
+=======
+import CustomerLayout from "../components/CustomerLayout";
+import CompanyLayout from "../components/CompanyLayout";
+import NotFound from "../components/NotFound";
+>>>>>>> 7175b7b9a2a529e53f36ef8ae0e5d9bcacf54061
 
-export const Navigation = () => {
-  const { loading } = useAuth();
-
-  if (loading) {
-    return <div>Carregando....</div>;
-  }
-
+const Navigation = () => {
   return (
     <Routes>
       <Route index element={<LandingPage />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<LoginCustomer />} />
       <Route path="/login-business" element={<LoginCompany />} />
-      <Route element={<ProtectedRoute roleRequired="CUSTOMER" />}>
-        <Route path="/platform" element={<DashboardCustomer />} />
+      <Route element={<CustomerLayout />}>
+        <Route path="/app" element={<DashboardCustomer />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/chat" element={<ChatCustomer />} />
         <Route path="/buffetProfile" element={<BuffetProfile />} />
       </Route>
-      <Route element={<ProtectedRoute roleRequired="COMPANY" />}>
+      <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<TestCompanyComponent />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

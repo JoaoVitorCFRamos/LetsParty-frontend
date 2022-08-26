@@ -1,6 +1,6 @@
 import "./style.css";
 
-export const ChatTemplate = () => {
+const ChatTemplate = () => {
   return (
     <div className="chatTemplate-mainDiv">
       <div className="chatTemplate-logoCompany"></div>

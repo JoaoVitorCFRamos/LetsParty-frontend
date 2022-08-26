@@ -1,41 +1,27 @@
-import { Link, useNavigate } from "react-router-dom";
-
-//states
-import { ChangeEvent, useEffect, useState } from "react";
-
-//Pages
 import "./style.css";
-
-//icons
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
-import { useAuth } from "../../../contexts/AuthContext";
+import { useAuth } from "../../../hooks/useAuth";
 
-export const LoginCustomer = () => {
-  //hooks
+const LoginCustomer = () => {
   const [fields, setFields] = useState({
     email: "",
     password: "",
   });
   const [passwordType, setPasswordType] = useState("password");
-  const { signInCustomer, signed, user } = useAuth();
+  const { signInCustomer, isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (signed && user?.role === "CUSTOMER") {
-      navigate("/platform");
-    }
-  }, [signed, navigate, user?.role]);
-
-  //functions
   const onChangeField =
     (field: string) =>
     (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFields({ ...fields, [field]: event.target.value });
     };
 
-  const handleLogin = async () => {
+  const handleLogin = async (event: FormEvent) => {
+    event.preventDefault();
     await signInCustomer(fields);
-    navigate("/platform");
   };
 
   const togglePassword = () => {
@@ -45,6 +31,12 @@ export const LoginCustomer = () => {
     }
     setPasswordType("password");
   };
+
+  useEffect(() => {
+    if(isAuthenticated && user?.role === 'CUSTOMER') {
+      navigate('/app');
+    }
+  }, [isAuthenticated, navigate, user?.role]);
 
   return (
     <div className="login-mainDiv">

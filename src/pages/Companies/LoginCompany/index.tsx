@@ -1,32 +1,37 @@
-import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
-import { ChangeEvent, useEffect, useState } from "react";
-import { useAuth } from "../../../contexts/AuthContext";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../hooks/useAuth";
 
-export const LoginCompany = () => {
-  const [fields, setFields] = useState({
+interface SignInFormData {
+  email: string;
+  password: string;
+}
+
+const LoginCompany = () => {
+  const [fields, setFields] = useState<SignInFormData>({
     email: "",
     password: "",
   });
+  const { signInCompany, isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
-  const { signInCompany, signed, user } = useAuth();
-
+  
   const onChangeField =
     (field: string) =>
     (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFields({ ...fields, [field]: event.target.value });
     };
 
-  const handleLogin = async () => {
+  const handleLogin = async (event: FormEvent) => {
+    event.preventDefault();
     await signInCompany(fields);
-    navigate("/dashboard");
   };
 
   useEffect(() => {
-    if (signed && user?.role === "COMPANY") {
-      navigate("/dashboard");
+    if(isAuthenticated && user?.role === 'COMPANY') {
+      navigate('/dashboard')
     }
-  }, [signed, navigate, user?.role]);
+  }, [isAuthenticated, navigate, user?.role])
 
   return (
     <div className="login-mainDiv">

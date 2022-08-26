@@ -1,11 +1,9 @@
+import "./style.css";
 import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../services/api";
 
-//Pages
-import "./style.css";
-
-export const Register = () => {
+const Register = () => {
   const [fields, setFields] = useState({
     fullName: "",
     email: "",

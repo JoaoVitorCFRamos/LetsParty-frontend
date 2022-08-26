@@ -1,37 +1,27 @@
-import { useAuth } from "../../contexts/AuthContext";
-
-//Pages
 import "./style.css";
-
-//icons
+import { Link } from "react-router-dom";
 import { FaPowerOff } from "react-icons/fa";
 import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
 import { MdFavorite } from "react-icons/md";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import api from "../../services/api";
 import { useEffect, useState } from "react";
+=======
+import { useAuth } from "../../hooks/useAuth";
+>>>>>>> 7175b7b9a2a529e53f36ef8ae0e5d9bcacf54061
 
-export const SideBar = () => {
-  const [customer, setCustomer] = useState({});
+type Props = {
+  email: string;
+}
 
+const SideBar = ({ email }: Props) => {
   const { signOut } = useAuth();
 
-  function handleSignOut() {
+  const handleSignOut = () => {
     signOut();
   }
-
-  const getCustomer = () => {
-    api.get("/customers/me").then((response) => {
-      setCustomer(response.data);
-    });
-  };
-
-  useEffect(() => {
-    getCustomer();
-  }, []);
-
-  console.log(customer);
 
   return (
     <div className="sideBar-mainDiv">
@@ -40,9 +30,14 @@ export const SideBar = () => {
           <label>Lets Party</label>
         </div>
 
+<<<<<<< HEAD
         <label className="sideBar-labelName"></label>
+=======
+        <label>{ email }</label>
+
+>>>>>>> 7175b7b9a2a529e53f36ef8ae0e5d9bcacf54061
         <div className="sideBar-divOptions">
-          <Link className="sideBar-links" to="/platform">
+          <Link className="sideBar-links" to="/app">
             <div>
               <BsHouseFill color="#F24E1E" size={23} />
               <label>Buffets</label>
