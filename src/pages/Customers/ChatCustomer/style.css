@@ -15,7 +15,6 @@
 }
 
 .chatCustomer-content {
-  /* border: 1px solid black; */
   width: 100%;
   padding: 2% 0%;
 }
@@ -24,7 +23,6 @@
   font-size: 28px;
   font-weight: 500;
   padding: 2% 2%;
-  /* border: 1px solid black; */
 }
 
 .chatCustomer-chats {

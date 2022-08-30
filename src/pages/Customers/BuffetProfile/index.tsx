@@ -1,19 +1,18 @@
 import "./style.css";
 
 // Components
-import SideBar from "../../../components/SideBar";
 import ProfilePicture from "../../../components/ProfilePicture";
+import Carousel from "../../../components/Carousel";
 
 //icons
 import { FaMoneyBillWave } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
 
+//images
+
 export const BuffetProfile = () => {
   return (
     <div className="buffetProfile-mainDiv">
-      <div className="buffetProfile-sideBar">
-        <SideBar email="asdsad" />
-      </div>
       <div className="buffetProfile-content">
         <div className="buffetProfile-topContent">
           <div className="buffetProfile-buffetsInfos">
@@ -34,6 +33,7 @@ export const BuffetProfile = () => {
             </div>
           </div>
         </div>
+        <Carousel />
       </div>
     </div>
   );

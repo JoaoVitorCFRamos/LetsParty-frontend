@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin: 1em 0;
+  font-family: sans-serif;
+}
+
+.carousel-container {
+  position: relative;
+  padding: 17px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-gallery-wrapper {
+  overflow-x: auto;
+}
+
+.carousel-arrow-left,
+.carousel-arrow-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  font-size: 20px;
+  line-height: 250px;
+  width: 40px;
+  color: #fff;
+  transition: all 600ms ease-in-out;
+  background: linear-gradient(to left, transparent 0%, rgb(99, 99, 99) 200%);
+  opacity: 0.1;
+  cursor: pointer;
+  border: none;
+}
+
+.carousel-arrow-left:hover,
+.carousel-arrow-right:hover {
+  opacity: 1;
+}
+
+.carousel-arrow-right {
+  right: 0;
+  left: auto;
+  text-align: right;
+  background: linear-gradient(to right, transparent 0%, rgb(99, 99, 99) 200%);
+}
+
+.carousel-gallery {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 15px;
+}
+
+.carousel-item {
+  width: 300px;
+  height: 230px;
+  flex-shrink: 0;
+  transition: all 600ms ease-in-out;
+  opacity: 0.5;
+}
+
+.carousel-current-item {
+  opacity: 1;
+}
+
+.carousel-gallery-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-gallery-wrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+}
