@@ -9,7 +9,10 @@ export const BuffetCard = () => {
       <img src={exampleBuffet} className="buffetCard-img"></img>
       <label>Zona Norte/SP</label>
       <div></div>
-      <label className="buffetCard-labelSeeMore">Saiba mais</label>
+      <Link to="/buffetProfile" className="buffetCard-link">
+        <label className="buffetCard-labelSeeMore">Saiba mais</label>
+      </Link>
+
     </div>
   );
 };

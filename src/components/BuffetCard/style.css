@@ -27,3 +27,9 @@
   padding-top: 5%;
   cursor: pointer;
 }
+
+.buffetCard-link {
+  text-decoration: none;
+  color: black;
+  margin-top: 5px;
+}
