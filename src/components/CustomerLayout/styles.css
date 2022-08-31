@@ -1,5 +1,5 @@
 .customerLayout-mainDiv {
-  width: 89vw;
+  width: 87vw;
   display: flex;
   flex-direction: row;
   background-color: #ebebeb;
@@ -17,5 +17,5 @@
 
 .customerLayout-content {
   width: 100%;
-  padding-left: 3%;
+  padding-left: 1.5%;
 }

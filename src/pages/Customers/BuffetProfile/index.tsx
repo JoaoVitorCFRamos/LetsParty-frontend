@@ -7,6 +7,7 @@ import Carousel from "../../../components/Carousel";
 //icons
 import { FaMoneyBillWave } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
+import FeedbackCard from "../../../components/FeedbackCard";
 
 //images
 
@@ -33,7 +34,21 @@ export const BuffetProfile = () => {
             </div>
           </div>
         </div>
+        <div className="buffetProfile-addressDiv">
+          <h1>Endereço</h1>
+          <label>Rua Exemplo, 123</label>
+        </div>
         <Carousel />
+        <div className="buffetProfile-feedbaackDiv">
+          <h1>Quadro de Feedbacks</h1>
+          <div className="buffetProfile-divCardsFeedback">
+
+            <FeedbackCard />
+            <FeedbackCard />
+            <FeedbackCard />
+            <FeedbackCard />
+          </div>
+        </div>
       </div>
     </div>
   );

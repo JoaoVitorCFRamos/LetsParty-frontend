@@ -1,11 +1,11 @@
 .chatTemplate-mainDiv {
-  width: 97%;
+  width: 100%;
   height: 15vh;
   background-color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 3%;
+  /* padding-left: 3%; */
   margin-top: 2%;
   cursor: pointer;
   /* border: 1px solid black; */

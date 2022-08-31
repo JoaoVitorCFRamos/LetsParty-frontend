@@ -16,7 +16,7 @@
 
 .favorites-content {
   width: 100%;
-  padding-left: 3%;
+  padding-left: 3% !important;
 }
 
 .favorites-divHigher {

@@ -1,41 +1,47 @@
 .buffetProfile-mainDiv {
-  width: 88vw;
   display: flex;
-  flex-direction: row;
   background-color: #ebebeb;
-  position: absolute;
-  right: 0%;
 }
 
-.buffetProfile-sideBar {
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
 
 .buffetProfile-content {
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
 }
 
 .buffetProfile-topContent {
+  width: 96%;
   display: flex;
-  padding: 3%;
+  padding: 1%;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .buffetProfile-buffetsInfos {
+  width: 30%;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .buffetProfile-nameLocalDiv {
+  width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.buffetProfile-nameLocalDiv h1 {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.buffetProfile-nameLocalDiv label {
+  font-size: 18px;
+  margin-bottom: 2px;
 }
 
 .buffetProfile-budgetFavDiv {
@@ -44,6 +50,7 @@
   height: 5vh;
   cursor: pointer;
   justify-content: space-around;
+  margin-top: 1%;
 }
 
 .buffetProfile-budgetDiv {
@@ -83,4 +90,44 @@
   font-size: 17px;
   font-weight: 500;
   text-align: center;
+}
+
+.buffetProfile-addressDiv {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1% 2%;
+}
+
+.buffetProfile-addressDiv h1 {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.buffetProfile-feedbaackDiv {
+  width: 90%;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0px 35px 0px;
+}
+
+.buffetProfile-feedbaackDiv h1 {
+  font-size: 22px;
+  padding: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+.buffetProfile-divCardsFeedback {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

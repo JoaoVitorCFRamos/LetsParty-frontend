@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-h1 {
-  text-align: center;
-  margin: 1em 0;
-  font-family: sans-serif;
-}
 
 .carousel-container {
   position: relative;
@@ -59,7 +54,7 @@ h1 {
 
 .carousel-item {
   width: 300px;
-  height: 230px;
+  height: 220px;
   flex-shrink: 0;
   transition: all 600ms ease-in-out;
   opacity: 0.5;
@@ -74,7 +69,9 @@ h1 {
 }
 
 .carousel-gallery-wrapper {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
   scroll-behavior: smooth;
 }
