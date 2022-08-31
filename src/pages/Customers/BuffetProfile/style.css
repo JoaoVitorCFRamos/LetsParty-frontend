@@ -3,7 +3,6 @@
   background-color: #ebebeb;
 }
 
-
 .buffetProfile-content {
   width: 100%;
   display: flex;
@@ -28,10 +27,12 @@
 }
 
 .buffetProfile-nameLocalDiv {
-  width: 40%;
+  width: 43%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 1%;
 }
 
 .buffetProfile-nameLocalDiv h1 {
@@ -122,7 +123,6 @@
   display: flex;
   justify-content: center;
 }
-
 
 .buffetProfile-divCardsFeedback {
   padding: 10px;

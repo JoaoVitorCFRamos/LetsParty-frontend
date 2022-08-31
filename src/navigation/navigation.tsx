@@ -25,6 +25,7 @@ const Navigation = () => {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/chat" element={<ChatCustomer />} />
         <Route path="/buffetProfile" element={<BuffetProfile />} />
+        <Route path="/buffetProfile" element={<BuffetProfile />} />
       </Route>
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<TestCompanyComponent />} />
