@@ -21,25 +21,8 @@
   height: 95%;
   border-radius: 15px;
   align-items: center;
-}
-
-.modal-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-.modal-leftContent {
+  justify-content: space-evenly;
   border: 1px solid black;
-  width: 49%;
-  height: 90%;
-}
-
-.modal-rightContent {
-  border: 1px solid black;
-  width: 49%;
-  height: 90%;
 }
 
 .modal-closeButton {
@@ -54,4 +37,5 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin: 2%;
 }

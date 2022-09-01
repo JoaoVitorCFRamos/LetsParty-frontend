@@ -12,6 +12,8 @@ import FeedbackCard from "../../../components/FeedbackCard";
 //icons
 import { FaMoneyBillWave } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
+import { BsCalendar4Week } from "react-icons/bs";
+import MenuOptions from "../../../components/MenuOptions";
 
 export const BuffetProfile: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -63,8 +65,55 @@ export const BuffetProfile: React.FC = () => {
         onClose={() => setIsModalVisible(false)}
         isModalVisible={isModalVisible}
       >
-        <div>
-          <h1>fduhisfauisfjkpdsfsafyu</h1>
+        <div className="modal-content">
+          <div className="modal-leftContent">
+            <div className="modal-dateDiv">
+              <BsCalendar4Week size={23} />
+              <h2>Data</h2>
+              <input type="date" />
+            </div>
+            <div className="modal-noteDiv">
+              <h2>Faça uma observação:</h2>
+              <textarea></textarea>
+            </div>
+            <div className="modal-decorationDiv">
+              {/* <MenuOptions /> */}
+              <h1>Opções de Decoração</h1>
+              <div>
+                <input type="checkbox" />
+                <label>Lorem Ipsum</label>
+              </div>
+              <div>
+                <input type="checkbox" />
+                <label>Lorem Ipsum</label>
+              </div>
+              <div>
+                <input type="checkbox" />
+                <label>Lorem Ipsum</label>
+              </div>
+              <div>
+                <input type="checkbox" />
+                <label>Lorem Ipsum</label>
+              </div>
+              <div>
+                <input type="checkbox" />
+                <label>Lorem Ipsum</label>
+              </div>
+              <div>
+                <input type="checkbox" />
+                <label>Lorem Ipsum</label>
+              </div>
+              <div>
+                <input type="checkbox" />
+                <label>Lorem Ipsum</label>
+              </div>
+              <div>
+                <input type="checkbox" />
+                <label>Lorem Ipsum</label>
+              </div>
+            </div>
+          </div>
+          <div className="modal-rightContent"></div>
         </div>
       </Modal>
     </>
