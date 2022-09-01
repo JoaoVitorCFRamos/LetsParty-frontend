@@ -58,9 +58,15 @@ export const BuffetProfile: React.FC = () => {
           </div>
         </div>
       </div>
-      {isModalVisible ? (
-        <Modal /*onClose={() => isModalVisible}*/></Modal>
-      ) : null}
+
+      <Modal
+        onClose={() => setIsModalVisible(false)}
+        isModalVisible={isModalVisible}
+      >
+        <div>
+          <h1>fduhisfauisfjkpdsfsafyu</h1>
+        </div>
+      </Modal>
     </>
   );
 };
