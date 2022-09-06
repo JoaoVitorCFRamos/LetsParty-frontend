@@ -1,0 +1,123 @@
+.dashboardCompany-topContent {
+  width: 96%;
+  display: flex;
+  padding: 2%;
+  padding-left: 3%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dashboardCompany-buffetsInfos {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dashboardCompany-nameLocalDiv {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+}
+
+.dashboardCompany-nameLocalDiv h1 {
+  font-size: 20px;
+  margin-bottom: 2px;
+  padding: 1%;
+}
+
+.dashboardCompany-nameLocalDiv label {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.dashboardCompany-favoriteDiv {
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 8vw;
+  border: 1px solid #00a3ff;
+  border-radius: 8px;
+  color: #00a3ff;
+  margin-left: 10px;
+  margin-top: 1%;
+  height: 5vh;
+}
+
+.dashboardCompany-favoriteDiv label {
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.dashboardCompany-addressDiv {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1% 4%;
+}
+
+.dashboardCompany-addressDiv h1 {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.dashboardCompany-myPhotosDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 4%;
+  font-size: 20px;
+  margin-top: 2%;
+}
+
+.dashboardCompany-addPhotosDiv {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 12px;
+  border: 1px solid black;
+  padding: 5px;
+  margin-left: 3px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dashboardCompany-bottomContentDiv {
+  width: 100%;
+  height: 80%;
+  padding: 3% 0% 0% 3%;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 5%;
+}
+
+.dashboardCompany-bottomContentDiv h1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 1%;
+}
+
+.dashboardCompany-bottomContentDiv label {
+  padding-top: 4px;
+}
+
+.dashboarCompany-divisionDiv {
+  width: 0px;
+  min-height: 20vh;
+  border: 1px solid black;
+  margin-right: 3%;
+}

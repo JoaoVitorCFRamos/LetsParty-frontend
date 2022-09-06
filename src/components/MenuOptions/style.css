@@ -1,0 +1,33 @@
+.modal-decorationDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.menuOptions-headerDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-decorationDiv h1 {
+  margin-bottom: 3%;
+}
+
+.modal-checksDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.modal-checksDiv div {
+  /* border: 1px solid black; */
+  border-radius: 10%;
+  padding-right: 20%;
+  padding-bottom: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -33,8 +33,8 @@ const LoginCustomer = () => {
   };
 
   useEffect(() => {
-    if(isAuthenticated && user?.role === 'CUSTOMER') {
-      navigate('/app');
+    if (isAuthenticated && user?.role === "CUSTOMER") {
+      navigate("/app");
     }
   }, [isAuthenticated, navigate, user?.role]);
 

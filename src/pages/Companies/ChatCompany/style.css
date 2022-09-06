@@ -1,15 +1,15 @@
-.chatCustomer-content {
+.chatCompany-content {
   width: 100%;
   padding: 2% 0%;
 }
 
-.chatCustomer-header {
+.chatCompany-header {
   font-size: 28px;
   font-weight: 500;
   padding: 2% 2%;
 }
 
-.chatCustomer-chats {
+.chatCompany-chats {
   display: flex;
   flex-direction: column;
 }

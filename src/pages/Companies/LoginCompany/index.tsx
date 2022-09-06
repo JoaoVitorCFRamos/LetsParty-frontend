@@ -15,7 +15,7 @@ const LoginCompany = () => {
   });
   const { signInCompany, isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
-  
+
   const onChangeField =
     (field: string) =>
     (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -28,10 +28,10 @@ const LoginCompany = () => {
   };
 
   useEffect(() => {
-    if(isAuthenticated && user?.role === 'COMPANY') {
-      navigate('/dashboard')
+    if (isAuthenticated && user?.role === "COMPANY") {
+      navigate("/dashboard");
     }
-  }, [isAuthenticated, navigate, user?.role])
+  }, [isAuthenticated, navigate, user?.role]);
 
   return (
     <div className="login-mainDiv">

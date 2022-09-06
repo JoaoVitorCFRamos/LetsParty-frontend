@@ -141,7 +141,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  /* border: 1px solid black; */
+  margin-left: 13%;
 }
 
 .modal-content h2 {
@@ -157,7 +157,6 @@
 }
 
 .modal-leftContent {
-  border: 1px solid black;
   width: 49%;
   max-height: 90%;
   padding-left: 2%;
@@ -173,7 +172,6 @@
   font-size: 16px;
   border: 1px solid black;
   border-radius: 6px;
-  /* font-weight: 500; */
 }
 
 .modal-noteDiv {
@@ -191,28 +189,7 @@
   margin-top: 4px;
 }
 
-.modal-decorationDiv {
-  width: 100%;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.modal-checkDiv {
-  width: 49%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  border: 1px solid black;
-}
-
-.modal-decorationDiv input {
-  border-radius: 10%;
-}
-
 .modal-rightContent {
-  border: 1px solid black;
   width: 49%;
   max-height: 90%;
 }

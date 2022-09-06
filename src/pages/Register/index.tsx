@@ -40,7 +40,10 @@ const Register = () => {
 
   const registerCompany = () => {
     api.post("/companies", fieldsCompany);
+    navigate("/login-business");
   };
+
+  console.log(api.get("/companies/1"));
 
   return (
     <div className="register-mainDiv">

@@ -19,7 +19,6 @@ export const Modal: FC<ModalProps> = (props) => {
         <div className="modal-modal">
           <div className="modal-mainDiv">
             {children}
-            {/* <div className="modal-content">{children}</div> */}
             <button className="modal-closeButton" onClick={onClose}>
               Finalizar
             </button>

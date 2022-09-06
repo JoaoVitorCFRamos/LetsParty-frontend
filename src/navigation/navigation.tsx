@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import TestCompanyComponent from "../components/TestCompanyComponent";
 import DashboardCustomer from "../pages/Customers/DashboardCustomer";
 import LandingPage from "../pages/LandingPage";
 import LoginCompany from "../pages/Companies/LoginCompany";
@@ -12,6 +11,10 @@ import BuffetProfile from "../pages/Customers/BuffetProfile";
 import CustomerLayout from "../components/CustomerLayout";
 import CompanyLayout from "../components/CompanyLayout";
 import NotFound from "../components/NotFound";
+
+//Companies Components
+import DashboardCompany from "../pages/Companies/DashboardCompany";
+import ChatCompany from "../pages/Companies/ChatCompany";
 
 const Navigation = () => {
   return (
@@ -28,7 +31,8 @@ const Navigation = () => {
         <Route path="/buffetProfile" element={<BuffetProfile />} />
       </Route>
       <Route element={<CompanyLayout />}>
-        <Route path="/dashboard" element={<TestCompanyComponent />} />
+        <Route path="/dashboard" element={<DashboardCompany />} />
+        <Route path="/chats" element={<ChatCompany />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

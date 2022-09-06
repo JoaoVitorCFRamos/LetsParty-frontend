@@ -8,12 +8,15 @@ import ProfilePicture from "../../../components/ProfilePicture";
 import Carousel from "../../../components/Carousel";
 import Modal from "../../../components/Modal";
 import FeedbackCard from "../../../components/FeedbackCard";
+import MenuOptions from "../../../components/MenuOptions";
 
 //icons
 import { FaMoneyBillWave } from "react-icons/fa";
+import { FaWineGlassAlt } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
+import { MdOutlineCake } from "react-icons/md";
 import { BsCalendar4Week } from "react-icons/bs";
-import MenuOptions from "../../../components/MenuOptions";
+import { BiDish } from "react-icons/bi";
 
 export const BuffetProfile: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -76,44 +79,21 @@ export const BuffetProfile: React.FC = () => {
               <h2>Faça uma observação:</h2>
               <textarea></textarea>
             </div>
-            <div className="modal-decorationDiv">
-              {/* <MenuOptions /> */}
-              <h1>Opções de Decoração</h1>
-              <div>
-                <input type="checkbox" />
-                <label>Lorem Ipsum</label>
-              </div>
-              <div>
-                <input type="checkbox" />
-                <label>Lorem Ipsum</label>
-              </div>
-              <div>
-                <input type="checkbox" />
-                <label>Lorem Ipsum</label>
-              </div>
-              <div>
-                <input type="checkbox" />
-                <label>Lorem Ipsum</label>
-              </div>
-              <div>
-                <input type="checkbox" />
-                <label>Lorem Ipsum</label>
-              </div>
-              <div>
-                <input type="checkbox" />
-                <label>Lorem Ipsum</label>
-              </div>
-              <div>
-                <input type="checkbox" />
-                <label>Lorem Ipsum</label>
-              </div>
-              <div>
-                <input type="checkbox" />
-                <label>Lorem Ipsum</label>
-              </div>
-            </div>
+            <MenuOptions
+              title="Opções de Decoração"
+              icon={<MdOutlineCake size={28} />}
+            />
           </div>
-          <div className="modal-rightContent"></div>
+          <div className="modal-rightContent">
+            <MenuOptions
+              title="Opções de Bebidas"
+              icon={<FaWineGlassAlt size={23} />}
+            />
+            <MenuOptions
+              title="Opções de Alimentação"
+              icon={<BiDish size={28} />}
+            />
+          </div>
         </div>
       </Modal>
     </>

@@ -1,5 +1,5 @@
-.dashboardCompany-mainDiv {
-  width: 88vw;
+.companyLaoyt-mainDiv {
+  width: 87vw;
   display: flex;
   flex-direction: row;
   background-color: #ebebeb;
@@ -8,14 +8,15 @@
   /* height: 100%; */
 }
 
-.dashboardCompany-sideBar {
+.companyLaoyt-sideBar {
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
 }
 
-.dashboardCompany-content {
+.companyLaoyt-content {
+  height: 100%;
   width: 100%;
-  padding-left: 3%;
+  padding-left: 1.5%;
 }
