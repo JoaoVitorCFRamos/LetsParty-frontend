@@ -114,3 +114,7 @@
   color: Blue;
   cursor: pointer !important;
 }
+
+.login-link label {
+  cursor: pointer;
+}

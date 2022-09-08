@@ -18,16 +18,17 @@
 }
 
 .sideBar-divLogo {
-  width: 70%;
+  /* border: 1px solid black; */
+  width: 100%;
   display: flex;
   justify-content: center;
-  text-align: center;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  padding: 5%;
-  color: #00a3ff;
-  margin-left: 10%;
+  align-items: center;
   margin-top: 10%;
+}
+
+.sideBar-imgLogo {
+  width: 60%;
+  height: 100%;
 }
 
 .sideBar-labelName {

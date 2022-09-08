@@ -5,6 +5,8 @@ import { useAuth } from "../../../hooks/useAuth";
 
 import { FaEye } from "react-icons/fa";
 
+import LogoLp from "../../../assets/Icon.png";
+
 const LoginCustomer = () => {
   const [fields, setFields] = useState({
     email: "",
@@ -61,6 +63,7 @@ const LoginCustomer = () => {
       </div>
       <div className="login-division"></div>
       <div className="loginCustomer-rightSide">
+        {/* <img src={LogoLp}></img> */}
         <input
           className="loginCustomer-inputEmail"
           type="text"

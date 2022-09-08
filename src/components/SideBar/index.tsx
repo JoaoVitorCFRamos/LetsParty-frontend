@@ -8,6 +8,8 @@ import api from "../../services/api";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 
+import LogoLp from "../../assets/Logo.png";
+
 type Props = {
   email: string;
 };
@@ -23,7 +25,7 @@ const SideBar = ({ email }: Props) => {
     <div className="sideBar-mainDiv">
       <div className="sideBar-divMenu">
         <div className="sideBar-divLogo">
-          <label>Lets Party</label>
+          <img className="sideBar-imgLogo" src={LogoLp} />
         </div>
         <label className="sideBar-labelName"></label>
         <label>{email}</label>
