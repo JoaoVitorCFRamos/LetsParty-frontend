@@ -1,8 +1,9 @@
 import "./style.css";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEye } from "react-icons/fa";
 import { useAuth } from "../../../hooks/useAuth";
+
+import { FaEye } from "react-icons/fa";
 
 const LoginCustomer = () => {
   const [fields, setFields] = useState({
