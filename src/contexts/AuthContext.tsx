@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 type AuthenticatedUser = {
   id: string;
   email: string;
-  role: 'CUSTOMER' | 'COMPANY';
-}
+  role: "CUSTOMER" | "COMPANY";
+};
 
 type Customer = {
   id: string;
@@ -15,8 +15,8 @@ type Customer = {
   profile: {
     id: string;
     fullName: string;
-  }
-}
+  };
+};
 
 type Company = {
   id: string;
@@ -24,20 +24,20 @@ type Company = {
   profile: {
     id: string;
     name: string;
-  }
-}
+  };
+};
 
 type Profile = Customer | Company;
 
 type SignInCredentials = {
   email: string;
   password: string;
-}
+};
 
 interface IJwtPayload extends JwtPayload {
   id: string;
   email: string;
-  role: 'CUSTOMER' | 'COMPANY';
+  role: "CUSTOMER" | "COMPANY";
 }
 
 type AuthContextData = {
@@ -51,31 +51,31 @@ type AuthContextData = {
 
 type AuthProviderProps = {
   children: ReactNode;
-}
+};
 
-export const AuthContext = createContext({} as AuthContextData)
+export const AuthContext = createContext({} as AuthContextData);
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<AuthenticatedUser | null>(null);
   const navigate = useNavigate();
-  
+
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-    const storagedToken = localStorage.getItem('@LPAuth:token');
-    
+    const storagedToken = localStorage.getItem("@LPAuth:token");
+
     if (storagedToken) {
       try {
         const userInfo = jwtDecode<IJwtPayload>(storagedToken);
-          
+
         setUser({
           id: userInfo.id,
           email: userInfo.email,
           role: userInfo.role,
         });
-          
+
         api.defaults.headers.common.Authorization = `Bearer ${storagedToken}`;
 
         return true;
-      } catch(error) {
+      } catch (error) {
         signOut();
         return false;
       }
@@ -84,115 +84,120 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   });
 
-  const signInCustomer = useCallback(async ({ email, password }: SignInCredentials) => {
-    try {
-      const response = await api.post("auth/customer", {
-        email,
-        password,
-      });
+  const signInCustomer = useCallback(
+    async ({ email, password }: SignInCredentials) => {
+      try {
+        const response = await api.post("auth/customer", {
+          email,
+          password,
+        });
 
-      const { accessToken } = response.data;
+        const { accessToken } = response.data;
 
-      localStorage.setItem('@LPAuth:token', accessToken);
+        localStorage.setItem("@LPAuth:token", accessToken);
 
-      api.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+        api.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
 
-      const userInfo = jwtDecode<IJwtPayload>(accessToken)
+        const userInfo = jwtDecode<IJwtPayload>(accessToken);
 
-      setUser({
-        id: userInfo.id,
-        email: userInfo.email,
-        role: userInfo.role
-      });
+        setUser({
+          id: userInfo.id,
+          email: userInfo.email,
+          role: userInfo.role,
+        });
 
-      setIsAuthenticated(true);
+        setIsAuthenticated(true);
 
-      navigate('/app');
+        navigate("/app");
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
+    },
+    [navigate]
+  );
 
-    } catch (error) {
-      setIsAuthenticated(false);
-    }
-  }, [navigate]);
+  const signInCompany = useCallback(
+    async ({ email, password }: SignInCredentials) => {
+      try {
+        const response = await api.post("auth/company", {
+          email,
+          password,
+        });
 
-  const signInCompany = useCallback(async ({ email, password }: SignInCredentials) => {
-    try {
-      const response = await api.post("auth/company", {
-        email,
-        password,
-      });
+        const { accessToken } = response.data;
 
-      const { accessToken } = response.data;
+        localStorage.setItem("@LPAuth:token", accessToken);
 
-      localStorage.setItem('@LPAuth:token', accessToken);
+        api.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
 
-      api.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+        const userInfo = jwtDecode<IJwtPayload>(accessToken);
 
-      const userInfo = jwtDecode<IJwtPayload>(accessToken)
+        setUser({
+          id: userInfo.id,
+          email: userInfo.email,
+          role: userInfo.role,
+        });
 
-      setUser({
-        id: userInfo.id,
-        email: userInfo.email,
-        role: userInfo.role
-      });
+        setIsAuthenticated(true);
 
-      setIsAuthenticated(true);
-
-      navigate('/dashboard');
-
-    } catch (error) {
-      setIsAuthenticated(false);
-    }
-  }, [navigate]);
+        navigate("/dashboard");
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
+    },
+    [navigate]
+  );
 
   const getProfile = useCallback(async () => {
     try {
-      switch(user?.role) {
-        case 'CUSTOMER':
-          const { data: customer } = await api.get<Customer>('customers/me');
+      switch (user?.role) {
+        case "CUSTOMER":
+          const { data: customer } = await api.get<Customer>("customers/me");
           return {
             id: customer.id,
             email: customer.email,
             profile: {
               id: customer.profile.id,
-              fullName: customer.profile.fullName
-            }
-          } as Customer
-        case 'COMPANY':
-          const { data: company} = await api.get<Company>('companies/me');
+              fullName: customer.profile.fullName,
+            },
+          } as Customer;
+        case "COMPANY":
+          const { data: company } = await api.get<Company>("companies/me");
           return {
             id: company.id,
             email: company.email,
             profile: {
               id: company.profile.id,
-            }
+            },
           } as Company;
         default:
-          signOut()
+          signOut();
           break;
       }
-    } catch(error) {
+    } catch (error) {
       signOut();
     }
   }, [user?.role]);
 
   const signOut = () => {
-    api.defaults.headers.common.Authorization = '';
-    localStorage.removeItem('@LPAuth:token');
+    api.defaults.headers.common.Authorization = "";
+    localStorage.removeItem("@LPAuth:token");
     setUser(null);
     setIsAuthenticated(false);
-  } 
+  };
 
   return (
-    <AuthContext.Provider 
-      value={{ 
-        signInCustomer, 
-        signInCompany, 
-        getProfile, 
-        signOut, 
-        isAuthenticated, 
-        user 
-      }}>
+    <AuthContext.Provider
+      value={{
+        signInCustomer,
+        signInCompany,
+        getProfile,
+        signOut,
+        isAuthenticated,
+        user,
+      }}
+    >
       {children}
     </AuthContext.Provider>
-  )
+  );
 }

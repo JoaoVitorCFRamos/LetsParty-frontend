@@ -3,11 +3,11 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import Loading from "../Loading";
 import SideBar from "../SideBar";
-import "./styles.css"
+import "./styles.css";
 
 type Profile = {
   email: string;
-}
+};
 
 const CustomerLayout = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +23,6 @@ const CustomerLayout = () => {
       if (response !== undefined) {
         setProfile({ email: response.email });
       }
-
     } catch (error) {
       setLoading(false);
     } finally {
@@ -35,20 +34,22 @@ const CustomerLayout = () => {
     fetchGetProfile();
   }, [fetchGetProfile]);
 
-  return !loading ? (isAuthenticated && (user && user.role === 'CUSTOMER') ? (
-    <div className="customerLayout-mainDiv">
-      <div className="customerLayout-sideBar">
-        <SideBar email={profile.email} />
+  return !loading ? (
+    isAuthenticated && user && user.role === "CUSTOMER" ? (
+      <div className="customerLayout-mainDiv">
+        <div className="customerLayout-sideBar">
+          <SideBar email={profile.email} />
+        </div>
+        <div className="customerLayout-content">
+          <Outlet />
+        </div>
       </div>
-      <div className="customerLayout-content">
-        <Outlet />
-      </div>
-    </div>
+    ) : (
+      <Navigate to="/" replace />
+    )
   ) : (
-    <Navigate to="/" replace />
-  )) : (
     <Loading />
   );
-}
+};
 
 export default CustomerLayout;

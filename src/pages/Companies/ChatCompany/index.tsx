@@ -6,15 +6,36 @@ export const ChatCompany = () => {
     <div className="chatCompany-content">
       <label className="chatCompany-header">Orçamentos recebidos</label>
       <div className="chatCompany-chats">
-        <ChatTemplate />
-        <ChatTemplate />
-        <ChatTemplate />
-        <ChatTemplate />
-        <ChatTemplate />
-        <ChatTemplate />
-        <ChatTemplate />
-        <ChatTemplate />
-        <ChatTemplate />
+        <ChatTemplate
+          name={"Name User"}
+          lastMessage={
+            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
+          }
+        />
+        <ChatTemplate
+          name={"Name User"}
+          lastMessage={
+            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
+          }
+        />
+        <ChatTemplate
+          name={"Name User"}
+          lastMessage={
+            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
+          }
+        />
+        <ChatTemplate
+          name={"Name User"}
+          lastMessage={
+            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
+          }
+        />
+        <ChatTemplate
+          name={"Name User"}
+          lastMessage={
+            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
+          }
+        />
       </div>
     </div>
   );

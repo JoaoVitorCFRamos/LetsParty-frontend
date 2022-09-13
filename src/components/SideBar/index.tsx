@@ -27,8 +27,7 @@ const SideBar = ({ email }: Props) => {
         <div className="sideBar-divLogo">
           <img className="sideBar-imgLogo" src={LogoLp} />
         </div>
-        <label className="sideBar-labelName"></label>
-        <label>{email}</label>
+        <label className="sideBar-labelName">{email}</label>
         <div className="sideBar-divOptions">
           <Link className="sideBar-links" to="/app">
             <div>

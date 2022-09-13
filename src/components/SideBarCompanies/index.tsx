@@ -25,8 +25,7 @@ const SideBarCompanies = ({ email }: Props) => {
         <div className="sideBarCompanies-divLogo">
           <label>Lets Party</label>
         </div>
-        <label className="sideBarCompanies-labelName"></label>
-        <label>{email}</label>
+        <label className="sideBarCompanies-labelName">{email}</label>
         <div className="sideBarCompanies-divOptions">
           <Link className="sideBarCompanies-links" to="/dashboard">
             <div>
