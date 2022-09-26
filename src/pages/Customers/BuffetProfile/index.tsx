@@ -87,7 +87,7 @@ const BuffetProfile = () => {
                 onClick={() => setIsModalVisible(true)}
                 className="buffetProfile-budgetDiv"
               >
-                <label>Contratar minha festa</label>
+                <label>Orçar</label>
                 <FaMoneyBillWave size={25} color="#0FA958" />
               </div>
               {isFavorite ? (
