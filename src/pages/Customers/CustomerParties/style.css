@@ -1,0 +1,15 @@
+.customerParties-content {
+  width: 100%;
+  padding: 2% 0%;
+}
+
+.customerParties-header {
+  font-size: 28px;
+  font-weight: 500;
+  padding: 2% 2%;
+}
+
+.customerParties-cards {
+  display: flex;
+  flex-direction: column;
+}

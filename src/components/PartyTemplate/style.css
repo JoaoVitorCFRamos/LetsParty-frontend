@@ -1,4 +1,4 @@
-.chatTemplate-mainDiv {
+.partyTemplate-mainDiv {
   width: 100%;
   height: 15vh;
   background-color: white;
@@ -11,7 +11,7 @@
   /* border: 1px solid black; */
 }
 
-.chatTemplate-nameAndMessage {
+.partyTemplate-info{
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -19,41 +19,13 @@
   padding-left: 3%;
 }
 
-.chatTemplate-nameCompany {
+.partyTemplate-nameCompany {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
 }
 
-.chatTemplate-lastMessage {
-  font-size: 16px;
-  padding-top: 3%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: rgb(85, 84, 84);
-  cursor: pointer;
-}
-
-.chatTemplate-lastMessage-not-read {
-  font-size: 18px;
-  font-weight: bolder;
-  padding-top: 3%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: rgb(85, 84, 84);
-  cursor: pointer;
-}
-
-.chatTemplate-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: orange;
-}
-
-.chatTemplate-logoCompany {
+.partyTemplate-logoCompany {
   border-radius: 100%;
   width: 90px;
   height: 80px;

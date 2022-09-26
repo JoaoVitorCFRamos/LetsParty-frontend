@@ -1,54 +1,56 @@
 import "./style.css";
 import ChatTemplate from "../../../components/ChatTemplate";
 import api from "../../../services/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+interface IChatCustomer {
+  id: string;
+  customerId: string;
+  companyId: string;
+  company: {
+    profile: {
+      name: string;
+    };
+  };
+  messages: [
+    {
+      content: string;
+      read: boolean;
+      owner: string;
+      sendAt: Date;
+    }
+  ];
+}
 
 const ChatCustomer = () => {
-  const [profileCompany, setProfileCompany] = useState([]);
+  const [chats, setChats] = useState<IChatCustomer[]>();
 
-  const GetCompanies = () => {
-    api.get("/companies").then((response) => {
-      setProfileCompany(response.data);
+  useEffect(() => {
+    api.get("/chats/customer").then((response) => {
+      setChats(response.data);
     });
-  };
-
-  // console.log(profileCompany);
+  }, []);
 
   return (
     <div className="chatCustomer-content">
       <label className="chatCustomer-header">Suas conversas com Buffets</label>
-      <div className="chatCustomer-chats">
-        <ChatTemplate
-          name={"Name Company"}
-          lastMessage={
-            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
-          }
-        />
-        <ChatTemplate
-          name={"Name Company1"}
-          lastMessage={
-            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
-          }
-        />
-        <ChatTemplate
-          name={"Name Company"}
-          lastMessage={
-            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
-          }
-        />
-        <ChatTemplate
-          name={"Name Company"}
-          lastMessage={
-            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
-          }
-        />
-        <ChatTemplate
-          name={"Name Company"}
-          lastMessage={
-            " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dasdsadasdsadads"
-          }
-        />
-      </div>
+      {chats && chats.length > 0 ? (
+        <div className="chatCustomer-chats">
+          {chats.map((chat, index) => (
+            <ChatTemplate
+              key={index}
+              name={chat.company.profile.name}
+              lastMessage={chat.messages[0].content}
+              read={chat.messages[0].read}
+              owner={chat.messages[0].owner}
+              readingUserId={chat.customerId}
+              sentAt={chat.messages[0].sendAt}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>Você ainda não possui nenhum chat ativo!</p>
+      )}
     </div>
   );
 };

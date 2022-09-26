@@ -1,7 +1,9 @@
 import axios, { AxiosError } from 'axios';
 
+export const apiUrl = 'http://localhost:3333';
+
 const api = axios.create({
-  baseURL: 'https://lets-party-api-development.herokuapp.com',
+  baseURL: apiUrl,
 });
 
 api.interceptors.response.use(response => {

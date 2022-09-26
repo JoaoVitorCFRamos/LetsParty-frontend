@@ -1,11 +1,12 @@
 import "./style.css";
-//images
-import BuffetImgEx from "../../assets/Rectangle58.png";
-import BuffetImgEx2 from "../../assets/Rectangle 61.png";
-import BuffetImgEx3 from "../../assets/BuffetInfantil.png";
 import { useRef } from "react";
+import { IBuffetImage } from "../../pages/Customers/BuffetProfile";
 
-export const Carousel = () => {
+type Props = {
+  images: IBuffetImage[];
+};
+
+export const Carousel = ({ images }: Props) => {
   const carousel = useRef(document.createElement("div"));
 
   const handleLeftClick = (event: any) => {
@@ -37,36 +38,14 @@ export const Carousel = () => {
       </button>
       <div className="carousel-gallery-wrapper" ref={carousel}>
         <div className="carousel-gallery">
-          <img
-            src={BuffetImgEx}
-            alt="buffet"
-            className="carousel-item carousel-current-item"
-          />
-          <img
-            src={BuffetImgEx}
-            alt="buffet"
-            className="carousel-item carousel-current-item"
-          />
-          <img
-            src={BuffetImgEx2}
-            alt="buffet"
-            className="carousel-item carousel-current-item"
-          />
-          <img
-            src={BuffetImgEx}
-            alt="buffet"
-            className="carousel-item carousel-current-item"
-          />
-          <img
-            src={BuffetImgEx}
-            alt="buffet"
-            className="carousel-item carousel-current-item"
-          />
-          <img
-            src={BuffetImgEx3}
-            alt="buffet"
-            className="carousel-item carousel-current-item"
-          />
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image.url}
+              alt="buffet"
+              className="carousel-item carousel-current-item"
+            />
+          ))}
         </div>
       </div>
     </div>

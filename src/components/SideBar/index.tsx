@@ -3,18 +3,17 @@ import { Link } from "react-router-dom";
 import { FaPowerOff } from "react-icons/fa";
 import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
+import { GiPartyPopper } from 'react-icons/gi';
 import { MdFavorite } from "react-icons/md";
-import api from "../../services/api";
-import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 
 import LogoLp from "../../assets/Logo.png";
 
 type Props = {
-  email: string;
+  customerName: string;
 };
 
-const SideBar = ({ email }: Props) => {
+const SideBar = ({ customerName }: Props) => {
   const { signOut } = useAuth();
 
   const handleSignOut = () => {
@@ -27,12 +26,18 @@ const SideBar = ({ email }: Props) => {
         <div className="sideBar-divLogo">
           <img className="sideBar-imgLogo" src={LogoLp} />
         </div>
-        <label className="sideBar-labelName">{email}</label>
+        <label className="sideBar-labelName">{customerName}</label>
         <div className="sideBar-divOptions">
           <Link className="sideBar-links" to="/app">
             <div>
               <BsHouseFill color="#F24E1E" size={23} />
               <label>Buffets</label>
+            </div>
+          </Link>
+          <Link className="sideBar-links" to="/my-parties">
+            <div>
+              <GiPartyPopper color="#FF0084" size={23} />
+              <label>Minhas festas</label>
             </div>
           </Link>
           <Link className="sideBar-links" to="/favorites">
