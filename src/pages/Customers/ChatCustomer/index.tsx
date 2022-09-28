@@ -12,7 +12,7 @@ const ChatCustomer = () => {
     });
   };
 
-  // console.log(profileCompany);
+  console.log(GetCompanies());
 
   return (
     <div className="chatCustomer-content">
