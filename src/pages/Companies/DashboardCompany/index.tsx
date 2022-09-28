@@ -10,15 +10,31 @@ import { MdOutlineCake } from "react-icons/md";
 import { MdAddAPhoto } from "react-icons/md";
 import { FaWineGlassAlt } from "react-icons/fa";
 import { BiDish } from "react-icons/bi";
+import api from "../../../services/api";
+import { useState, useEffect } from "react";
+import { useAuth } from "../../../hooks/useAuth";
+
+
+
+type myCompany = {
+  email: string;
+  profile: {
+    name: string;
+  };
+};
 
 export const DashboardCompany = () => {
+
+
+
+
   return (
     <>
       <div className="dashboardCompany-topContent">
         <div className="dashboardCompany-buffetsInfos">
           <ProfilePicture />
           <div className="dashboardCompany-nameLocalDiv">
-            <h1>Buffet Alegria</h1>
+            <h1>Buffet alegria </h1>
             <label>Zona Norte/SP</label>
           </div>
         </div>
