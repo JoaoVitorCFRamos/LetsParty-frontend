@@ -17,6 +17,12 @@ import ChatCompany from "../pages/Companies/ChatCompany";
 import CustomerParties from "../pages/Customers/CustomerParties";
 import RegisterCustomer from "../pages/Customers/RegisterCustomer";
 import RegisterCompany from "../pages/Companies/RegisterCompany";
+import PartyInformations from "../pages/Customers/PartyInformations";
+import ChoosePartyTheme from "../pages/Customers/ChoosePartyTheme";
+import OptionalServices from "../pages/Customers/OptionalServices";
+import ContractTerms from "../pages/Customers/ContractTerms";
+import Payment from "../pages/Customers/Payment";
+import PaymentCompleted from "../pages/Customers/PaymentCompleted";
 
 const Navigation = () => {
   return (
@@ -32,6 +38,12 @@ const Navigation = () => {
         <Route path="/my-parties" element={<CustomerParties />} />
         <Route path="/chat" element={<ChatCustomer />} />
         <Route path="/buffet/:buffetId" element={<BuffetProfile />} />
+        <Route path="/partyInformations" element={<PartyInformations />} />
+        <Route path="/choosePartyTheme" element={<ChoosePartyTheme />} />
+        <Route path="/optionalServices" element={<OptionalServices />} />
+        <Route path="/contractTerms" element={<ContractTerms />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/paymentCompleted" element={<PaymentCompleted />} />
       </Route>
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<DashboardCompany />} />

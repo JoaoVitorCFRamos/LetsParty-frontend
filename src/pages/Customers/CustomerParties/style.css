@@ -1,6 +1,8 @@
 .customerParties-content {
   width: 100%;
   padding: 2% 0%;
+  display: flex;
+  flex-direction: column;
 }
 
 .customerParties-header {
@@ -12,4 +14,6 @@
 .customerParties-cards {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  /* border: 1px solid black; */
 }

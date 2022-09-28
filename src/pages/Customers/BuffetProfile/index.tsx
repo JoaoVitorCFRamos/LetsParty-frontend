@@ -2,22 +2,19 @@ import React, { useEffect } from "react";
 import "./style.css";
 //Hooks
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 // Components
 import ProfilePicture from "../../../components/ProfilePicture";
 import Carousel from "../../../components/Carousel";
+import api, { apiUrl } from "../../../services/api";
 import Modal from "../../../components/Modal";
 import MenuOptions from "../../../components/MenuOptions";
 
 //icons
 import { FaMoneyBillWave } from "react-icons/fa";
-import { FaWineGlassAlt } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
-import { MdOutlineCake } from "react-icons/md";
-import { BsCalendar4Week } from "react-icons/bs";
-import { BiDish } from "react-icons/bi";
-import { useParams } from "react-router-dom";
-import api, { apiUrl } from "../../../services/api";
+
 
 export interface IBuffetProfile {
   id: string;
@@ -38,6 +35,7 @@ export interface IBuffetImage {
 }
 
 const BuffetProfile = () => {
+  const navigate = useNavigate();
   const params = useParams();
   const [buffetProfile, setBuffetProfile] = useState<IBuffetProfile>();
   const [buffetImages, setBuffetImages] = useState<IBuffetImage[]>([]);
@@ -84,7 +82,8 @@ const BuffetProfile = () => {
             </div>
             <div className="buffetProfile-budgetFavDiv">
               <div
-                onClick={() => setIsModalVisible(true)}
+                // onClick={() => setIsModalVisible(true)}
+                onClick={() => navigate('/partyInformations')}
                 className="buffetProfile-budgetDiv"
               >
                 <label>Orçar</label>
@@ -124,7 +123,7 @@ const BuffetProfile = () => {
         </div>
       </div>
 
-      <Modal
+      {/* <Modal
         onClose={() => setIsModalVisible(false)}
         isModalVisible={isModalVisible}
       >
@@ -155,7 +154,7 @@ const BuffetProfile = () => {
             />
           </div>
         </div>
-      </Modal>
+      </Modal> */}
     </>
   );
 };
