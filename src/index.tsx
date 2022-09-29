@@ -7,7 +7,6 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  //Strict Mode do React causa requests duplicadas
   <BrowserRouter>
     <App />
   </BrowserRouter>

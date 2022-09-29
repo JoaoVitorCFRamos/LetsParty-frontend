@@ -35,6 +35,24 @@
   cursor: pointer;
 }
 
+.chatTemplate-lastMessage-not-read {
+  font-size: 18px;
+  font-weight: bolder;
+  padding-top: 3%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(85, 84, 84);
+  cursor: pointer;
+}
+
+.chatTemplate-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: orange;
+}
+
 .chatTemplate-logoCompany {
   border-radius: 100%;
   width: 90px;

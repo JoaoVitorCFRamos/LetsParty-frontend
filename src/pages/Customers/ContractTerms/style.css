@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Oleo+Script:wght@700&display=swap');
+
+/*font-family: 'IBM Plex Mono', monospace; */
+
+.contractTerms-mainDiv {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contractTerms-header {
+    font-size: 23px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: center;
+}
+
+.contractTerms-mainContent {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* border: 1px solid black; */
+}
+
+.scroll {
+    height: 80%;
+    /* margin: 5px; */
+    padding: 5px;
+    background-color: white;
+    overflow: auto;
+    text-align: justify;
+    padding: 3% 4% 0% 4%;
+    text-align: center;
+}
+
+.contractTerms-divCheckAcceptTerms {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+    padding-top: 2%;
+}
+
+.contractTerms-labelAcceptTerms {
+    /* margin-top: 2%; */
+    font-size: 13px;
+    margin-left: 10px;
+}

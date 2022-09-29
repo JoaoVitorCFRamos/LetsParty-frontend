@@ -47,23 +47,22 @@ const LoginCustomer = () => {
         <label className="login-labelsHeader">Let's Party</label>
         <div className="login-divTexts">
           <label className="login-labelSubtitle">
-            Deseja realizar a festa dos sonhos para seus filhos?
+            Falta pouco para você realizar aquela festa inesquecível!!
           </label>
           <label className="login-labelsParagraph">
-            Feche orçamentos de eventos infantis conosco! Personalize do
-            jeitinho que quiser
+            Contrate eventos infantis conosco! Personalize sua festa do jeitinho
+            que quiser
           </label>
         </div>
         <div className="login-divTexts">
-          <label className="login-labelSubtitle">É um estabelecimento?</label>
-          <label className="login-labelsParagraph">
+          <label className="login-labelSubtitle">É um Buffet?</label>
+          <Link className="login-labelsParagraph" to="/register-company">
             Cadastre seu espaço aqui conosco!
-          </label>
+          </Link>
         </div>
       </div>
       <div className="login-division"></div>
       <div className="loginCustomer-rightSide">
-        {/* <img src={LogoLp}></img> */}
         <input
           className="loginCustomer-inputEmail"
           type="text"
@@ -85,9 +84,12 @@ const LoginCustomer = () => {
         <button className="login-loginButton" onClick={handleLogin}>
           Entrar
         </button>
-        <Link className="login-link" to="/register">
-          <label>Cadastre-se</label>
-        </Link>
+        <div>
+          Ainda não possui cadastro? &nbsp;
+          <Link className="login-link" to="/register-customer">
+            <label>Cadastre-se</label>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import { FaPowerOff } from "react-icons/fa";
 import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
-import { MdFavorite } from "react-icons/md";
-import api from "../../services/api";
-import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 
 type Props = {

@@ -50,21 +50,20 @@ const LoginCompany = () => {
         <label className="login-labelsHeader">Let's Party</label>
         <div className="login-divTexts">
           <label className="login-labelSubtitle">
-            Deseja realizar a festa dos sonhos para seus filhos?
+            Portal do Parceiro 
           </label>
           <label className="login-labelsParagraph">
-            Feche orçamentos de eventos infantis conosco! Personalize do
-            jeitinho que quiser
+            Gerencie o seu Buffet de forma fácil e rápida.
           </label>
         </div>
         <div className="login-divTexts">
-          <label className="login-labelSubtitle">É um estabelecimento?</label>
+          <label className="login-labelSubtitle">É um cliente?</label>
           <label className="login-labelsParagraph">
-            Cadastre seu espaço aqui conosco!
+            Crie o seu cadastro
           </label>
         </div>
       </div>
-      <div className="login-division"></div>
+      <div className="login-company-division"></div>
       <div className="login-rightSide">
         <input
           className="login-inputEmail"
@@ -84,12 +83,15 @@ const LoginCompany = () => {
             <FaEye size={20} />
           </div>
         </div>
-        <button className="login-loginButton" onClick={handleLogin}>
+        <button className="login-company-loginButton" onClick={handleLogin}>
           Entrar
         </button>
-        <Link className="login-link" to="/register">
-          <label>Cadastre-se</label>
-        </Link>
+        <div>
+          Ainda não possui cadastro? &nbsp;
+          <Link className="login-link" to="/register-company">
+            <label>Cadastre-se</label>
+          </Link>
+        </div>
       </div>
     </div>
   );

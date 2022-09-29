@@ -39,8 +39,8 @@
   text-align: center;
 }
 
-.login-division {
-  border: 1px solid #00a3ff;
+.login-company-division {
+  border: 1px solid #ff69b4;
   height: 80vh;
   margin-top: 10vh;
 }
@@ -96,9 +96,9 @@
   cursor: pointer;
 }
 
-.login-loginButton {
+.login-company-loginButton {
   width: 19vw;
-  background-color: #00a3ff;
+  background-color: #ff69b4;
   color: white;
   font-size: 18px;
   border: none;
@@ -111,6 +111,6 @@
 
 .login-link {
   text-decoration: none;
-  color: Blue;
+  color: pink;
   cursor: pointer;
 }

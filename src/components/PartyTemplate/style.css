@@ -1,0 +1,53 @@
+.partyTemplate-mainDiv {
+  width: 80%;
+  height: 23vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1%;
+  border-radius: 7px;
+  border: 1px solid black;
+  box-shadow: 0px 2px rgb(173, 173, 173);
+  cursor: pointer;
+
+}
+
+.partyTemplate-leftSide {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.partyTemplate-leftSide label {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.partyTemplate-infosBD {
+  font-size: 17px;
+  font-weight: 400 !important;
+}
+
+.partyTemplate-rightSide {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.partyTemplate-rightSide label {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.partyTemplate-labelSeeMore {
+  font-size: 15px;
+  font-weight: 400;
+  color: #2762F9;
+  cursor: pointer;
+}

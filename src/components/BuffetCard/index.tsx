@@ -1,15 +1,22 @@
 import "./style.css";
 import exampleBuffet from "../../assets/BuffetInfantil.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export const BuffetCard = () => {
+type Props = {
+  id: string;
+  name: string;
+  city: string;
+  neighborhood: string;
+}
+
+export const BuffetCard = (props: Props) => {
   return (
     <div className="buffetCard-mainDiv">
-      <label className="buffetCard-nameBuffet">Name Buffet</label>
+      <label className="buffetCard-nameBuffet">{props.name}</label>
       <img src={exampleBuffet} className="buffetCard-img"></img>
-      <label>Zona Norte/SP</label>
+      <label>{`${props.neighborhood} - ${props.city}`}</label>
       <div></div>
-      <Link to="/buffetProfile" className="buffetCard-link">
+      <Link to={`/buffet/${props.id}`} className="buffetCard-link">
         <label className="buffetCard-labelSeeMore">Saiba mais</label>
       </Link>
 

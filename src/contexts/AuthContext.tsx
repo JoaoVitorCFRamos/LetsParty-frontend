@@ -2,32 +2,13 @@ import { createContext, ReactNode, useCallback, useState } from "react";
 import api from "../services/api";
 import jwtDecode, { JwtPayload } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 type AuthenticatedUser = {
   id: string;
   email: string;
   role: "CUSTOMER" | "COMPANY";
 };
-
-type Customer = {
-  id: string;
-  email: string;
-  profile: {
-    id: string;
-    fullName: string;
-  };
-};
-
-type Company = {
-  id: string;
-  email: string;
-  profile: {
-    id: string;
-    name: string;
-  };
-};
-
-type Profile = Customer | Company;
 
 type SignInCredentials = {
   email: string;
@@ -44,7 +25,6 @@ type AuthContextData = {
   signInCustomer: (credentials: SignInCredentials) => Promise<void>;
   signInCompany: (credentials: SignInCredentials) => Promise<void>;
   signOut: () => void;
-  getProfile: () => Promise<Profile | undefined>;
   isAuthenticated: boolean;
   user: AuthenticatedUser | null;
 };
@@ -109,8 +89,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsAuthenticated(true);
 
         navigate("/app");
-      } catch (error) {
+      } catch (error: any) {
         setIsAuthenticated(false);
+        toast(error.response?.data.message);
       }
     },
     [navigate]
@@ -141,43 +122,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsAuthenticated(true);
 
         navigate("/dashboard");
-      } catch (error) {
+      } catch (error: any) {
         setIsAuthenticated(false);
+        toast(error.response?.data.message);
       }
     },
     [navigate]
   );
-
-  const getProfile = useCallback(async () => {
-    try {
-      switch (user?.role) {
-        case "CUSTOMER":
-          const { data: customer } = await api.get<Customer>("customers/me");
-          return {
-            id: customer.id,
-            email: customer.email,
-            profile: {
-              id: customer.profile.id,
-              fullName: customer.profile.fullName,
-            },
-          } as Customer;
-        case "COMPANY":
-          const { data: company } = await api.get<Company>("companies/me");
-          return {
-            id: company.id,
-            email: company.email,
-            profile: {
-              id: company.profile.id,
-            },
-          } as Company;
-        default:
-          signOut();
-          break;
-      }
-    } catch (error) {
-      signOut();
-    }
-  }, [user?.role]);
 
   const signOut = () => {
     api.defaults.headers.common.Authorization = "";
@@ -191,7 +142,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       value={{
         signInCustomer,
         signInCompany,
-        getProfile,
         signOut,
         isAuthenticated,
         user,
