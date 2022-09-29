@@ -1,6 +1,6 @@
 /* Customize the label (the container) */
 .customCheckbox-container {
-    width: 0%;
+    min-width: 0%;
     display: block;
     position: relative;
     padding-left: 35px;
@@ -12,6 +12,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-align: start !important;
 }
 
 /* Hide the browser's default radio button */

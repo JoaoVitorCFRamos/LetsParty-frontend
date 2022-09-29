@@ -1,10 +1,30 @@
+import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { BlueButton } from "../../../components/BlueButton"
+import api from "../../../services/api";
 import "./style.css"
 
 export const PartyInformations = () => {
-
     const navigate = useNavigate();
+
+    const [fields, setFields] = useState({
+        birthdayPerson: "",
+        birthdayAge: "",
+        eventDate: "",
+        numberOfGuests: "",
+    })
+
+    const onChangeFields =
+        (field: string) =>
+            (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+                setFields({ ...fields, [field]: event.target.value });
+            };
+
+
+    const registerCustomer = () => {
+        api.post("/parties", fields);
+        // navigate("/login");
+    };
 
     return (
         <div className="partyInformations-mainDiv">
@@ -14,11 +34,11 @@ export const PartyInformations = () => {
             </div>
             <div className="partyInformations-mainContent">
                 <label>Informe o nome do aniversariante</label>
-                <input type="text" />
+                <input type="text" onChange={onChangeFields("birthdayPerson")} value={fields.birthdayPerson} />
                 <label>Informe a idade do aniversariante</label>
                 <select></select>
                 <label>Data do evento</label>
-                <input type="date" />
+                <input type="date" onChange={onChangeFields("eventDate")} value={fields.eventDate} />
                 <label>Horario do evento</label>
                 <select></select>
             </div>

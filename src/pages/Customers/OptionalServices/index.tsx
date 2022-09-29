@@ -15,10 +15,11 @@ export const OptionalServices = () => {
             </div>
             <div className="optionalServices-mainContent">
                 <label>Selecione os serviços opcionais caso desejado</label>
-                <CustomCheckBox title="One" />
-                <CustomCheckBox title="One" />
-                <CustomCheckBox title="One" />
-                <CustomCheckBox title="One" />
+                <CustomCheckBox title="Personagens humanos" price={1000} />
+                <CustomCheckBox title="Cerimonia de entrada da criança" price={200} />
+                <CustomCheckBox title="Cerimonia de entrada da criança" price={200} />
+                <CustomCheckBox title="Cerimonia de entrada da criança" price={200} />
+
 
             </div>
             <BlueButton onClick={() => navigate('/contractTerms')} title="Ir para o pagamento" />

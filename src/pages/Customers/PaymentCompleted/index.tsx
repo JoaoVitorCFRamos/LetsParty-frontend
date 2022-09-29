@@ -1,18 +1,21 @@
 import { BlueButton } from "../../../components/BlueButton";
-import "./style.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
+import "./style.css"
 
 export const PaymentCompleted = () => {
 
     const navigate = useNavigate()
 
     return (
-        <div>
+        <div className="paymentCompleted-mainDiv">
             <label>Parabéns!! Pagamento concluído.
                 Sua festa foi contratada com sucesso</label>
-            <BlueButton onClick={() => navigate('/my-parties')} title="Concluir" />
+            <div>
+
+                <BlueButton onClick={() => navigate('/my-parties')} title="Concluir" />
+            </div>
 
         </div>
     )
