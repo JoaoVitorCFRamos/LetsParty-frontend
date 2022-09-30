@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*  
+font-family: 'Dancing Script', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+
+.partyDashboard-mainDiv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.partyDashboard-topContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.partyDashboard-header {
+    font-size: 23px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.partyDashboard-mainContent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.partyDashboard-leftCards {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: start;
+    /* border: 1px solid black; */
+}
+
+.partyDashboard-leftCards div {
+    width: 80%;
+    background-color: white;
+    margin-top: 1%;
+    border-radius: 8px;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.partyDashboard-leftCards div h1 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 1%;
+}
+
+.partyDashboard-leftCards div label {
+    font-size: 17px;
+    padding-top: 3%;
+
+}
+
+.partyDashboard-spans {
+    font-size: 17px;
+    font-weight: 500;
+    padding-top: 3%;
+
+}
+
+
+.partyDashboard-rightCards {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: start;
+    /* border: 1px solid black; */
+    align-items: center;
+}
+
+
+.partyDashboard-rightCards div {
+    width: 75%;
+    background-color: white;
+    margin-top: 1%;
+    border-radius: 8px;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.partyDashboard-rightCards div h1 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 1%;
+}
+
+.partyDashboard-rightCards div label {
+    font-size: 17px;
+    padding-top: 2%;
+
+}
+
+.partyDashboard-contact {
+    cursor: pointer;
+    color: #00B2FF;
+}

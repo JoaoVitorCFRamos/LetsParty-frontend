@@ -1,6 +1,8 @@
 import ProfilePicture from "../ProfilePicture"
 import react, { useState, FC } from "react";
 import "./style.css"
+import { useNavigate } from "react-router-dom";
+
 interface PartyTemplate {
   birthdayPerson: string;
   date: any;
@@ -10,11 +12,12 @@ interface PartyTemplate {
 
 export const PartyTemplate: react.FC<PartyTemplate> = (props) => {
   const { birthdayPerson, date, buffetName, stats } = props
+  const navigate = useNavigate();
 
 
 
   return (
-    <div className="partyTemplate-mainDiv">
+    <div className="partyTemplate-mainDiv" onClick={() => navigate('/partyDashboard')}>
       <div className="partyTemplate-leftSide">
         <label>Aniversariante: <label className="partyTemplate-infosBD">{birthdayPerson}</label></label>
         <label>Data da comemoração: <label className="partyTemplate-infosBD">{date}</label></label>

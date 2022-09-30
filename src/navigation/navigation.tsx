@@ -23,6 +23,7 @@ import OptionalServices from "../pages/Customers/OptionalServices";
 import ContractTerms from "../pages/Customers/ContractTerms";
 import Payment from "../pages/Customers/Payment";
 import PaymentCompleted from "../pages/Customers/PaymentCompleted";
+import PartyDashboard from "../pages/Customers/PartyDashboard";
 
 const Navigation = () => {
   return (
@@ -44,6 +45,7 @@ const Navigation = () => {
         <Route path="/contractTerms" element={<ContractTerms />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/paymentCompleted" element={<PaymentCompleted />} />
+        <Route path="/partyDashboard" element={<PartyDashboard />} />
       </Route>
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<DashboardCompany />} />
