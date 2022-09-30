@@ -50,7 +50,7 @@ const DashboardCustomer = () => {
           ))}
         </div>
         <div className="dashboardCustomer-searchByName">
-          <input type="text" />
+          <input type="text" placeholder="Procurar por nome" />
           <div>
             <FaSearch />
           </div>

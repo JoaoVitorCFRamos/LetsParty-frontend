@@ -117,44 +117,18 @@ const BuffetProfile = () => {
           ) : (
             <p>Este Buffet ainda não possui fotos</p>
           )}
+          <div className="buffetProfile-descriptionFrame">
+            <label className="buffetProfile-aboutCompanyTitle">Sobre o buffet {buffetProfile?.profile.name}</label>
+            <label className="buffetProfile-aboutCompanyDescription">
+              dsaidfhufasfd
+              {buffetProfile?.profile.description}
+              {buffetProfile?.profile.maxCapacity}
+            </label>
+          </div>
 
-          {buffetProfile?.profile.description}
-          {buffetProfile?.profile.maxCapacity}
         </div>
       </div>
 
-      {/* <Modal
-        onClose={() => setIsModalVisible(false)}
-        isModalVisible={isModalVisible}
-      >
-        <div className="modal-content">
-          <div className="modal-leftContent">
-            <div className="modal-dateDiv">
-              <BsCalendar4Week size={23} />
-              <h2>Data</h2>
-              <input type="date" />
-            </div>
-            <div className="modal-noteDiv">
-              <h2>Faça uma observação:</h2>
-              <textarea></textarea>
-            </div>
-            <MenuOptions
-              title="Opções de Decoração"
-              icon={<MdOutlineCake size={28} />}
-            />
-          </div>
-          <div className="modal-rightContent">
-            <MenuOptions
-              title="Opções de Bebidas"
-              icon={<FaWineGlassAlt size={23} />}
-            />
-            <MenuOptions
-              title="Opções de Alimentação"
-              icon={<BiDish size={28} />}
-            />
-          </div>
-        </div>
-      </Modal> */}
     </>
   );
 };

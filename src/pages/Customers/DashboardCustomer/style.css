@@ -59,7 +59,6 @@
   border-radius: 7px;
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
   flex-direction: column;
   padding: 1%;
 }
@@ -69,25 +68,23 @@
   text-align: center;
   font-weight: 600;
   padding: 4% 0% 4% 0%;
-  /* border: 1px solid black; */
 }
 
 .dashboardCustomer-searchByName {
   display: flex;
   width: 25%;
-  /* border: 1px solid black; */
   background-color: white;
   border-radius: 8px;
   position: fixed;
   right: 1%;
   top: 7%;
   align-items: center;
-  /* justify-content: space-between; */
+
 }
 
 .dashboardCustomer-searchByName input {
   padding: 1%;
-  width: 80%;
+  width: 90%;
   border: 1px solid white;
   border-radius: 8px;
   outline: none;
@@ -99,18 +96,14 @@
 }
 
 .dashboardCustomer-dropdownChildren-mainDiv {
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
-  /* padding: 1%; */
 }
 
 .dashboardCustomer-dropdownChildren-mainDiv label {
-  /* width: 100%; */
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* border: 1px solid black; */
   font-size: 16px;
   margin-top: 4%;
   justify-content: center;

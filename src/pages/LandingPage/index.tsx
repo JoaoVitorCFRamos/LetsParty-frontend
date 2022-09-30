@@ -2,10 +2,13 @@ import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../../src/assets/Logo.png"
 import { CircleComponent } from "../../components/CircleComponent";
+import react, { useRef } from "react";
 
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const inputEl = useRef<HTMLInputElement>(null);
+
 
   const teste = () => {
     navigate("/register")
@@ -31,7 +34,7 @@ const LandingPage = () => {
       <div className="landingPage-aboutUsDiv">
         <div className="ladingPage-aboutUsLeft"></div>
         <div className="ladingPage-aboutUsRight">
-          <label className="landingPage-header">O que fazemos?</label>
+          <label className="landingPage-header">Aqui voce encontra tudo que precisa pra sua festa!</label>
           <label>Nosso objetivo é reunir Buffets infantis e contratantes de festas infantis dentro da mesma plataforma. <br></br>
             Assim trazendo maior facilidade e flexibilidade para ambas as partes.
           </label>
@@ -86,7 +89,11 @@ const LandingPage = () => {
 
 
     </div>
+
+
   );
+
+
 };
 
 export default LandingPage;

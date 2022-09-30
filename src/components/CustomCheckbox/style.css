@@ -1,4 +1,3 @@
-/* Customize the label (the container) */
 .customCheckbox-container {
     min-width: 0%;
     display: block;
@@ -15,7 +14,6 @@
     text-align: start !important;
 }
 
-/* Hide the browser's default radio button */
 .customCheckbox-container input {
     position: absolute;
     opacity: 0;
@@ -24,7 +22,6 @@
     width: 0;
 }
 
-/* Create a custom radio button */
 .customCheckbox-checkmark {
     background-color: white;
     position: absolute;
@@ -32,33 +29,27 @@
     left: 0;
     height: 23px;
     width: 23px;
-    /* background-color: #eee; */
     border-radius: 50%;
 }
 
-/* On mouse-over, add a grey background color */
 .customCheckbox-container:hover input~.customCheckbox-checkmark {
     background-color: #ccc;
 }
 
-/* When the radio button is checked, add a blue background */
 .customCheckbox-container input:checked~.customCheckbox-checkmark {
     background-color: #2196F3;
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
 .customCheckbox-checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
 .customCheckbox-container input:checked~.customCheckbox-checkmark:after {
     display: block;
 }
 
-/* Style the indicator (dot/circle) */
 .customCheckbox-container .customCheckbox-checkmark:after {
     top: 8px;
     left: 8px;

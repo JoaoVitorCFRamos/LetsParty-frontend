@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*  
+font-family: 'Dancing Script', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
 .buffetProfile-mainDiv {
   display: flex;
   background-color: #ebebeb;
+  /* border: 1px solid black; */
 }
 
 .buffetProfile-content {
@@ -24,6 +33,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
 }
 
 .buffetProfile-nameLocalDiv {
@@ -38,11 +48,14 @@
 .buffetProfile-nameLocalDiv h1 {
   font-size: 20px;
   margin-bottom: 2px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .buffetProfile-nameLocalDiv label {
   font-size: 18px;
   margin-bottom: 2px;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .buffetProfile-budgetFavDiv {
@@ -71,6 +84,8 @@
   font-size: 17px;
   font-weight: 500;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .buffetProfile-favoriteDiv {
@@ -91,6 +106,8 @@
   font-size: 17px;
   font-weight: 500;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .buffetProfile-favoritedDiv {
@@ -123,93 +140,35 @@
 
 .buffetProfile-addressDiv h1 {
   font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+
   margin-bottom: 3px;
 }
 
-.buffetProfile-feedbaackDiv {
-  width: 90%;
-  display: flex;
-  padding: 10px;
-  flex-direction: column;
-  background-color: white;
+.buffetProfile-descriptionFrame {
+  width: 93%;
+  min-height: 43vh;
+  margin-top: 3%;
+  border: 1px solid #656565;
   border-radius: 10px;
-  padding: 10px;
-  margin: 20px 0px 35px 0px;
-}
-
-.buffetProfile-feedbaackDiv h1 {
-  font-size: 22px;
-  padding: 2vh;
   display: flex;
+  flex-direction: column;
+  /* align-items: center; */
   justify-content: center;
+  background-color: #F9F9F9;
+  padding: 2%;
 }
 
-.buffetProfile-divCardsFeedback {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.buffetProfile-aboutCompanyTitle {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 2%;
+  font-family: 'Poppins', sans-serif;
+
 }
 
-/*Modal children css */
+.buffetProfile-aboutCompanyDescription {
+  font-size: 17px;
+  font-weight: 400;
 
-.modal-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin-left: 13%;
-}
-
-.modal-content h2 {
-  font-size: 18px;
-  font-weight: 500;
-  margin: 1%;
-}
-
-.modal-content h1 {
-  font-size: 20px;
-  font-weight: 500;
-  margin: 1%;
-}
-
-.modal-leftContent {
-  width: 49%;
-  max-height: 90%;
-  padding-left: 2%;
-}
-
-.modal-dateDiv {
-  display: flex;
-  align-items: center;
-  margin: 5% 1%;
-}
-
-.modal-dateDiv input {
-  font-size: 16px;
-  border: 1px solid black;
-  border-radius: 6px;
-}
-
-.modal-noteDiv {
-  width: 100%;
-  margin: 4% 0px;
-}
-
-.modal-noteDiv textarea {
-  resize: none;
-  border: none;
-  border-radius: 6px;
-  width: 60%;
-  height: 20vh;
-  padding: 1%;
-  margin-top: 4px;
-}
-
-.modal-rightContent {
-  width: 49%;
-  max-height: 90%;
 }
