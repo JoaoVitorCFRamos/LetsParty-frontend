@@ -3,7 +3,7 @@ import "./style.css"
 
 interface BlueButton {
     title: string;
-    onClick?: () => any;
+    onClick?: any;
 }
 
 export const BlueButton: react.FC<BlueButton> = (props) => {

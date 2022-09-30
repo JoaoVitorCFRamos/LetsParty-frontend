@@ -68,6 +68,7 @@
   text-align: center;
   font-weight: 600;
   padding: 4% 0% 4% 0%;
+  border-bottom: 1px solid black;
 }
 
 .dashboardCustomer-searchByName {
@@ -109,8 +110,6 @@
   justify-content: center;
   text-align: center;
 }
-
-.dashboardCustomer-dropdownChildren-mainDiv input {}
 
 .dashboardCustomer-dropdownChildren-mainDiv label {
   margin-left: 10%;

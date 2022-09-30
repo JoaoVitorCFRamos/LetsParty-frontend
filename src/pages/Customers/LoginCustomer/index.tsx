@@ -6,6 +6,7 @@ import { useAuth } from "../../../hooks/useAuth";
 import { FaEye } from "react-icons/fa";
 
 import LogoLp from "../../../assets/Icon.png";
+import { BlueButton } from "../../../components/BlueButton";
 
 const LoginCustomer = () => {
   const [fields, setFields] = useState({
@@ -18,9 +19,9 @@ const LoginCustomer = () => {
 
   const onChangeField =
     (field: string) =>
-    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFields({ ...fields, [field]: event.target.value });
-    };
+      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFields({ ...fields, [field]: event.target.value });
+      };
 
   const handleLogin = async (event: FormEvent) => {
     event.preventDefault();
@@ -43,54 +44,34 @@ const LoginCustomer = () => {
 
   return (
     <div className="login-mainDiv">
-      <div className="login-leftSide">
-        <label className="login-labelsHeader">Let's Party</label>
-        <div className="login-divTexts">
-          <label className="login-labelSubtitle">
-            Falta pouco para você realizar aquela festa inesquecível!!
-          </label>
-          <label className="login-labelsParagraph">
-            Contrate eventos infantis conosco! Personalize sua festa do jeitinho
-            que quiser
-          </label>
+      <div className="login-loginDiv">
+        <div className="login-headerDiv">
+          <img src={LogoLp} />
+          <label className="login-header">Com a Let's Party você vai encontrar o Buffet perfeito para suas festas infantis. Será uma festa inesquecível!</label>
         </div>
-        <div className="login-divTexts">
-          <label className="login-labelSubtitle">É um Buffet?</label>
-          <Link className="login-labelsParagraph" to="/register-company">
-            Cadastre seu espaço aqui conosco!
-          </Link>
-        </div>
-      </div>
-      <div className="login-division"></div>
-      <div className="loginCustomer-rightSide">
-        <input
-          className="loginCustomer-inputEmail"
-          type="text"
-          placeholder="Email"
-          onChange={onChangeField("email")}
-          value={fields.email}
-        />
-        <div className="loginCustomer-divPasswordInput">
+        <div className="login-inputsDiv">
           <input
-            type={passwordType}
-            placeholder="Senha"
-            onChange={onChangeField("password")}
-            value={fields.password}
+            className="loginCustomer-inputEmail"
+            type="text"
+            placeholder="Email"
+            onChange={onChangeField("email")}
+            value={fields.email}
           />
-          <div onClick={togglePassword} className="loginCustomer-divIcon">
-            <FaEye size={20} />
+          <div className="loginCustomer-divPasswordInput">
+            <input
+              type={passwordType}
+              placeholder="Senha"
+              onChange={onChangeField("password")}
+              value={fields.password}
+            />
+            <div onClick={togglePassword} className="loginCustomer-divIcon">
+              <FaEye size={20} />
+            </div>
           </div>
         </div>
-        <button className="login-loginButton" onClick={handleLogin}>
-          Entrar
-        </button>
-        <div>
-          Ainda não possui cadastro? &nbsp;
-          <Link className="login-link" to="/register-customer">
-            <label>Cadastre-se</label>
-          </Link>
-        </div>
+        <BlueButton onClick={handleLogin} title="Entrar" />
       </div>
+
     </div>
   );
 };
