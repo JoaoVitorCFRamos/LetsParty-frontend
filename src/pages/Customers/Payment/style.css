@@ -87,6 +87,15 @@ font-family: 'Roboto', sans-serif;
 .payment-dropdown-divCC input {
     padding: 2% !important;
     margin-top: 1%;
+    outline: none;
+    border: 1px solid #909497;
+}
+
+.payment-dropdown-divCC select {
+    padding: 2% !important;
+    margin-top: 1%;
+    outline: none;
+    border: 1px solid #909497;
 }
 
 .payment-dropdown-ValCVV {

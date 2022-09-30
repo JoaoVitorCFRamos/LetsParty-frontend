@@ -31,8 +31,13 @@ export const Payment = () => {
                             <input type="text" placeholder="Validade" />
                             <input type="text" placeholder="CVV" />
                         </div>
+                        <input type="text" placeholder="Nome do titular" />
                         <input type="text" placeholder="CPF/CNPJ do titular" />
-                        <input type="text" placeholder="Aplido de cartão(opcional)" />
+                        <select placeholder="Número de parcelas">
+                            <option value="valor1">----Número de parcelas----</option>
+                            <option value="valor2" selected>Valor 2</option>
+                            <option value="valor3">Valor 3</option>
+                        </select>
                     </div>
                 </Dropdown>
                 <Dropdown title="Cartão de Débito">
@@ -42,8 +47,8 @@ export const Payment = () => {
                             <input type="text" placeholder="Validade" />
                             <input type="text" placeholder="CVV" />
                         </div>
+                        <input type="text" placeholder="Nome do titular" />
                         <input type="text" placeholder="CPF/CNPJ do titular" />
-                        <input type="text" placeholder="Aplido de cartão(opcional)" />
                     </div>
                 </Dropdown>
 
