@@ -53,12 +53,9 @@ export const Payment = () => {
                 </Dropdown>
 
             </div >
-            <BlueButton onClick={() => navigate('/choosePartyTheme')} title="Continuar" />
+            <BlueButton onClick={() => navigate('/paymentCompleted')} title="Continuar" />
         </div >
-        // <div>
-        //     <label>Selecione a forma de pagamento de sua preferência</label>
-        //     <BlueButton onClick={() => navigate('/paymentCompleted')} title="Concluir" />
-        // </div>
+
     )
 }
 
