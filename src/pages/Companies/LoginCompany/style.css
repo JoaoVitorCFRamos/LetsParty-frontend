@@ -1,89 +1,96 @@
-.login-mainDiv {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*  
+font-family: 'Dancing Script', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+
+.loginCompany-mainDiv {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 42, 66, 0.8);
 }
 
-.login-leftSide {
-  width: 49%;
-  height: 80vh;
+.loginCompany-loginDiv {
+  width: 28%;
+  height: 65%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  margin-top: 10vh;
+  justify-content: space-around;
+  flex-direction: column;
+  border: 1px solid #006DAB;
+  background-color: white;
+  border-radius: 9px;
+  position: fixed;
+  z-index: 10;
+
 }
 
-.login-divTexts {
-  width: 70%;
+.loginCompany-headerDiv {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.login-labelsHeader {
-  font-size: 40px;
-  font-weight: 500;
-  margin-bottom: 1vh;
-  text-align: center;
-}
-
-.login-labelSubtitle {
-  font-size: 30px;
-  text-align: center;
-}
-
-.login-labelsParagraph {
-  font-size: 20px;
-  text-align: center;
-}
-
-.login-company-division {
-  border: 1px solid #ff69b4;
-  height: 80vh;
-  margin-top: 10vh;
-}
-
-.login-inputEmail {
-  width: 19vw;
+  flex-direction: column;
   padding: 2%;
+
+}
+
+.loginCompany-headerDiv img {
+  width: 30%;
+}
+
+.loginCompany-header {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  padding: 2%;
+}
+
+
+.loginCompany-inputsDiv {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginCompany-inputEmail {
+  width: 100%;
+  padding: 5% 3%;
   margin-bottom: 5vh;
   border: 1px solid black;
   border-radius: 10px;
   font-size: 16px;
+  outline: none;
 }
 
-.login-rightSide {
-  width: 49%;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10vh;
-}
 
-.login-divPasswordInput {
+.loginCompany-divPasswordInput {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* border: 1px solid black; */
 }
 
-.login-divPasswordInput input {
-  width: 32%;
-  padding: 2%;
+.loginCompany-divPasswordInput input {
+  width: 100%;
+  padding: 5% 3%;
   border: 1px solid black;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-right: 0px solid;
   font-size: 16px;
+  outline: none;
 }
 
-.login-divIcon {
-  width: 7%;
+.loginCompany-divIcon {
+  width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,25 +99,6 @@
   border-bottom-right-radius: 10px;
   border: 1px solid black;
   border-left: 0px;
-  background-color: #aaaaaa;
-  cursor: pointer;
-}
-
-.login-company-loginButton {
-  width: 19vw;
-  background-color: #ff69b4;
-  color: white;
-  font-size: 18px;
-  border: none;
-  padding: 2vh 5vw;
-  border-radius: 6px;
-  cursor: pointer;
-  margin: 3vh;
-  margin-bottom: 6vh !important;
-}
-
-.login-link {
-  text-decoration: none;
-  color: pink;
+  background-color: rgba(57, 94, 116, 0.8);
   cursor: pointer;
 }

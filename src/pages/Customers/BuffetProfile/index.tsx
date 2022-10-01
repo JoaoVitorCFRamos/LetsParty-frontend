@@ -121,6 +121,7 @@ const BuffetProfile = () => {
             <label className="buffetProfile-aboutCompanyTitle">Sobre o buffet {buffetProfile?.profile.name}</label>
             <label className="buffetProfile-aboutCompanyDescription">
               dsaidfhufasfd
+              {/* <br></br> */}
               {buffetProfile?.profile.description}
               {buffetProfile?.profile.maxCapacity}
             </label>

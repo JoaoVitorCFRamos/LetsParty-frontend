@@ -3392,11 +3392,11 @@ export const ContractTerms = () => {
                     <label className="contractTerms-labelAcceptTerms">Li e concordo com os termos de contrato</label>
                 </div>
 
-
             </div >
             {check == false
-                ? <BlueButton onClick={() => toast.info("Aceite os termos de contrato para poder proseguir")} title="Prosseguir" />
-                : <BlueButton onClick={() => navigate('/payment')} title="Prosseguir" />
+                ? <div className="contractTems-divButton"><BlueButton onClick={() => toast.info("Aceite os termos de contrato para poder proseguir")} title="Prosseguir" /></div>
+                : <div className="contractTems-divButton"><BlueButton onClick={() => navigate('/payment')} title="Prosseguir" /></div>
+
             }
 
         </div >

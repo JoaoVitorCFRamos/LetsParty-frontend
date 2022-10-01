@@ -42,7 +42,9 @@ export const PartyInformations = () => {
                 <label>Horario do evento</label>
                 <select></select>
             </div>
-            <BlueButton onClick={() => navigate('/choosePartyTheme')} title="Continuar" />
+            <div className="partyInformations-divButton">
+                <BlueButton onClick={() => navigate('/choosePartyTheme')} title="Continuar" />
+            </div>
         </div >
     )
 }

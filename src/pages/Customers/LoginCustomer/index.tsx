@@ -69,7 +69,9 @@ const LoginCustomer = () => {
             </div>
           </div>
         </div>
-        <BlueButton onClick={handleLogin} title="Entrar" />
+        <div className="loginCostumer-divButton">
+          <BlueButton onClick={handleLogin} title="Entrar" />
+        </div>
       </div>
 
     </div>

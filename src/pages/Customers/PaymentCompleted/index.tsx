@@ -12,7 +12,7 @@ export const PaymentCompleted = () => {
         <div className="paymentCompleted-mainDiv">
             <label>Parabéns!! Pagamento concluído.
                 Sua festa foi contratada com sucesso</label>
-            <div>
+            <div className="paymentCompleted-buttonDiv">
 
                 <BlueButton onClick={() => navigate('/my-parties')} title="Concluir" />
             </div>

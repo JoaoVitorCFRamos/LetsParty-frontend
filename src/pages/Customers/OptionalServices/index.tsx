@@ -22,7 +22,9 @@ export const OptionalServices = () => {
 
 
             </div>
-            <BlueButton onClick={() => navigate('/contractTerms')} title="Ir para o pagamento" />
+            <div className="optionalServices-divButton">
+                <BlueButton onClick={() => navigate('/contractTerms')} title="Ir para o pagamento" />
+            </div>
         </div >
     )
 }

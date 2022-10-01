@@ -65,7 +65,9 @@ export const PartyDashboard = () => {
                     </div>
                 </div>
             </div>
-            <BlueButton onClick={() => navigate('/contractTerms')} title="Ir para o pagamento " />
+            <div className="partyDashboard-buttonDiv">
+                <BlueButton onClick={() => navigate('/contractTerms')} title="Ir para o pagamento " />
+            </div>
         </div >
     )
 }

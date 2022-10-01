@@ -17,3 +17,7 @@
 .paymentCompleted-mainDiv div {
     margin-top: 6%;
 }
+
+.paymentCompleted-buttonDiv {
+    width: 17%;
+}

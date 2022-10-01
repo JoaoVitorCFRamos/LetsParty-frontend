@@ -19,7 +19,10 @@ export const ChoosePartyTheme = () => {
                     <img></img>
                 </div>
             </div>
-            <BlueButton onClick={() => navigate('/optionalServices')} title="Continuar " />
+            <div className="choosePartyTheme-divButton">
+
+                <BlueButton onClick={() => navigate('/optionalServices')} title="Continuar " />
+            </div>
         </div >
     )
 }

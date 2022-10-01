@@ -70,20 +70,16 @@ const LandingPage = () => {
           <label className="landingPage-lrHeader">Deseja utilizar a plataforma como cliente?</label>
           <label className="landingPage-lrMakeLogin">Faça login ou cadastre-se aqui</label>
           <button onClick={() => navigate("/login")} className="ladingPage-defaultButton">Entrar</button>
-          <button onClick={() => navigate("/register")} className="ladingPage-defaultButton">Registrar-se</button>
+          <button onClick={() => navigate("/register-customer")} className="ladingPage-defaultButton">Registrar-se</button>
 
         </div>
         <div className="landingPage-lrMiddleContent"></div>
         <div className="landingPage-lrRightContent">
-          <label className="landingPage-lrHeader">Deseja utilizar a plataforma como cliente?</label>
+          <label className="landingPage-lrHeader">Deseja utilizar a plataforma como estabelecimento?</label>
           <label className="landingPage-lrMakeLogin">Faça login ou cadastre-se aqui</label>
           <button onClick={() => navigate("/login-business")} className="ladingPage-defaultButton">Entrar</button>
+          <button onClick={() => navigate("/register-company")} className="ladingPage-defaultButton">Registrar-se</button>
 
-          <button onClick={() => navigate("/register")} className="ladingPage-defaultButton">Registrar-se</button>
-
-
-          {/* <Link to="/register">
-          </Link> */}
         </div>
       </div>
 
