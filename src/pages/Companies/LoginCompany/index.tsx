@@ -56,12 +56,6 @@ const LoginCompany = () => {
             Gerencie o seu Buffet de forma fácil e rápida.
           </label>
         </div>
-        <div className="login-divTexts">
-          <label className="login-labelSubtitle">É um cliente?</label>
-          <label className="login-labelsParagraph">
-            Crie o seu cadastro
-          </label>
-        </div>
       </div>
       <div className="login-company-division"></div>
       <div className="login-rightSide">

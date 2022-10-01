@@ -1,6 +1,7 @@
 import axios, { AxiosError } from "axios";
 
 export const apiUrl = "https://lets-party-api-development.herokuapp.com";
+//export const apiUrl = "http://localhost:3333";
 
 const api = axios.create({
   baseURL: apiUrl,

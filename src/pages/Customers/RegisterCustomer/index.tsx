@@ -2,6 +2,8 @@ import "./style.css";
 import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../../services/api";
+import { toast } from "react-toastify";
+import { AxiosError } from "axios";
 
 const RegisterCustomer = () => {
   const [fields, setFields] = useState({
@@ -19,15 +21,31 @@ const RegisterCustomer = () => {
       setFields({ ...fields, [field]: event.target.value });
     };
 
-  const registerCustomer = () => {
-    api.post("/customers", fields);
-    navigate("/login");
+  const registerCustomer = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    api
+      .post("/customers", fields)
+      .then((response) => {
+        if (response.status === 201) {
+          toast.success("Cadastro realizado com sucesso!");
+          navigate("/login");
+        }
+      })
+      .catch((error: AxiosError<any>) => {
+        error.response?.data?.message.forEach((message: any) => {
+          toast.error(message);
+        });
+      });
   };
 
   return (
     <div className="register-mainDiv">
       <div className="register-leftSide">
-        <label className="register-labelSubtitle">Faça seu cadastro de forma rápida e fácil</label>
+        <label className="register-labelSubtitle">
+          Faça seu cadastro de forma rápida e fácil
+        </label>
         <div className="register-divFormUser">
           <div>
             <label>Nome:</label>

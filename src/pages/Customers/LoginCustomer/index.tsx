@@ -54,12 +54,6 @@ const LoginCustomer = () => {
             que quiser
           </label>
         </div>
-        <div className="login-divTexts">
-          <label className="login-labelSubtitle">É um Buffet?</label>
-          <Link className="login-labelsParagraph" to="/register-company">
-            Cadastre seu espaço aqui conosco!
-          </Link>
-        </div>
       </div>
       <div className="login-division"></div>
       <div className="loginCustomer-rightSide">
