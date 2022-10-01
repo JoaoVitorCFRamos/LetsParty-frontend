@@ -5,10 +5,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* padding-left: 3%; */
   margin-top: 2%;
   cursor: pointer;
-  /* border: 1px solid black; */
 }
 
 .chatTemplate-nameAndMessage {
