@@ -3,8 +3,8 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../hooks/useAuth";
 import { FaEye } from "react-icons/fa";
-import { BlueButton } from "../../../components/BlueButton";
 import LogoLp from "../../../assets/Icon.png";
+import BlueButton from "../../../components/BlueButton";
 
 interface SignInFormData {
   email: string;

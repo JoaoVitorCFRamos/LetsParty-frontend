@@ -1,8 +1,8 @@
-import { BlueButton } from "../../../components/BlueButton";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 import "./style.css"
+import BlueButton from "../../../components/BlueButton";
 
 export const PaymentCompleted = () => {
 

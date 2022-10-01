@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
-import { BlueButton } from "../../../components/BlueButton";
 import api from "../../../services/api";
 import { profile } from "console";
 import "./style.css"
+import BlueButton from "../../../components/BlueButton";
 
 
 interface PartyDashboard {

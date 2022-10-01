@@ -6,7 +6,7 @@ import { useAuth } from "../../../hooks/useAuth";
 import { FaEye } from "react-icons/fa";
 
 import LogoLp from "../../../assets/Icon.png";
-import { BlueButton } from "../../../components/BlueButton";
+import BlueButton from "../../../components/BlueButton";
 
 const LoginCustomer = () => {
   const [fields, setFields] = useState({

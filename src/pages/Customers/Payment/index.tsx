@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { BlueButton } from "../../../components/BlueButton";
+import BlueButton from "../../../components/BlueButton";
 import { Dropdown } from "../../../components/Dropdown";
 import "./style.css";
-import BlueButton from "../../../components/BlueButton";
 
 interface IPayment {
   values: {
@@ -89,6 +88,6 @@ export const Payment = ({
       </div>
     </div >
 
+  )
 };
-
 export default Payment;
