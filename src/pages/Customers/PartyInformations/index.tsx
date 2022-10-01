@@ -136,7 +136,10 @@ const PartyInformations = ({
           </optgroup>
         </select>
       </div>
-      <BlueButton onClick={handleNextStep} title="Continuar" />
+      <div className="partyInformations-divButton">
+
+        <BlueButton onClick={handleNextStep} title="Continuar" />
+      </div>
     </div>
   );
 };

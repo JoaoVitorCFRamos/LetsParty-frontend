@@ -3560,11 +3560,13 @@ const ContractTerms = ({ values, onChange, nextStep }: IContractTerms) => {
           </label>
         </div>
       </div>
+      <div className="contractTerms-divButton">
 
-      <BlueButton
-        onClick={handleNextStep}
-        title="Prosseguir"
-      />
+        <BlueButton
+          onClick={handleNextStep}
+          title="Prosseguir"
+        />
+      </div>
 
       {/* {check === false ? (
         <BlueButton

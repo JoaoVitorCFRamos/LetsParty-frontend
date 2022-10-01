@@ -25,6 +25,7 @@ import Payment from "../pages/Customers/Payment";
 import PaymentCompleted from "../pages/Customers/ContractCompleted";
 import InvoiceParty from "../pages/Customers/InvoiceParty";
 import ContractParty from "../pages/Customers/ContractParty";
+import { PartyDashboard } from "../pages/Customers/PartyDashboard";
 
 const Navigation = () => {
   return (
@@ -45,6 +46,7 @@ const Navigation = () => {
           element={<InvoiceParty />}
         />
         <Route path="/party/invoice/:id/contract" element={<ContractParty />} />
+        <Route path="/partyDashboard" element={<PartyDashboard />} />
       </Route>
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<DashboardCompany />} />

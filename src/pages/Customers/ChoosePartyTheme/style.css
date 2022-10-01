@@ -53,3 +53,7 @@ font-family: 'Roboto', sans-serif;
 .choosePartyTheme-divButton {
     width: 20%;
 }
+
+.choosePartyTheme-divButton div {
+    margin-bottom: 2%;
+}

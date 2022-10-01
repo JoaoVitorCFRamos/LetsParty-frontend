@@ -7,7 +7,7 @@ font-family: 'Roboto', sans-serif;
 */
 
 
-.login-mainDiv {
+.loginCustomer-mainDiv {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,7 +17,7 @@ font-family: 'Roboto', sans-serif;
   background-color: rgba(0, 42, 66, 0.8);
 }
 
-.login-loginDiv {
+.loginCustomer-loginDiv {
   width: 28%;
   height: 65%;
   display: flex;
@@ -32,7 +32,7 @@ font-family: 'Roboto', sans-serif;
 
 }
 
-.login-headerDiv {
+.loginCustomer-headerDiv {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -40,11 +40,11 @@ font-family: 'Roboto', sans-serif;
 
 }
 
-.login-headerDiv img {
+.loginCustomer-headerDiv img {
   width: 30%;
 }
 
-.login-header {
+.loginCustomer-header {
   text-align: center;
   font-size: 25px;
   font-weight: 400;
@@ -53,7 +53,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 
-.login-inputsDiv {
+.loginCustomer-inputsDiv {
   width: 60%;
   display: flex;
   flex-direction: column;

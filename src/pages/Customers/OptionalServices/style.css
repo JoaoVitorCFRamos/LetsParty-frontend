@@ -51,3 +51,7 @@
 .optionalServices-divButton {
     width: 20%;
 }
+
+.optionalServices-divButton div {
+    margin-bottom: 2%;
+}

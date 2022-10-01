@@ -43,13 +43,13 @@ const LoginCustomer = () => {
   }, [isAuthenticated, navigate, user?.role]);
 
   return (
-    <div className="login-mainDiv">
-      <div className="login-loginDiv">
-        <div className="login-headerDiv">
+    <div className="loginCustomer-mainDiv">
+      <div className="loginCustomer-loginDiv">
+        <div className="loginCustomer-headerDiv">
           <img src={LogoLp} />
-          <label className="login-header">Com a Let's Party você vai encontrar o Buffet perfeito para suas festas infantis. Será uma festa inesquecível!</label>
+          <label className="loginCustomer-header">Com a Let's Party você vai encontrar o Buffet perfeito para suas festas infantis. Será uma festa inesquecível!</label>
         </div>
-        <div className="login-inputsDiv">
+        <div className="loginCustomer-inputsDiv">
           <input
             className="loginCustomer-inputEmail"
             type="text"

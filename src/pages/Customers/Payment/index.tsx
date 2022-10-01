@@ -82,8 +82,9 @@ export const Payment = ({
 
       </div >
       <div className="payment-buttonDiv">
-
-        <BlueButton onClick={handlePreviousStep} title="Voltar" />
+        <div>
+          <BlueButton onClick={handlePreviousStep} title="Voltar" />
+        </div>
         <BlueButton onClick={handleNextStep} title="Concluir" />
       </div>
     </div >

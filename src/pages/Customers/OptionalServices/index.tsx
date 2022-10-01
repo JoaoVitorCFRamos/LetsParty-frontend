@@ -72,8 +72,12 @@ const OptionalServices = ({
           />
         ))}
       </div>
-      <BlueButton onClick={handlePreviousStep} title="Voltar" />
-      <BlueButton onClick={handleNextStep} title="Enviar" />
+      <div className="optionalServices-divButton">
+        <div>
+          <BlueButton onClick={handlePreviousStep} title="Voltar" />
+        </div>
+        <BlueButton onClick={handleNextStep} title="Enviar" />
+      </div>
     </div>
   );
 };

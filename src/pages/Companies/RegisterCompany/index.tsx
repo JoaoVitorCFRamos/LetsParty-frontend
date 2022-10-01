@@ -1,10 +1,13 @@
-import "./style.css";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../../services/api";
 import { toast } from "react-toastify";
 import { AxiosError } from "axios";
 import { useDebounce } from "../../../hooks/useDebounce";
+import BlueButton from "../../../components/BlueButton";
+import LogoLp from "../../../assets/Icon.png";
+import "./style.css"
+
 
 interface IRegisterCompany {
   name: string;
@@ -61,18 +64,13 @@ const RegisterCompany = () => {
       .post("/companies", fields)
       .then((response) => {
         if (response.status === 201) {
-          toast.success("Cadastro realizado com sucesso!");
           navigate("/login-business");
         }
       })
       .catch((error: AxiosError<any>) => {
-        if (error.response?.status === 409) {
-          toast.error("Já existe um usuário com este Endereço de E-mail");
-        } else {
-          error.response?.data?.message.forEach((message: any) => {
-            toast.error(message);
-          });
-        }
+        error.response?.data?.message.forEach((message: any) => {
+          toast(message);
+        });
       });
   };
 
@@ -97,137 +95,253 @@ const RegisterCompany = () => {
   }, [debouncedValue]);
 
   return (
-    <div className="register-mainDiv">
-      <div className="register-rightSide">
-        <label className="register-labelSubtitle">Cadastre o seu Buffet</label>
-        <div className="register-divFormEstablishment">
-          <div>
-            <label>Nome da empresa:</label>
-            <input
-              onChange={onChangeFields("name")}
-              value={fields.name}
-              type="text"
-            />
-          </div>
-          <div>
-            <label>CNPJ da empresa:</label>
-            <input
-              onChange={onChangeFields("cnpj")}
-              value={fields.cnpj}
-              type="text"
-            />
-          </div>
-          <div>
-            <label>Telefone para contato:</label>
-            <input
-              type="tel"
-              onChange={(e) =>
-                setFields({
-                  ...fields,
-                  contact: { phoneNumber: e.target.value },
-                })
-              }
-              value={fields.contact.phoneNumber}
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-            />
-          </div>
-          <div>
-            <label>Endereço de E-mail:</label>
-            <input
-              onChange={onChangeFields("email")}
-              value={fields.email}
-              type="email"
-            />
-          </div>
-          <div>
-            <label>Senha:</label>
-            <input
-              onChange={onChangeFields("password")}
-              value={fields.password}
-              type="password"
-            />
-          </div>
-          <div>
-            <label>CEP:</label>
-            <input
-              onChange={(e) =>
-                setFields({
-                  ...fields,
-                  address: { ...fields.address, zipCode: e.target.value },
-                })
-              }
-              value={fields.address.zipCode}
-              type="text"
-            />
-          </div>
-          {showAddressFields ? (
-            <>
-              <div>
-                <label>Logradouro:</label>
-                <input
-                  disabled={true}
-                  value={fields.address.street}
-                  type="text"
-                />
-              </div>
-              <div>
-                <label>Número:</label>
-                <input
-                  onChange={(e) =>
-                    setFields({
-                      ...fields,
-                      address: {
-                        ...fields.address,
-                        number: Number(e.target.value),
-                      },
-                    })
-                  }
-                  value={fields.address.number}
-                  type="text"
-                />
-              </div>
-              <div>
-                <label>Estado:</label>
-                <input
-                  disabled={true}
-                  value={fields.address.state}
-                  type="text"
-                />
-              </div>
-              <div>
-                <label>Cidade:</label>
-                <input
-                  disabled={true}
-                  value={fields.address.city}
-                  type="text"
-                />
-              </div>
-              <div>
-                <label>Bairro:</label>
-                <input
-                  disabled={true}
-                  value={fields.address.neighborhood}
-                  type="text"
-                />
-              </div>
-            </>
-          ) : undefined}
-
-          <button
-            className="register-company-registerButton"
-            onClick={(e) => registerCompany(e)}
-          >
-            Cadastrar
-          </button>
+    <div className="loginCompany-mainDiv">
+      <div className="registerCompany-loginDiv">
+        <div className="registerCompany-headerDiv">
+          <img src={LogoLp} />
+          <label className="loginCompany-header">Cadastre-se para virar uma empresa parceira</label>
         </div>
-        <label>
-          Já possui cadastro?{" "}
-          <Link className="register-link" to="/login-business">
-            Fazer Login{" "}
-          </Link>
-        </label>
+        <div className="loginCompany-inputsDiv">
+          <input
+            onChange={onChangeFields("name")}
+            value={fields.name}
+            type="text"
+            placeholder="Insira o nome da sua empresa"
+          />
+          <input
+            onChange={onChangeFields("cnpj")}
+            value={fields.cnpj}
+            type="text"
+            placeholder="Insira o cnpj da sua empresa"
+          />
+          <input
+            type="tel"
+            onChange={(e) =>
+              setFields({
+                ...fields,
+                contact: { phoneNumber: e.target.value },
+              })
+            }
+            value={fields.contact.phoneNumber}
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            placeholder="Insira o telefone da sua empresa"
+          />
+          <input
+            onChange={onChangeFields("email")}
+            value={fields.email}
+            type="email"
+            placeholder="Insira o email da sua empresa"
+          />
+
+          <input
+            onChange={onChangeFields("password")}
+            value={fields.password}
+            type="password"
+            placeholder="Insira uma senha"
+          />
+          <input
+            onChange={(e) =>
+              setFields({
+                ...fields,
+                address: { ...fields.address, zipCode: e.target.value },
+              })
+            }
+            value={fields.address.zipCode}
+            type="text"
+            placeholder="Informe seu cep"
+          />
+        </div>
+        {showAddressFields ? (
+          <>
+            <div>
+              <label>Logradouro:</label>
+              <input
+                disabled={true}
+                value={fields.address.street}
+                type="text"
+              />
+            </div>
+            <div>
+              <label>Número:</label>
+              <input
+                onChange={(e) =>
+                  setFields({
+                    ...fields,
+                    address: {
+                      ...fields.address,
+                      number: Number(e.target.value),
+                    },
+                  })
+                }
+                value={fields.address.number}
+                type="text"
+              />
+            </div>
+            <div>
+              <label>Estado:</label>
+              <input
+                disabled={true}
+                value={fields.address.state}
+                type="text"
+              />
+            </div>
+            <div>
+              <label>Cidade:</label>
+              <input
+                disabled={true}
+                value={fields.address.city}
+                type="text"
+              />
+            </div>
+            <div>
+              <label>Bairro:</label>
+              <input
+                disabled={true}
+                value={fields.address.neighborhood}
+                type="text"
+              />
+            </div>
+          </>
+        ) : undefined}
+        <div className="loginCompany-divButton">
+
+          <BlueButton onClick={(e) => registerCompany(e)} title="Entrar" />
+        </div>
       </div>
-    </div>
+    </div >
+
+
+    // <div className="register-mainDiv">
+    //   <div className="register-rightSide">
+    //     <label className="register-labelSubtitle">Cadastre o seu Buffet</label>
+    //     <div className="register-divFormEstablishment">
+    //       <div>
+    //         <label>Nome da empresa:</label>
+    //         <input
+    //           onChange={onChangeFields("name")}
+    //           value={fields.name}
+    //           type="text"
+    //         />
+    //       </div>
+    //       <div>
+    //         <label>CNPJ da empresa:</label>
+    //         <input
+    //           onChange={onChangeFields("cnpj")}
+    //           value={fields.cnpj}
+    //           type="text"
+    //         />
+    //       </div>
+    //       <div>
+    //         <label>Telefone para contato:</label>
+    //         <input
+    //           type="tel"
+    //           onChange={(e) =>
+    //             setFields({
+    //               ...fields,
+    //               contact: { phoneNumber: e.target.value },
+    //             })
+    //           }
+    //           value={fields.contact.phoneNumber}
+    //           pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+    //         />
+    //       </div>
+    //       <div>
+    //         <label>Endereço de E-mail:</label>
+    //         <input
+    //           onChange={onChangeFields("email")}
+    //           value={fields.email}
+    //           type="email"
+    //         />
+    //       </div>
+    //       <div>
+    //         <label>Senha:</label>
+    //         <input
+    //           onChange={onChangeFields("password")}
+    //           value={fields.password}
+    //           type="password"
+    //         />
+    //       </div>
+    //       <div>
+    //         <label>CEP:</label>
+    //         <input
+    //           onChange={(e) =>
+    //             setFields({
+    //               ...fields,
+    //               address: { ...fields.address, zipCode: e.target.value },
+    //             })
+    //           }
+    //           value={fields.address.zipCode}
+    //           type="text"
+    //         />
+    //       </div>
+    //       {showAddressFields ? (
+    //         <>
+    //           <div>
+    //             <label>Logradouro:</label>
+    //             <input
+    //               disabled={true}
+    //               value={fields.address.street}
+    //               type="text"
+    //             />
+    //           </div>
+    //           <div>
+    //             <label>Número:</label>
+    //             <input
+    //               onChange={(e) =>
+    //                 setFields({
+    //                   ...fields,
+    //                   address: {
+    //                     ...fields.address,
+    //                     number: Number(e.target.value),
+    //                   },
+    //                 })
+    //               }
+    //               value={fields.address.number}
+    //               type="text"
+    //             />
+    //           </div>
+    //           <div>
+    //             <label>Estado:</label>
+    //             <input
+    //               disabled={true}
+    //               value={fields.address.state}
+    //               type="text"
+    //             />
+    //           </div>
+    //           <div>
+    //             <label>Cidade:</label>
+    //             <input
+    //               disabled={true}
+    //               value={fields.address.city}
+    //               type="text"
+    //             />
+    //           </div>
+    //           <div>
+    //             <label>Bairro:</label>
+    //             <input
+    //               disabled={true}
+    //               value={fields.address.neighborhood}
+    //               type="text"
+    //             />
+    //           </div>
+    //         </>
+    //       ) : undefined}
+
+    //       <button
+    //         className="register-company-registerButton"
+    //         onClick={(e) => registerCompany(e)}
+    //       >
+    //         Cadastrar
+    //       </button>
+    //     </div>
+    //     <label>
+    //       Já possui cadastro?{" "}
+    //       <Link className="register-link" to="/login-business">
+    //         Fazer Login{" "}
+    //       </Link>
+    //     </label>
+    //   </div>
+    // </div>
   );
 };
 

@@ -86,8 +86,9 @@ const ChoosePartyTheme = ({
         ) : undefined}
       </div>
       <div className="choosePartyTheme-divButton">
-
-        <BlueButton onClick={handlePreviousStep} title="Voltar" />
+        <div>
+          <BlueButton onClick={handlePreviousStep} title="Voltar" />
+        </div>
         <BlueButton onClick={handleNextStep} title="Continuar" />
       </div>
     </div>

@@ -24,6 +24,7 @@ export const PartyDashboard = () => {
         });
     }
 
+
     useEffect(() => {
         getCustumer()
     }, [])
@@ -66,7 +67,7 @@ export const PartyDashboard = () => {
                 </div>
             </div>
             <div className="partyDashboard-buttonDiv">
-                <BlueButton onClick={() => navigate('/contractTerms')} title="Ir para o pagamento " />
+                <BlueButton onClick={() => navigate('/party/invoice/:id/contract')} title="Ir para o pagamento " />
             </div>
         </div >
     )
