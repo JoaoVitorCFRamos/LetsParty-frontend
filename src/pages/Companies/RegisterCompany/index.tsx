@@ -49,9 +49,9 @@ const RegisterCompany = () => {
 
   const onChangeFields =
     (field: string) =>
-    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFields({ ...fields, [field]: event.target.value });
-    };
+      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFields({ ...fields, [field]: event.target.value });
+      };
 
   const registerCompany = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>

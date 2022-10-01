@@ -91,8 +91,8 @@ const DashboardCompany = () => {
         >
           {({ getRootProps, getInputProps }) => (
             <div className="dashboardCompany-addPhotosDiv">
-              <div {...getRootProps()}>
-                <input {...getInputProps()} />
+              <div  {...getRootProps()}>
+                <input  {...getInputProps()} />
                 <label>Adicionar foto(s)</label>
                 <MdAddAPhoto size={16} />
               </div>

@@ -51,7 +51,7 @@ const LoginCompany = () => {
       <div className="loginCompany-loginDiv">
         <div className="loginCompany-headerDiv">
           <img src={LogoLp} />
-          <label className="loginCompany-header">Com a Let's Party você vai encontrar o Buffet perfeito para suas festas infantis. Será uma festa inesquecível!</label>
+          <label className="loginCompany-header">Olá buffet parceira, faça login para continuar</label>
         </div>
         <div className="loginCompany-inputsDiv">
           <input
@@ -73,7 +73,10 @@ const LoginCompany = () => {
             </div>
           </div>
         </div>
-        <BlueButton onClick={handleLogin} title="Entrar" />
+        <div className="loginCompany-divButton">
+
+          <BlueButton onClick={handleLogin} title="Entrar" />
+        </div>
       </div>
 
     </div>
