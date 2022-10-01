@@ -22,8 +22,9 @@ import ChoosePartyTheme from "../pages/Customers/ChoosePartyTheme";
 import OptionalServices from "../pages/Customers/OptionalServices";
 import ContractTerms from "../pages/Customers/ContractTerms";
 import Payment from "../pages/Customers/Payment";
-import PaymentCompleted from "../pages/Customers/PaymentCompleted";
-import PartyDashboard from "../pages/Customers/PartyDashboard";
+import PaymentCompleted from "../pages/Customers/ContractCompleted";
+import InvoiceParty from "../pages/Customers/InvoiceParty";
+import ContractParty from "../pages/Customers/ContractParty";
 
 const Navigation = () => {
   return (
@@ -39,13 +40,11 @@ const Navigation = () => {
         <Route path="/my-parties" element={<CustomerParties />} />
         <Route path="/chat" element={<ChatCustomer />} />
         <Route path="/buffet/:buffetId" element={<BuffetProfile />} />
-        <Route path="/partyInformations" element={<PartyInformations />} />
-        <Route path="/choosePartyTheme" element={<ChoosePartyTheme />} />
-        <Route path="/optionalServices" element={<OptionalServices />} />
-        <Route path="/contractTerms" element={<ContractTerms />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/paymentCompleted" element={<PaymentCompleted />} />
-        <Route path="/partyDashboard" element={<PartyDashboard />} />
+        <Route
+          path="/buffet/:buffetId/party/invoice"
+          element={<InvoiceParty />}
+        />
+        <Route path="/party/invoice/:id/contract" element={<ContractParty />} />
       </Route>
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<DashboardCompany />} />

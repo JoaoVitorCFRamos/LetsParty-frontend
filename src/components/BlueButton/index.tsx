@@ -1,14 +1,16 @@
-import react, { FC } from "react";
-import "./style.css"
+import "./style.css";
 
-interface BlueButton {
-    title: string;
-    onClick?: any;
+interface IBlueButton {
+  title: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => any;
 }
 
-export const BlueButton: react.FC<BlueButton> = (props) => {
-    return (
-        <button onClick={props.onClick} className="blueButton-button">{props.title}</button>
-    )
-}
+const BlueButton = (props: IBlueButton) => {
+  return (
+    <button onClick={props.onClick} className="blueButton-button">
+      {props.title}
+    </button>
+  );
+};
+
 export default BlueButton;

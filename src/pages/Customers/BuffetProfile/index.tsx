@@ -1,20 +1,12 @@
-import React, { useEffect } from "react";
 import "./style.css";
-//Hooks
+import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
-// Components
 import ProfilePicture from "../../../components/ProfilePicture";
 import Carousel from "../../../components/Carousel";
 import api, { apiUrl } from "../../../services/api";
-import Modal from "../../../components/Modal";
-import MenuOptions from "../../../components/MenuOptions";
-
-//icons
 import { FaMoneyBillWave } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
-
 
 export interface IBuffetProfile {
   id: string;
@@ -40,7 +32,6 @@ const BuffetProfile = () => {
   const [buffetProfile, setBuffetProfile] = useState<IBuffetProfile>();
   const [buffetImages, setBuffetImages] = useState<IBuffetImage[]>([]);
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
-  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
   const handleClickFavorite = () => {
     api.put(`/customers/favorites/${params.buffetId}`).then((response) => {
@@ -82,11 +73,12 @@ const BuffetProfile = () => {
             </div>
             <div className="buffetProfile-budgetFavDiv">
               <div
-                // onClick={() => setIsModalVisible(true)}
-                onClick={() => navigate('/partyInformations')}
+                onClick={() =>
+                  navigate(`/buffet/${params.buffetId}/party/invoice`)
+                }
                 className="buffetProfile-budgetDiv"
               >
-                <label>Orçar</label>
+                <label>Montar minha festa</label>
                 <FaMoneyBillWave size={25} color="#0FA958" />
               </div>
               {isFavorite ? (
@@ -112,6 +104,9 @@ const BuffetProfile = () => {
             <h1>Endereço</h1>
             <label>{buffetProfile?.profile.addressLine}</label>
           </div>
+          <div className="buffetProfile-addressDiv">
+            <h1>Galeria de Fotos</h1>
+          </div>
           {buffetImages.length > 0 ? (
             <Carousel images={buffetImages} />
           ) : (
@@ -129,7 +124,6 @@ const BuffetProfile = () => {
 
         </div>
       </div>
-
     </>
   );
 };

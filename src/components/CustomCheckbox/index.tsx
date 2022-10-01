@@ -1,22 +1,31 @@
-import "./style.css"
-import react, { FC } from "react";
+import React, { ChangeEvent } from "react";
+import "./style.css";
 
-interface CustomCheckBox {
-    title: string;
-    price?: number;
+interface ICustomCheckBox {
+  title: string;
+  price: string;
+  value: string;
+  checked: boolean;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const CustomCheckBox: react.FC<CustomCheckBox> = (props) => {
-    const { title, price } = props;
-    return (
-        <div className="customCheckbox-mainDiv">
-            <label className="customCheckbox-container">{title}<p></p>(valor: R${price})
-                <input type="checkbox" />
-                <span className="customCheckbox-checkmark"></span>
-            </label>
+const CustomCheckBox = (props: ICustomCheckBox) => {
+  const { title, price } = props;
 
-        </div >
-    )
-}
+  return (
+    <div className="customCheckbox-mainDiv">
+      <label className="customCheckbox-container">
+        {`${title} (+ ${price})`}
+        <input
+          type="checkbox"
+          value={props.value}
+          checked={props.checked}
+          onChange={props.onChange}
+        />
+        <span className="customCheckbox-checkmark"></span>
+      </label>
+    </div>
+  );
+};
 
 export default CustomCheckBox;

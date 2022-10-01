@@ -61,13 +61,18 @@ const RegisterCompany = () => {
       .post("/companies", fields)
       .then((response) => {
         if (response.status === 201) {
+          toast.success("Cadastro realizado com sucesso!");
           navigate("/login-business");
         }
       })
       .catch((error: AxiosError<any>) => {
-        error.response?.data?.message.forEach((message: any) => {
-          toast(message);
-        });
+        if (error.response?.status === 409) {
+          toast.error("Já existe um usuário com este Endereço de E-mail");
+        } else {
+          error.response?.data?.message.forEach((message: any) => {
+            toast.error(message);
+          });
+        }
       });
   };
 
