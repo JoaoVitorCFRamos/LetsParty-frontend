@@ -13,7 +13,7 @@ const FinishInvoice = () => {
         seu pedido, e você poderá continuar para efetivação do contrato e
         pagamento.
       </h4>
-      <div>
+      <div className="">
         <BlueButton onClick={() => navigate("/my-parties")} title="Concluir" />
       </div>
     </div>

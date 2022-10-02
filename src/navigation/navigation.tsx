@@ -18,6 +18,7 @@ import InvoiceParty from "../pages/Customers/InvoiceParty";
 import ContractParty from "../pages/Customers/ContractParty";
 import PartyDashboard from "../pages/Customers/PartyDashboard";
 import Payment from "../pages/Customers/Payment";
+import Budgets from "../pages/Companies/Budgets";
 
 const Navigation = () => {
   return (
@@ -43,6 +44,7 @@ const Navigation = () => {
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<DashboardCompany />} />
         <Route path="/chats" element={<ChatCompany />} />
+        <Route path="/budgets" element={<Budgets />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

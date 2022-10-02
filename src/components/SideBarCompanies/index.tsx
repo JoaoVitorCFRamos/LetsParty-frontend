@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { FaPowerOff } from "react-icons/fa";
 import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
+
+import { FaMoneyBillWave } from "react-icons/fa";
+
 import { useAuth } from "../../hooks/useAuth";
 
 type Props = {
@@ -25,15 +28,21 @@ const SideBarCompanies = ({ email }: Props) => {
         <label className="sideBarCompanies-labelName">{email}</label>
         <div className="sideBarCompanies-divOptions">
           <Link className="sideBarCompanies-links" to="/dashboard">
-            <div>
+            <div className="sideBarCompanies-divLinkMenu">
               <BsHouseFill color="#F24E1E" size={23} />
               <label>Meu Buffet</label>
             </div>
           </Link>
           <Link className="sideBarCompanies-links" to="/chats">
-            <div>
+            <div className="sideBarCompanies-divLinkMenu">
               <BsFillChatSquareFill color="#0071BE" size={23} />
               <label>Chat</label>
+            </div>
+          </Link>
+          <Link className="sideBarCompanies-links" to="/budgets">
+            <div className="sideBarCompanies-divLinkMenu">
+              <FaMoneyBillWave color="#0FA958" size={23} />
+              <label>Orçamentos</label>
             </div>
           </Link>
         </div>

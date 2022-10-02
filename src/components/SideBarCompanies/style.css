@@ -81,3 +81,10 @@
   text-decoration: none;
   color: black;
 }
+
+.sideBarCompanies-divLinkMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
