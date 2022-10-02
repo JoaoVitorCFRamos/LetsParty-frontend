@@ -93,7 +93,7 @@ const DashboardCustomer = () => {
           {loading ? (
             <Loading />
           ) : buffets?.length === 0 ? (
-            <h1>Nenhum resultado encontrado</h1>
+            <h1 className="dashboardCustomer-noResultsFound">Nenhum resultado encontrado</h1>
           ) : (
             buffets?.map((buffet, index) => (
               <BuffetCard

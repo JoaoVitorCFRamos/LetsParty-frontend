@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*  
+font-family: 'Dancing Script', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+
 .dashboardCustomer-divHigher {
   /* border: 1px solid black; */
   width: 96%;
@@ -11,6 +20,8 @@
   font-size: 25px;
   padding-left: 3%;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .dashboardCustomer-divHigher select {
@@ -46,11 +57,21 @@
   justify-content: space-evenly;
 }
 
+.dashboardCustomer-noResultsFound {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: flex-start;
+  height: 20vh;
+  font-size: 23px;
+
+}
+
 /* ------------------------------------------------------------------------------------------------------------------------------------- */
 
 .dashboardCustomer-filterDiv {
   width: 25%;
-  height: 85vh;
+  min-height: 85vh;
   border: 1px solid #afafaf;
   position: fixed;
   right: 1%;
@@ -69,6 +90,7 @@
   font-weight: 600;
   padding: 4% 0% 4% 0%;
   border-bottom: 1px solid black;
+  width: 100%;
 }
 
 .dashboardCustomer-searchByName {
@@ -99,6 +121,8 @@
 .dashboardCustomer-dropdownChildren-mainDiv {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
 }
 
 .dashboardCustomer-dropdownChildren-mainDiv label {
@@ -107,11 +131,16 @@
   align-items: center;
   font-size: 16px;
   margin-top: 4%;
-  justify-content: center;
+  /* justify-content: center; */
   text-align: center;
+  width: 100%;
 }
 
 .dashboardCustomer-dropdownChildren-mainDiv label {
   margin-left: 10%;
   font-weight: 400;
+}
+
+.dashboardCustomer-dropdownChildren-mainDiv input {
+  outline: none;
 }

@@ -77,7 +77,7 @@ const LoginCompany = () => {
           <BlueButton onClick={handleLogin} title="Entrar" />
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

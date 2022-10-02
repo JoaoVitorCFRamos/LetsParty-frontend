@@ -17,6 +17,7 @@ import RegisterCompany from "../pages/Companies/RegisterCompany";
 import InvoiceParty from "../pages/Customers/InvoiceParty";
 import ContractParty from "../pages/Customers/ContractParty";
 import PartyDashboard from "../pages/Customers/PartyDashboard";
+import Payment from "../pages/Customers/Payment";
 
 const Navigation = () => {
   return (
