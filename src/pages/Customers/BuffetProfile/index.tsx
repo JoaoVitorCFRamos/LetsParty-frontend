@@ -112,16 +112,34 @@ const BuffetProfile = () => {
           ) : (
             <p>Este Buffet ainda não possui fotos</p>
           )}
-          <div className="buffetProfile-descriptionFrame">
-            <label className="buffetProfile-aboutCompanyTitle">Sobre o buffet {buffetProfile?.profile.name}</label>
-            <label className="buffetProfile-aboutCompanyDescription">
-              dsaidfhufasfd
-              {/* <br></br> */}
-              {buffetProfile?.profile.description}
-              {buffetProfile?.profile.maxCapacity}
-            </label>
-          </div>
 
+          <div className="buffetProfile-descriptionFrame">
+            {buffetProfile && buffetProfile.profile.description !== null ? (
+              <>
+                <label className="buffetProfile-aboutCompanyTitle">
+                  Sobre o Buffet
+                </label>
+                <label className="buffetProfile-aboutCompanyDescription">
+                  {buffetProfile?.profile.description}
+                </label>
+                <label className="buffetProfile-aboutCompanyTitle">
+                  Capacidade máxima suportada no local
+                </label>
+                <label className="buffetProfile-aboutCompanyDescription">
+                  Máximo de {buffetProfile?.profile.maxCapacity} convidados
+                </label>
+              </>
+            ) : (
+              <>
+                <label className="buffetProfile-aboutCompanyTitle">
+                  Sobre o Buffet
+                </label>
+                <label className="buffetProfile-aboutCompanyDescription">
+                  O Buffet ainda não cadastrou uma descrição.
+                </label>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </>

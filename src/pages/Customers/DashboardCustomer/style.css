@@ -54,7 +54,7 @@
   border: 1px solid #afafaf;
   position: fixed;
   right: 1%;
-  margin-top: 2%;
+  /* margin-top: 2%; */
   background-color: white;
   border-radius: 7px;
   display: flex;

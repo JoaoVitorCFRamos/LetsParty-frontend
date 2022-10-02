@@ -1,6 +1,6 @@
 import "./style.css";
 import BuffetCard from "../../../components/BuffetCard";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../../../services/api";
 import { FaSearch } from "react-icons/fa";
 import Dropdown from "../../../components/Dropdown";
@@ -100,18 +100,19 @@ const DashboardCustomer = () => {
                 key={index}
                 id={buffet.id}
                 name={buffet.profile.name}
+                thumbnail={buffet.profile.thumbnail}
                 neighborhood={buffet.profile.neighborhood}
                 city={buffet.profile.city}
               />
             ))
           )}
         </div>
-        <div className="dashboardCustomer-searchByName">
+        {/* <div className="dashboardCustomer-searchByName">
           <input type="text" placeholder="Procurar por nome" />
           <div>
             <FaSearch />
           </div>
-        </div>
+        </div> */}
         <div className="dashboardCustomer-filterDiv">
           <label className="dashboardCustomer-filterTitle">
             {" "}

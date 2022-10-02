@@ -11,7 +11,7 @@ interface IFavoriteBuffet {
       name: string;
       city: string;
       neighborhood: string;
-      thumbnail?: string;
+      thumbnail: string | null;
     };
   };
 }
@@ -37,6 +37,7 @@ const Favorites = () => {
             id={buffet.company.id}
             name={buffet.company.profile.name}
             city={buffet.company.profile.city}
+            thumbnail={buffet.company.profile.thumbnail}
             neighborhood={buffet.company.profile.neighborhood}
           />
         ))}

@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import DashboardCustomer from "../pages/Customers/DashboardCustomer";
 import LandingPage from "../pages/LandingPage";
@@ -10,22 +9,14 @@ import BuffetProfile from "../pages/Customers/BuffetProfile";
 import CustomerLayout from "../components/CustomerLayout";
 import CompanyLayout from "../components/CompanyLayout";
 import NotFound from "../components/NotFound";
-
-//Companies Components
 import DashboardCompany from "../pages/Companies/DashboardCompany";
 import ChatCompany from "../pages/Companies/ChatCompany";
 import CustomerParties from "../pages/Customers/CustomerParties";
 import RegisterCustomer from "../pages/Customers/RegisterCustomer";
 import RegisterCompany from "../pages/Companies/RegisterCompany";
-import PartyInformations from "../pages/Customers/PartyInformations";
-import ChoosePartyTheme from "../pages/Customers/ChoosePartyTheme";
-import OptionalServices from "../pages/Customers/OptionalServices";
-import ContractTerms from "../pages/Customers/ContractTerms";
-import Payment from "../pages/Customers/Payment";
-import PaymentCompleted from "../pages/Customers/ContractCompleted";
 import InvoiceParty from "../pages/Customers/InvoiceParty";
 import ContractParty from "../pages/Customers/ContractParty";
-import { PartyDashboard } from "../pages/Customers/PartyDashboard";
+import PartyDashboard from "../pages/Customers/PartyDashboard";
 
 const Navigation = () => {
   return (
@@ -45,8 +36,8 @@ const Navigation = () => {
           path="/buffet/:buffetId/party/invoice"
           element={<InvoiceParty />}
         />
-        <Route path="/party/invoice/:id/contract" element={<ContractParty />} />
-        <Route path="/partyDashboard" element={<PartyDashboard />} />
+        <Route path="/party/:partyId/contract" element={<ContractParty />} />
+        <Route path="/party/:partyId" element={<PartyDashboard />} />
       </Route>
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<DashboardCompany />} />

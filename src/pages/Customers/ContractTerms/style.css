@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Oleo+Script:wght@700&display=swap');
-
-/*font-family: 'IBM Plex Mono', monospace; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .contractTerms-mainDiv {
     height: 100vh;
@@ -13,7 +11,7 @@
 
 .contractTerms-header {
     font-size: 23px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Roboto';
     text-align: center;
 }
 

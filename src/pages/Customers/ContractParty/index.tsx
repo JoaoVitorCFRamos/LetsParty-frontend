@@ -1,23 +1,30 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import api from "../../../services/api";
 import ContractCompleted from "../ContractCompleted";
 import ContractTerms from "../ContractTerms";
 import Payment from "../Payment";
 
-type Party = {
-  //invoiceId: string;
+type IContractParty = {
+  companyId: string;
+  customerId: string;
   acceptedTerms: boolean;
   paymentMethod: string;
-  paymentInstallments: number;
+  installments: number | "";
+  totalPrice: number;
 };
 
 const ContractParty = () => {
-  //const params = useParams();
+  const params = useParams();
   const [step, setStep] = useState<number>(1);
-  const [fields, setFields] = useState<Party>({
+  const [fields, setFields] = useState<IContractParty>({
+    customerId: "",
+    companyId: "",
     acceptedTerms: false,
     paymentMethod: "",
-    paymentInstallments: 1,
+    installments: "",
+    totalPrice: 0,
   });
 
   const handlePrevStep = () => {
@@ -28,14 +35,65 @@ const ContractParty = () => {
     setStep((step) => step + 1);
   };
 
-  const onChangeField =
-    (field: string) => (event: ChangeEvent<HTMLInputElement>) => {
-      setFields({ ...fields, [field]: event.target.value });
+  const onChangeTermsCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      setFields({
+        ...fields,
+        acceptedTerms: true,
+      });
+    } else {
+      setFields({
+        ...fields,
+        acceptedTerms: false,
+      });
+    }
+  };
+
+  const onChangeInstallmentsField =
+    (field: string) => (event: ChangeEvent<HTMLSelectElement>) => {
+      setFields({ ...fields, [field]: Number(event.target.value) });
     };
 
+  useEffect(() => {
+    api.get(`/parties/${params.partyId}`).then((response) => {
+      setFields((oldState) => ({
+        ...oldState,
+        companyId: response.data.company.id,
+        customerId: response.data.customer.id,
+        totalPrice: Number(response.data.totalPrice),
+      }));
+    });
+  }, [params.partyId]);
+
   const handleSubmit = async () => {
-    //const id = params.buffetId;
-    await api.get("health");
+    try {
+      await api
+        .put(`/parties/${params.partyId}/finish`, {
+          paymentMethod: "CREDIT_CARD",
+          installments: fields.installments,
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            api
+              .get(
+                `chats/exists?customerId=${fields.customerId}&companyId=${fields.companyId}`
+              )
+              .then((response) => {
+                if (response.data === false) {
+                  api
+                    .post(
+                      `chats?customerId=${fields.customerId}&companyId=${fields.companyId}`
+                    )
+                    .catch((error) => {});
+                }
+              });
+          }
+        });
+    } catch (error: any) {
+      toast.error(error.response.data.message);
+    }
   };
 
   const handleShowView = () => {
@@ -46,7 +104,7 @@ const ContractParty = () => {
             values={{
               acceptedTerms: fields.acceptedTerms,
             }}
-            onChange={onChangeField}
+            onChange={onChangeTermsCheckbox}
             nextStep={handleNextStep}
           />
         );
@@ -55,10 +113,11 @@ const ContractParty = () => {
         return (
           <Payment
             values={{
+              totalPrice: fields.totalPrice,
               paymentMethod: fields.paymentMethod,
-              paymentInstallments: fields.paymentInstallments,
+              installments: fields.installments,
             }}
-            onChange={onChangeField}
+            onChange={onChangeInstallmentsField}
             previousStep={handlePrevStep}
             nextStep={handleNextStep}
             submit={handleSubmit}

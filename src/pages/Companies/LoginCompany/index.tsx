@@ -1,6 +1,6 @@
 import "./style.css";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../hooks/useAuth";
 import { FaEye } from "react-icons/fa";
 import LogoLp from "../../../assets/Icon.png";
@@ -51,7 +51,7 @@ const LoginCompany = () => {
       <div className="loginCompany-loginDiv">
         <div className="loginCompany-headerDiv">
           <img src={LogoLp} />
-          <label className="loginCompany-header">Olá buffet parceira, faça login para continuar</label>
+          <label className="loginCompany-header">Olá, Buffet parceiro! Faça login para continuar</label>
         </div>
         <div className="loginCompany-inputsDiv">
           <input
@@ -74,11 +74,9 @@ const LoginCompany = () => {
           </div>
         </div>
         <div className="loginCompany-divButton">
-
           <BlueButton onClick={handleLogin} title="Entrar" />
         </div>
       </div>
-
     </div>
   );
 };

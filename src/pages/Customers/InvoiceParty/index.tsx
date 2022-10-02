@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import { addDays, format } from "date-fns";
 import { ChangeEvent, useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
@@ -124,7 +125,7 @@ const InvoiceParty = () => {
     )}T${eventHour}`;
 
     try {
-      await api.post("invoices", {
+      await api.post("parties", {
         companyId: params.buffetId,
         birthdayPerson: fields.birthdayPerson,
         birthdayAge: fields.birthdayAge,
@@ -134,7 +135,7 @@ const InvoiceParty = () => {
         requestedServicesId: fields.requestedServicesId,
       });
     } catch (error: any) {
-      toast.error(error);
+      toast.error(error.response.data.message);
     }
   };
 

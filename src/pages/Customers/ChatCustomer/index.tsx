@@ -40,11 +40,11 @@ const ChatCustomer = () => {
             <ChatTemplate
               key={index}
               name={chat.company.profile.name}
-              lastMessage={chat.messages[0].content}
-              read={chat.messages[0].read}
-              owner={chat.messages[0].owner}
+              lastMessage={chat.messages.shift()?.content || "Você iniciou uma conversa com este Buffet"}
+              read={chat.messages.shift()?.read || null || undefined}
+              owner={chat.messages.shift()?.owner || null || undefined}
               readingUserId={chat.customerId}
-              sentAt={chat.messages[0].sendAt}
+              sentAt={chat.messages.shift()?.sendAt || null || undefined}
             />
           ))}
         </div>

@@ -1,24 +1,30 @@
 import "./style.css";
 import BlueButton from "../../../components/BlueButton";
+import { toast } from "react-toastify";
 
 interface IContractTerms {
   values: {
     acceptedTerms: boolean;
   };
   nextStep: () => void;
-  onChange: (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const ContractTerms = ({ values, onChange, nextStep }: IContractTerms) => {
   const handleNextStep = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    nextStep();
+
+    if (values.acceptedTerms === false) {
+      toast.error("Por favor, aceite os termos antes de continuar");
+    } else {
+      nextStep();
+    }
   };
 
   return (
     <div className="contractTerms-mainDiv">
       <label className="contractTerms-header">
-        Concorde com nossos termos para poder seguir para o pagamento
+        Concorde com os termos para prosseguir com a contratação
       </label>
 
       <div className="contractTerms-mainContent">
@@ -3553,7 +3559,7 @@ const ContractTerms = ({ values, onChange, nextStep }: IContractTerms) => {
           <input
             type="checkbox"
             checked={values.acceptedTerms}
-            onChange={onChange('acceptedTerms')}
+            onChange={onChange}
           />
           <label className="contractTerms-labelAcceptTerms">
             Li e concordo com os termos de contrato
@@ -3561,11 +3567,7 @@ const ContractTerms = ({ values, onChange, nextStep }: IContractTerms) => {
         </div>
       </div>
       <div className="contractTerms-divButton">
-
-        <BlueButton
-          onClick={handleNextStep}
-          title="Prosseguir"
-        />
+        <BlueButton onClick={handleNextStep} title="Continuar" />
       </div>
 
       {/* {check === false ? (

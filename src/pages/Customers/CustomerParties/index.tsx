@@ -1,66 +1,51 @@
 import "./style.css";
 import PartyTemplate from "../../../components/PartyTemplate";
-import api from "../../../services/api";
 import { useEffect, useState } from "react";
+import api from "../../../services/api";
 
-// interface invoices {
-//   birthdayPerson: string;
-//   birthdayAge: number;
-
-// }
-
+interface PartySummary {
+  id: string;
+  company: {
+    id: string;
+    name: string;
+  };
+  eventDate: Date;
+  eventEndDate: Date;
+  birthdayPerson: string;
+  status: "IN_ANALYSIS" | "APPROVED" | "NOT_APPROVED" | "CONFIRMED";
+}
 
 const CustomerParties = () => {
-  // const [invoice, setInvoice] = useState<invoices[]>();
+  const [parties, setParties] = useState<PartySummary[]>();
 
-  // const getInvoiceInfo = () => {
-
-  //   api.get('/customers/invoices/customer').then((response) => {
-  //     setInvoice(response.data);
-  //   });
-  // }
-
-  // useEffect(() => {
-  //   getInvoiceInfo
-  // }, [])
-
-  // buffets?.map((buffet, index) => (
-  //   <BuffetCard
-  //   />
-  // ))
+  useEffect(() => {
+    api.get("/parties/customer").then((response) => {
+      setParties(response.data);
+    });
+  }, []);
 
   return (
-
-    // <div className="customerParties-content">
-    //   <label className="customerParties-header">Minhas festas</label>
-    //   <div className="customerParties-cards">
-    //     {
-    //       invoice.map((invoice) => (
-    //         <PartyTemplate
-    //           birthdayPerson={invoice.birthdayPerson}
-    //           date={new Date()}
-    //           buffetName="Buffet Alegria"
-    //           status={{ type: "IN_ANALYSIS", message: "Em análise" }}
-    //         />
-    //       )
-    //       )
-    //     }
-    //     {/* TODO Integrar com backend */}
-    //   </div>
-    // </div>
-
-
     <div className="customerParties-content">
       <label className="customerParties-header">Minhas festas</label>
-      <div className="customerParties-cards">
-        <PartyTemplate
-          birthdayPerson="Ana Gabriela"
-          date={new Date()}
-          buffetName="Buffet Alegria"
-          status={{ type: "IN_ANALYSIS", message: "Em análise" }}
-        />
-        {/* TODO Integrar com backend */}
-      </div>
+      {parties && parties.length > 0 ? (
+        <div className="customerParties-cards">
+          {parties.map((party, index) => (
+            <div className="customerParties-card">
+              <PartyTemplate
+                key={index}
+                id={party.id}
+                birthdayPerson={party.birthdayPerson}
+                eventDate={party.eventDate}
+                eventEndDate={party.eventEndDate}
+                buffetName={party.company.name}
+                status={party.status}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <h1>Você ainda não contratou nenhuma festa</h1>
+      )}
     </div>
   );
 };

@@ -4,11 +4,11 @@ import { format, parseISO } from "date-fns";
 
 interface ChatTemplateProps {
   name: string;
-  lastMessage: string;
-  read: boolean;
-  readingUserId: string;
-  owner: string;
-  sentAt: Date;
+  lastMessage?: string | null;
+  read?: boolean;
+  readingUserId?: string;
+  owner?: string;
+  sentAt?: Date;
 }
 
 const ChatTemplate: FC<ChatTemplateProps> = (props) => {
@@ -22,19 +22,19 @@ const ChatTemplate: FC<ChatTemplateProps> = (props) => {
         {read ? (
           <>
             <p className="chatTemplate-lastMessage">{lastMessage}</p>
-            <p>{format(parseISO(sentAt.toString()), "h:mm a")}</p>
+            <p>{sentAt && format(parseISO(sentAt.toString()), "h:mm a")}</p>
           </>
         ) : owner !== readingUserId ? (
           <>
             {/* TODO - Arrumar CSS do ponto de nova mensagem e horário */}
             <div className="chatTemplate-dot"></div>
             <p className="chatTemplate-lastMessage-not-read">{lastMessage}</p>
-            <p>{format(parseISO(sentAt.toString()), "h:mm a")}</p>
+            <p>{sentAt && format(parseISO(sentAt.toString()), "h:mm a")}</p>
           </>
         ) : (
           <>
             <p className="chatTemplate-lastMessage">{lastMessage}</p>
-            <p>{format(parseISO(sentAt.toString()), "h:mm a")}</p>
+            <p>{sentAt && format(parseISO(sentAt.toString()), "h:mm a")}</p>
           </>
         )}
       </div>

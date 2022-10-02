@@ -2,24 +2,42 @@ import "./style.css";
 import ProfilePicture from "../ProfilePicture";
 import BlueButton from "../BlueButton";
 import { useNavigate } from "react-router-dom";
+import { addHours, format } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
 
 interface IPartyTemplate {
-  //id: string;
+  id: string;
   birthdayPerson: string;
-  date: Date;
+  eventDate: Date;
+  eventEndDate: Date;
   buffetName: string;
-  status: {
-    type: "IN_ANALYSIS" | "APPROVED" | "NOT_APPROVED";
-    message: string;
-  };
+  status: "IN_ANALYSIS" | "APPROVED" | "NOT_APPROVED" | "CONFIRMED";
 }
 
 const PartyTemplate = (props: IPartyTemplate) => {
   const navigate = useNavigate();
-  const { birthdayPerson, date, buffetName, status } = props;
+  const { id, birthdayPerson, eventDate, eventEndDate, buffetName, status } =
+    props;
+
+  const handleStatus = (
+    status: "IN_ANALYSIS" | "APPROVED" | "NOT_APPROVED" | "CONFIRMED"
+  ) => {
+    if (status === "APPROVED") {
+      return "Aprovada. Aguardando pagamento";
+    } else if (status === "NOT_APPROVED") {
+      return "Não aprovado.";
+    } else if (status === "CONFIRMED") {
+      return "Confirmada.";
+    } else {
+      return "Em análise";
+    }
+  };
 
   return (
-    <div className="partyTemplate-mainDiv" onClick={() => navigate('/partyDashboard')}>
+    <div
+      className="partyTemplate-mainDiv"
+      onClick={() => navigate(`/party/${id}`)}
+    >
       <div className="partyTemplate-leftSide">
         <label>
           Aniversariante: &nbsp;
@@ -28,23 +46,32 @@ const PartyTemplate = (props: IPartyTemplate) => {
         <label>
           Data do evento: &nbsp;
           <label className="partyTemplate-infosBD">
-            {date.toLocaleDateString()} - {date.toLocaleTimeString()} às{" "}
-            {date.toLocaleTimeString()}
+            {format(new Date(eventDate), "dd/MM/yyyy")} -{" "}
+            {format(addHours(new Date(eventDate), 3), "H:mm", {
+              locale: ptBR,
+            })}{" "}
+            às{" "}
+            {format(addHours(new Date(eventEndDate), 3), "HH:mm", {
+              locale: ptBR,
+            })}
           </label>
         </label>
         <label>Buffet realizador:</label>
-        <ProfilePicture />
-        <label className="partyTemplate-infosBD">{buffetName}</label>
+        <div className="partyTemplate-infoBuffet">
+          <ProfilePicture />
+          <label className="partyTemplate-infoBuffetText">{buffetName}</label>
+        </div>
       </div>
       <div className="partyTemplate-rightSide">
         <label>
-          Status: <label>{status.message}</label>{" "}
+          Status: <label>{handleStatus(status)}</label>{" "}
         </label>
-        <BlueButton
-          onClick={() => navigate("/party/invoice/1/contract")}
-          title="Finalizar contrato"
-        />
-        <label className="partyTemplate-labelSeeMore">Ver mais</label>
+        {status === "APPROVED" ? (
+          <BlueButton
+            onClick={() => navigate("/party/invoice/1/contract")}
+            title="Finalizar contrato"
+          />
+        ) : undefined}
       </div>
     </div>
   );

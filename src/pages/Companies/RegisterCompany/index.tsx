@@ -1,17 +1,17 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import api from "../../../services/api";
 import { toast } from "react-toastify";
 import { AxiosError } from "axios";
 import { useDebounce } from "../../../hooks/useDebounce";
 import BlueButton from "../../../components/BlueButton";
 import LogoLp from "../../../assets/Icon.png";
-import "./style.css"
-
+import "./style.css";
 
 interface IRegisterCompany {
   name: string;
   cnpj: string;
+  maxCapacity: number | "";
   email: string;
   password: string;
   address: {
@@ -31,6 +31,7 @@ const RegisterCompany = () => {
   const [fields, setFields] = useState<IRegisterCompany>({
     name: "",
     cnpj: "",
+    maxCapacity: "",
     email: "",
     password: "",
     address: {
@@ -52,9 +53,9 @@ const RegisterCompany = () => {
 
   const onChangeFields =
     (field: string) =>
-      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFields({ ...fields, [field]: event.target.value });
-      };
+    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFields({ ...fields, [field]: event.target.value });
+    };
 
   const registerCompany = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -99,20 +100,28 @@ const RegisterCompany = () => {
       <div className="registerCompany-loginDiv">
         <div className="registerCompany-headerDiv">
           <img src={LogoLp} />
-          <label className="loginCompany-header">Cadastre-se para virar uma empresa parceira</label>
+          <label className="loginCompany-header">
+            Cadastre-se para virar uma empresa parceira
+          </label>
         </div>
         <div className="loginCompany-inputsDiv">
           <input
             onChange={onChangeFields("name")}
             value={fields.name}
             type="text"
-            placeholder="Insira o nome da sua empresa"
+            placeholder="Nome da empresa"
           />
           <input
             onChange={onChangeFields("cnpj")}
             value={fields.cnpj}
             type="text"
-            placeholder="Insira o cnpj da sua empresa"
+            placeholder="CNPJ da empresa"
+          />
+          <input
+            onChange={onChangeFields("maxCapacity")}
+            value={fields.maxCapacity}
+            type="number"
+            placeholder="Capacidade máxima do local"
           />
           <input
             type="tel"
@@ -124,20 +133,20 @@ const RegisterCompany = () => {
             }
             value={fields.contact.phoneNumber}
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-            placeholder="Insira o telefone da sua empresa"
+            placeholder="Telefone para contato (com DDD)"
           />
           <input
             onChange={onChangeFields("email")}
             value={fields.email}
             type="email"
-            placeholder="Insira o email da sua empresa"
+            placeholder="Endereço de E-mail da empresa"
           />
 
           <input
             onChange={onChangeFields("password")}
             value={fields.password}
             type="password"
-            placeholder="Insira uma senha"
+            placeholder="Senha"
           />
           <input
             onChange={(e) =>
@@ -148,7 +157,7 @@ const RegisterCompany = () => {
             }
             value={fields.address.zipCode}
             type="text"
-            placeholder="Informe seu cep"
+            placeholder="CEP"
           />
         </div>
         {showAddressFields ? (
@@ -179,19 +188,11 @@ const RegisterCompany = () => {
             </div>
             <div>
               <label>Estado:</label>
-              <input
-                disabled={true}
-                value={fields.address.state}
-                type="text"
-              />
+              <input disabled={true} value={fields.address.state} type="text" />
             </div>
             <div>
               <label>Cidade:</label>
-              <input
-                disabled={true}
-                value={fields.address.city}
-                type="text"
-              />
+              <input disabled={true} value={fields.address.city} type="text" />
             </div>
             <div>
               <label>Bairro:</label>
@@ -204,12 +205,10 @@ const RegisterCompany = () => {
           </>
         ) : undefined}
         <div className="loginCompany-divButton">
-
-          <BlueButton onClick={(e) => registerCompany(e)} title="Entrar" />
+          <BlueButton onClick={(e) => registerCompany(e)} title="Cadastrar" />
         </div>
       </div>
-    </div >
-
+    </div>
 
     // <div className="register-mainDiv">
     //   <div className="register-rightSide">

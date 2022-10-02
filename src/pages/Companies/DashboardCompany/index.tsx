@@ -72,13 +72,6 @@ const DashboardCompany = () => {
             <label>{`${buffetProfile?.profile.neighborhood} - ${buffetProfile?.profile.city}`}</label>
           </div>
         </div>
-
-        {/* {???} */}
-
-        {/* <div className="dashboardCompany-favoriteDiv">
-          <label>Editar</label>
-          <BsFillPenFill color="#00a3ff" size={18} />{" "}
-        </div> */}
       </div>
       <div className="dashboardCompany-addressDiv">
         <h1>Endereço</h1>
@@ -109,23 +102,6 @@ const DashboardCompany = () => {
             Opções de decoração (formulário e adicionar foto) 
             Setar uma foto para ser a thumbnail do anuncio (Um botão)
       */}
-
-      {/* <div className="dashboardCompany-bottomContentDiv">
-        <MenuOptions
-          title="Opções de Decoração"
-          icon={<MdOutlineCake size={28} />}
-        />
-        <div className="dashboarCompany-divisionDiv"></div>
-        <MenuOptions
-          title="Opções de Bebidas"
-          icon={<FaWineGlassAlt size={23} />}
-        />
-        <div className="dashboarCompany-divisionDiv"></div>
-        <MenuOptions
-          title="Opções de Alimentação"
-          icon={<BiDish size={28} />}
-        />
-      </div> */}
     </>
   );
 };
