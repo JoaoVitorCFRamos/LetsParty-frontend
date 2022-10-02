@@ -1,7 +1,10 @@
 import "./style.css";
+import img from "../../assets/BuffetInfantil.png"
 
 const ProfilePicture = () => {
-  return <div className="chatTemplate-logoCompany"></div>;
+  return <div >
+    <img className="chatTemplate-logoCompany" src={img} ></img>
+  </div >;
 };
 
 export default ProfilePicture;

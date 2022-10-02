@@ -3,7 +3,7 @@
   width: 90px;
   height: 80px;
   border: 1px solid black;
-  background: url(../../assets/BuffetInfantil.png) no-repeat center center;
+  /* background: url(../../assets/BuffetInfantil.png) no-repeat center center; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
