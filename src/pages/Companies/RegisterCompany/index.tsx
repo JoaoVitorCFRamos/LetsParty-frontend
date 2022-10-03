@@ -162,48 +162,52 @@ const RegisterCompany = () => {
         </div>
         {showAddressFields ? (
           <>
-            <div className="divInputsR">
-              <label>Logradouro:</label>
-              <input
-                disabled={true}
-                value={fields.address.street}
-                type="text"
-              />
-            </div>
-            <div className="divInputsR">
-              <label>Número:</label>
-              <input
-                onChange={(e) =>
-                  setFields({
-                    ...fields,
-                    address: {
-                      ...fields.address,
-                      number: Number(e.target.value),
-                    },
-                  })
-                }
-                value={fields.address.number}
-                type="text"
-              />
-            </div>
-            <div className="divInputsR">
+            <div className="divNonosLabels">
 
-              {/* <div className="registerCopany-inputsA"> */}
-              <label>Estado:</label>
-              <input disabled={true} value={fields.address.state} type="text" className="registerCopany-inputsA" />
-            </div>
-            <div className="divInputsR">
-              <label>Cidade:</label>
-              <input disabled={true} value={fields.address.city} type="text" className="registerCopany-inputsA" />
-            </div>
-            <div className="divInputsR">
-              <label>Bairro:</label>
-              <input
-                disabled={true}
-                value={fields.address.neighborhood}
-                type="text"
-                className="registerCopany-inputsA"
-              />
+              <div className="divInputsR">
+                <label>Logradouro:</label>
+                <input
+                  disabled={true}
+                  value={fields.address.street}
+                  type="text"
+                  className="registerCopany-inputsCEP"
+                />
+              </div>
+              <div className="divInputsR">
+                <label>Número:</label>
+                <input
+                  onChange={(e) =>
+                    setFields({
+                      ...fields,
+                      address: {
+                        ...fields.address,
+                        number: Number(e.target.value),
+                      },
+                    })
+                  }
+                  value={fields.address.number}
+                  type="text"
+                  className="registerCopany-inputsCEP"
+                />
+              </div>
+              <div className="divInputsR">
+
+                <label>Estado:</label>
+                <input disabled={true} value={fields.address.state} type="text" className="registerCopany-inputsCEP" />
+              </div>
+              <div className="divInputsR">
+                <label>Cidade:</label>
+                <input disabled={true} value={fields.address.city} type="text" className="registerCopany-inputsCEP" />
+              </div>
+              <div className="divInputsR">
+                <label>Bairro:</label>
+                <input
+                  disabled={true}
+                  value={fields.address.neighborhood}
+                  type="text"
+                  className="registerCopany-inputsCEP"
+                />
+              </div>
             </div>
           </>
         ) : undefined}

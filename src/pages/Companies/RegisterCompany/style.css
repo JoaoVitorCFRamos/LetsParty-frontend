@@ -105,21 +105,30 @@ font-family: 'Roboto', sans-serif;
   margin-bottom: 1%;
 }
 
-/* 
+.divNonosLabels {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid black; */
+  min-height: 30vh;
+  justify-content: space-around;
+}
+
+
 .registerCopany-inputsA {
   width: 100%;
   padding: 5% 3%;
+  margin-bottom: 5vh;
   border: 1px solid black;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-right: 0px solid;
+  border-radius: 10px;
   font-size: 16px;
   outline: none;
-} */
+}
 
 
 .divInputsR {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   margin-bottom: 1%;
