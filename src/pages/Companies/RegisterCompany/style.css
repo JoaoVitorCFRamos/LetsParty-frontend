@@ -13,7 +13,7 @@ font-family: 'Roboto', sans-serif;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgba(0, 42, 66, 0.8);
 }
 
@@ -102,5 +102,25 @@ font-family: 'Roboto', sans-serif;
 
 .registerCompany-divButton {
   width: 60%;
+  margin-bottom: 1%;
+}
+
+/* 
+.registerCopany-inputsA {
+  width: 100%;
+  padding: 5% 3%;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 0px solid;
+  font-size: 16px;
+  outline: none;
+} */
+
+
+.divInputsR {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 1%;
 }
