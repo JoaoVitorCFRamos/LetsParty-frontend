@@ -4,6 +4,8 @@ import { FaPaintBrush, FaPowerOff } from "react-icons/fa";
 import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
 
+import LogoLp from "../../assets/Logo.png";
+
 import { FaMoneyBillWave } from "react-icons/fa";
 
 import { useAuth } from "../../hooks/useAuth";
@@ -23,7 +25,7 @@ const SideBarCompanies = ({ email }: Props) => {
     <div className="sideBarCompanies-mainDiv">
       <div className="sideBarCompanies-divMenu">
         <div className="sideBarCompanies-divLogo">
-          <label>Lets Party</label>
+          <img className="sideBar-imgLogo" src={LogoLp} />
         </div>
         <label className="sideBarCompanies-labelName">{email}</label>
         <div className="sideBarCompanies-divOptions">

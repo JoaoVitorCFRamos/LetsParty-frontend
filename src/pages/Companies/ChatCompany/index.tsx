@@ -56,7 +56,7 @@ const ChatCompany = () => {
           ))}
         </div>
       ) : (
-        <p>Você ainda não possui nenhum chat ativo!</p>
+        <p className="chatCompany-dont-have">Você ainda não possui nenhum chat ativo!</p>
       )}
     </div>
   );

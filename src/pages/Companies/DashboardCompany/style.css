@@ -1,3 +1,17 @@
+.dashboardCompany-mainDiv {
+  display: flex;
+  background-color: #ebebeb;
+  /* border: 1px solid black; */
+}
+
+.dashboardCompany-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+}
+
 .dashboardCompany-topContent {
   width: 96%;
   display: flex;
@@ -116,9 +130,38 @@
   padding-top: 4px;
 }
 
-.dashboarCompany-divisionDiv {
+.dashboardCompany-divisionDiv {
   width: 0px;
   min-height: 20vh;
   border: 1px solid black;
   margin-right: 3%;
+}
+
+.dashboardCompany-descriptionFrame {
+  width: 93%;
+  min-height: 43vh;
+  margin-top: 3%;
+  border: 1px solid #656565;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-around; */
+  background-color: #F9F9F9;
+  padding: 2%;
+  margin-bottom: 50px;
+}
+
+.dashboardCompany-aboutCompanyTitle {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboardCompany-aboutCompanyDescription {
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: justify;
 }
