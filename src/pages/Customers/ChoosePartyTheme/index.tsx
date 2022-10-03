@@ -76,7 +76,7 @@ const ChoosePartyTheme = ({
               ))}
             </select>
             {values.partyThemeId !== "" ? (
-              <div>
+              <div className="choosePartyTheme-divImg">
                 <img
                   src={`${apiUrl}/companies/party-themes/${values.partyThemeId}/image`}
                 />
@@ -89,7 +89,9 @@ const ChoosePartyTheme = ({
         <div>
           <BlueButton onClick={handlePreviousStep} title="Voltar" />
         </div>
-        <BlueButton onClick={handleNextStep} title="Continuar" />
+        <div>
+          <BlueButton onClick={handleNextStep} title="Continuar" />
+        </div>
       </div>
     </div>
   );

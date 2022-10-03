@@ -5,8 +5,8 @@ import api from "../../../services/api";
 import "./style.css";
 
 const AddPricing = () => {
-  const [numberOfGuests, setNumberOfGuests] = useState<number>();
-  const [price, setPrice] = useState<number>();
+  const [numberOfGuests, setNumberOfGuests] = useState<number | "">();
+  const [price, setPrice] = useState<number | "">();
 
   const handleSubmit = () => {
     if (!numberOfGuests) {
@@ -25,11 +25,16 @@ const AddPricing = () => {
         })
         .then((response) => {
           if (response.status === 201) {
-            toast.success("Precificação criado com sucesso");
+            setNumberOfGuests("");
+            setPrice("");
+            toast.success("Precificação criada com sucesso");
           }
         })
         .catch((error) => {
-          toast.error("Não foi possível cadastrar uma precificação");
+          toast.error(
+            error.response.data.message ||
+              "Não foi possível cadastrar uma precificação"
+          );
         });
     }
   };

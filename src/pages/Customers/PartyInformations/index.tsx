@@ -13,6 +13,7 @@ interface IPartyInformation {
     pricingId: string;
     eventDate: string;
     eventHourId: string;
+    price: string;
   };
   nextStep: () => void;
   onChange: (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -136,8 +137,8 @@ const PartyInformations = ({
           </optgroup>
         </select>
       </div>
+      <h4>Valor total: {values.price}</h4>
       <div className="partyInformations-divButton">
-
         <BlueButton onClick={handleNextStep} title="Continuar" />
       </div>
     </div>

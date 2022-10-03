@@ -182,9 +182,11 @@ const PartyInfo = () => {
               <span className="partyDashboard-spans">Contratante:</span>{" "}
               {party?.customer.fullName}
             </label>
-            <label className="partyDashboard-contact">
-              Clique aqui para entrar em contato via chat
-            </label>
+            {party?.status !== "CONFIRMED" ? undefined : (
+              <label className="partyDashboard-contact">
+                Clique aqui para entrar em contato via chat
+              </label>
+            )}
           </div>
         </div>
       </div>

@@ -8,42 +8,40 @@ const Personalization = () => {
   return (
     <div className="personification-mainDiv">
       <div className="personification-contentsDiv">
-        <label>
-          Clique aqui para adicionar um Serviço Opcional em seu Buffet
-        </label>
+        <label>Cadastrar um serviço opcional em seu Buffet</label>
         <div>
           <BlueButton
             onClick={() => navigate("/addOptionalService")}
-            title="Serviços Opcionais"
+            title="Clique aqui"
           />
         </div>
       </div>
       <div className="personification-contentsDiv">
         <label>
-          Clique aqui para adicionar um pacote de preço em seu Buffet
+          Criar pacotes de preço em seu Buffet
         </label>
         <div>
           <BlueButton
             onClick={() => navigate("/addPricing")}
-            title="Pacote de preço"
+            title="Clique Aqui"
           />
         </div>
       </div>
       <div className="personification-contentsDiv">
-        <label>Clique aqui para adicionar um tema de festa em seu Buffet</label>
+        <label>Cadastrar opções de temas em seu Buffet</label>
         <div>
           <BlueButton
             onClick={() => navigate("/addTheme")}
-            title="Tema festivo"
+            title="Clique Aqui"
           />
         </div>
       </div>
       <div className="personification-contentsDiv">
-        <label>Clique aqui para adicionar uma descrição no seu perfil</label>
+        <label>Alterar descrição do perfil do Buffet</label>
         <div>
           <BlueButton
             onClick={() => navigate("/addDescription")}
-            title="Alterar descrição"
+            title="Clique Aqui"
           />
         </div>
       </div>

@@ -8,7 +8,7 @@
 }
 
 .addDescription-mainContent {
-  width: 30%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   display: flex;
@@ -26,15 +26,16 @@
 
 .addDescription-textarea {
   width: 100%;
-  height: 30vh;
+  height: 50vh;
   font-size: 17px;
   padding: 4%;
   margin-top: 3%;
   outline: none;
   border-radius: 8px;
   border: 1px solid #006DAB;
+  resize: none;
 }
 
 .addDescription-buttonDiv {
-  width: 20%;
+  width: 25%;
 }

@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import BlueButton from "../../../components/BlueButton";
 import api from "../../../services/api";
 import "./style.css";
 
 const AddOptionalServices = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState<string>();
-  const [price, setPrice] = useState<number>();
+  const [price, setPrice] = useState<number | "">();
 
   const handleSubmit = () => {
     if (!name) {
@@ -26,11 +28,16 @@ const AddOptionalServices = () => {
         })
         .then((response) => {
           if (response.status === 201) {
+            setName("");
+            setPrice("");
             toast.success("Serviço criado com sucesso!");
           }
         })
-        .catch(() => {
-          toast.error("Não foi possível cadastrar o serviço");
+        .catch((error) => {
+          toast.error(
+            error.response.data.message ||
+              "Não foi possível cadastrar o serviço"
+          );
         });
     }
   };
@@ -38,7 +45,9 @@ const AddOptionalServices = () => {
   return (
     <div className="addOptionalServices-mainDiv">
       <div className="addOptionalServices-mainContent">
-        <label>Informe o serviço que será prestado e o seu preço</label>
+        <label>
+          Informe qual serviço será prestado e o seu respectivo preço
+        </label>
         <input
           type="text"
           value={name}
@@ -55,7 +64,7 @@ const AddOptionalServices = () => {
         />
       </div>
       <div className="addOptionalServices-buttonDiv">
-        <BlueButton onClick={() => handleSubmit} title="Cadastrar" />
+        <BlueButton onClick={() => handleSubmit()} title="Cadastrar" />
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const AddDescription = () => {
         />
       </div>
       <div className="addDescription-buttonDiv">
-        <BlueButton onClick={() => handleSubmit} title="Cadastrar" />
+        <BlueButton onClick={() => handleSubmit()} title="Cadastrar" />
       </div>
     </div>
   );

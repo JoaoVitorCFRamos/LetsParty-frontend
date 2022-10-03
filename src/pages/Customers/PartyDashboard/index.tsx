@@ -183,9 +183,11 @@ const PartyDashboard = () => {
               <span className="partyDashboard-spans">Buffet realizador:</span>{" "}
               {party?.company.name}
             </label>
-            <label className="partyDashboard-contact">
-              Clique aqui para entrar em contato via chat
-            </label>
+            {party?.status !== "CONFIRMED" ? undefined : (
+              <label className="partyDashboard-contact">
+                Clique aqui para entrar em contato via chat
+              </label>
+            )}
           </div>
         </div>
       </div>
