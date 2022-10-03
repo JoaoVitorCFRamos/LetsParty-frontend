@@ -2,7 +2,6 @@ import "./style.css";
 import BuffetCard from "../../../components/BuffetCard";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
-import { FaSearch } from "react-icons/fa";
 import Dropdown from "../../../components/Dropdown";
 import Loading from "../../../components/Loading";
 import { useDebounce } from "../../../hooks/useDebounce";
@@ -107,12 +106,6 @@ const DashboardCustomer = () => {
             ))
           )}
         </div>
-        {/* <div className="dashboardCustomer-searchByName">
-          <input type="text" placeholder="Procurar por nome" />
-          <div>
-            <FaSearch />
-          </div>
-        </div> */}
         <div className="dashboardCustomer-filterDiv">
           <label className="dashboardCustomer-filterTitle">
             {" "}

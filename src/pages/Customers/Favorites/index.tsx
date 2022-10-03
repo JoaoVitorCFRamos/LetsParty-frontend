@@ -30,18 +30,22 @@ const Favorites = () => {
       <div className="favorites-divHigher">
         <label>Seus Buffets favoritos</label>
       </div>
-      <div className="favorites-divBottom">
-        {buffets?.map((buffet, index) => (
-          <BuffetCard
-            key={index}
-            id={buffet.company.id}
-            name={buffet.company.profile.name}
-            city={buffet.company.profile.city}
-            thumbnail={buffet.company.profile.thumbnail}
-            neighborhood={buffet.company.profile.neighborhood}
-          />
-        ))}
-      </div>
+      {buffets && buffets.length > 0 ? (
+        <div className="favorites-divBottom">
+          {buffets?.map((buffet, index) => (
+            <BuffetCard
+              key={index}
+              id={buffet.company.id}
+              name={buffet.company.profile.name}
+              city={buffet.company.profile.city}
+              thumbnail={buffet.company.profile.thumbnail}
+              neighborhood={buffet.company.profile.neighborhood}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="favorites-notFound">Você ainda não adicionou nenhum Buffet como favorito</p>
+      )}
     </>
   );
 };

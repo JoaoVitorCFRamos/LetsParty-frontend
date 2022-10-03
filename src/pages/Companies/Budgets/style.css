@@ -11,8 +11,6 @@ font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* justify-content: space-between; */
-    /* background-color: red; */
 }
 
 .budgets-header {
@@ -33,17 +31,14 @@ font-family: 'Roboto', sans-serif;
     max-height: 85% !important;
 }
 
-
-
 table {
-    width: 85%;
+    width: 95%;
     max-height: 90vh !important;
     border-collapse: collapse;
     margin: 50px auto;
     border: 1px solid #006DAB !important;
 }
 
-/* Zebra striping */
 tr:nth-of-type(odd) {
     background: #eee;
 }
@@ -69,7 +64,7 @@ td,
 th button {
     padding: 1% !important;
     border: 1px solid white;
-    text-align: left;
+    text-align: center;
     font-size: 18px;
 }
 
@@ -81,8 +76,8 @@ th button {
 
 .budgets-tdAcceptButtons {
     width: 45%;
+    height: 45px;
     background-color: #0FA958;
-    padding: 2%;
     outline: none;
     border: 1px solid black;
     font-size: 16px;
@@ -94,8 +89,8 @@ th button {
 
 .budgets-tdDeclineButtons {
     width: 45%;
+    height: 45px;
     background-color: #FF0000;
-    padding: 2%;
     outline: none;
     border: 1px solid black;
     font-size: 16px;
@@ -106,7 +101,8 @@ th button {
 }
 
 .budgets-tdRegisterButtons {
-    width: 45%;
+    width: 70%;
+    height: 45px;
     background-color: #0099ff;
     padding: 2%;
     outline: none;
@@ -116,6 +112,11 @@ th button {
     color: white;
     border-color: #0071BE;
     cursor: pointer;
+}
+
+.budgets-p {
+  width: 100%;
+  text-align: center;
 }
 
 /* 

@@ -2,6 +2,7 @@ import "./style.css";
 import ChatTemplate from "../../../components/ChatTemplate";
 import api from "../../../services/api";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface IChatCustomer {
   id: string;
@@ -23,6 +24,7 @@ interface IChatCustomer {
 }
 
 const ChatCustomer = () => {
+  const navigate = useNavigate();
   const [chats, setChats] = useState<IChatCustomer[]>();
 
   useEffect(() => {
@@ -39,12 +41,17 @@ const ChatCustomer = () => {
           {chats.map((chat, index) => (
             <ChatTemplate
               key={index}
+              id={chat.id}
               name={chat.company.profile.name}
-              lastMessage={chat.messages.shift()?.content || "Você iniciou uma conversa com este Buffet"}
+              lastMessage={
+                chat.messages.shift()?.content ||
+                "Você iniciou uma conversa com este Buffet"
+              }
               read={chat.messages.shift()?.read || null || undefined}
               owner={chat.messages.shift()?.owner || null || undefined}
               readingUserId={chat.customerId}
               sentAt={chat.messages.shift()?.sendAt || null || undefined}
+              onClick={() => navigate(`/chat/${chat.id}`)}
             />
           ))}
         </div>

@@ -96,15 +96,15 @@ const RegisterCompany = () => {
   }, [debouncedValue]);
 
   return (
-    <div className="loginCompany-mainDiv">
-      <div className="registerCompany-loginDiv">
+    <div className="registerCompany-mainDiv">
+      <div className="registerCompany-registerDiv">
         <div className="registerCompany-headerDiv">
           <img src={LogoLp} />
-          <label className="loginCompany-header">
+          <label className="registerCompany-header">
             Cadastre-se para virar uma empresa parceira
           </label>
         </div>
-        <div className="loginCompany-inputsDiv">
+        <div className="registerCompany-inputsDiv">
           <input
             onChange={onChangeFields("name")}
             value={fields.name}
@@ -204,7 +204,7 @@ const RegisterCompany = () => {
             </div>
           </>
         ) : undefined}
-        <div className="loginCompany-divButton">
+        <div className="registerCompany-divButton">
           <BlueButton onClick={(e) => registerCompany(e)} title="Cadastrar" />
         </div>
       </div>

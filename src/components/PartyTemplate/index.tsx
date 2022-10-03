@@ -4,10 +4,14 @@ import BlueButton from "../BlueButton";
 import { useNavigate } from "react-router-dom";
 import { addHours, format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
+import AvatarPicture from "../AvatarPicture";
 
 interface IPartyTemplate {
   id: string;
   birthdayPerson: string;
+  company: {
+    id: string;
+  };
   eventDate: Date;
   eventEndDate: Date;
   buffetName: string;
@@ -16,8 +20,15 @@ interface IPartyTemplate {
 
 const PartyTemplate = (props: IPartyTemplate) => {
   const navigate = useNavigate();
-  const { id, birthdayPerson, eventDate, eventEndDate, buffetName, status } =
-    props;
+  const {
+    id,
+    birthdayPerson,
+    company,
+    eventDate,
+    eventEndDate,
+    buffetName,
+    status,
+  } = props;
 
   const handleStatus = (
     status: "IN_ANALYSIS" | "APPROVED" | "NOT_APPROVED" | "CONFIRMED"
@@ -58,7 +69,7 @@ const PartyTemplate = (props: IPartyTemplate) => {
         </label>
         <label>Buffet realizador:</label>
         <div className="partyTemplate-infoBuffet">
-          <ProfilePicture />
+          <AvatarPicture companyId={company.id} />
           <label className="partyTemplate-infoBuffetText">{buffetName}</label>
         </div>
       </div>

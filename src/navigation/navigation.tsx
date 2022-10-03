@@ -17,8 +17,15 @@ import RegisterCompany from "../pages/Companies/RegisterCompany";
 import InvoiceParty from "../pages/Customers/InvoiceParty";
 import ContractParty from "../pages/Customers/ContractParty";
 import PartyDashboard from "../pages/Customers/PartyDashboard";
-import Payment from "../pages/Customers/Payment";
 import Budgets from "../pages/Companies/Budgets";
+import PartyInfo from "../pages/Companies/PartyInfo";
+import ChatConversationCustomer from "../pages/Customers/ChatConversationCustomer";
+import ChatConversationCompany from "../pages/Companies/ChatConversationCompany";
+import Personalization from "../pages/Companies/Personalization";
+import AddDescription from "../pages/Companies/AddDescription";
+import AddOptionalServices from "../pages/Companies/AddOptionalServices";
+import AddPricing from "../pages/Companies/AddPricing";
+import AddTheme from "../pages/Companies/AddTheme";
 
 const Navigation = () => {
   return (
@@ -33,6 +40,7 @@ const Navigation = () => {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/my-parties" element={<CustomerParties />} />
         <Route path="/chat" element={<ChatCustomer />} />
+        <Route path="/chat/:chatId" element={<ChatConversationCustomer />} />
         <Route path="/buffet/:buffetId" element={<BuffetProfile />} />
         <Route
           path="/buffet/:buffetId/party/invoice"
@@ -44,7 +52,17 @@ const Navigation = () => {
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<DashboardCompany />} />
         <Route path="/chats" element={<ChatCompany />} />
+        <Route
+          path="/chat/customer/:chatId"
+          element={<ChatConversationCompany />}
+        />
         <Route path="/budgets" element={<Budgets />} />
+        <Route path="/party/:partyId/info" element={<PartyInfo />} />
+        <Route path="/personalization" element={<Personalization />} />
+        <Route path="/addDescription" element={<AddDescription />} />
+        <Route path="/addOptionalService" element={<AddOptionalServices />} />
+        <Route path="/addTheme" element={<AddTheme />} />
+        <Route path="/addPricing" element={<AddPricing />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

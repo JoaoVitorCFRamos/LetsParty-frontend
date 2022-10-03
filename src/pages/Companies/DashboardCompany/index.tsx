@@ -22,24 +22,29 @@ interface IBuffetProfile {
 
 export interface IBuffetImage {
   url: string;
+  isThumbnail: boolean;
 }
 
 const DashboardCompany = () => {
-  const { user } = useAuth();
   const [buffetProfile, setBuffetProfile] = useState<IBuffetProfile>();
   const [buffetImages, setBuffetImages] = useState<IBuffetImage[]>([]);
 
   useEffect(() => {
-    api.get<IBuffetProfile>(`/companies/${user?.id}`).then((response) => {
+    api.get<IBuffetProfile>(`/companies/me`).then((response) => {
       setBuffetProfile(response.data);
       response.data.profile.images.forEach((image) => {
-        setBuffetImages((images) => [
-          ...images,
-          { url: `${apiUrl}/companies/images/${image.url}` },
-        ]);
+        if (!image.isThumbnail) {
+          setBuffetImages((images) => [
+            ...images,
+            {
+              url: `${apiUrl}/companies/images/${image.url}`,
+              isThumbnail: image.isThumbnail,
+            },
+          ]);
+        }
       });
     });
-  }, [user?.id]);
+  }, []);
 
   const handleUploadGalleryPhotos = (files: any[]) => {
     const formData = new FormData();
@@ -66,7 +71,7 @@ const DashboardCompany = () => {
     <>
       <div className="dashboardCompany-topContent">
         <div className="dashboardCompany-buffetsInfos">
-          <ProfilePicture />
+          {buffetProfile && <ProfilePicture companyId={buffetProfile.id} />}
           <div className="dashboardCompany-nameLocalDiv">
             <h1>{buffetProfile?.profile.name}</h1>
             <label>{`${buffetProfile?.profile.neighborhood} - ${buffetProfile?.profile.city}`}</label>
@@ -84,8 +89,8 @@ const DashboardCompany = () => {
         >
           {({ getRootProps, getInputProps }) => (
             <div className="dashboardCompany-addPhotosDiv">
-              <div  {...getRootProps()}>
-                <input  {...getInputProps()} />
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
                 <label>Adicionar foto(s)</label>
                 <MdAddAPhoto size={16} />
               </div>

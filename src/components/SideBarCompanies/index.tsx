@@ -1,6 +1,6 @@
 import "./style.css";
 import { Link } from "react-router-dom";
-import { FaPowerOff } from "react-icons/fa";
+import { FaPaintBrush, FaPowerOff } from "react-icons/fa";
 import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
 
@@ -33,16 +33,22 @@ const SideBarCompanies = ({ email }: Props) => {
               <label>Meu Buffet</label>
             </div>
           </Link>
+          <Link className="sideBarCompanies-links" to="/budgets">
+            <div className="sideBarCompanies-divLinkMenu">
+              <FaMoneyBillWave color="#0FA958" size={23} />
+              <label>Festas</label>
+            </div>
+          </Link>
+          <Link className="sideBarCompanies-links" to="/personalization">
+            <div className="sideBarCompanies-divLinkMenu">
+              <FaPaintBrush color="#FF0000" size={23} />
+              <label>Personalização</label>
+            </div>
+          </Link>
           <Link className="sideBarCompanies-links" to="/chats">
             <div className="sideBarCompanies-divLinkMenu">
               <BsFillChatSquareFill color="#0071BE" size={23} />
               <label>Chat</label>
-            </div>
-          </Link>
-          <Link className="sideBarCompanies-links" to="/budgets">
-            <div className="sideBarCompanies-divLinkMenu">
-              <FaMoneyBillWave color="#0FA958" size={23} />
-              <label>Orçamentos</label>
             </div>
           </Link>
         </div>

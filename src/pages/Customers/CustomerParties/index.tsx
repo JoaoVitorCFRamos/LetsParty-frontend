@@ -34,6 +34,7 @@ const CustomerParties = () => {
               <PartyTemplate
                 key={index}
                 id={party.id}
+                company={party.company}
                 birthdayPerson={party.birthdayPerson}
                 eventDate={party.eventDate}
                 eventEndDate={party.eventEndDate}
