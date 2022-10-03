@@ -21,6 +21,10 @@ import Payment from "../pages/Customers/Payment";
 import Budgets from "../pages/Companies/Budgets";
 import ChatConversation from "../pages/Customers/ChatConversationCustomer";
 import Personification from "../pages/Companies/Personification";
+import AddDescription from "../pages/Companies/AddDescription";
+import AddOptionalServices from "../pages/Companies/AddOptionalServices";
+import AddTheme from "../pages/Companies/AddTheme";
+import AddPricing from "../pages/Companies/AddPricing";
 
 const Navigation = () => {
   return (
@@ -49,6 +53,10 @@ const Navigation = () => {
         <Route path="/chats" element={<ChatCompany />} />
         <Route path="/budgets" element={<Budgets />} />
         <Route path="/personification" element={<Personification />} />
+        <Route path="/addDescription" element={<AddDescription />} />
+        <Route path="/addOptionalService" element={<AddOptionalServices />} />
+        <Route path="/addTheme" element={<AddTheme />} />
+        <Route path="/addPricing" element={<AddPricing />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
