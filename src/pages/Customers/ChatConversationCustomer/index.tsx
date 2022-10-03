@@ -8,10 +8,19 @@ export const ChatConversationCustomer = () => {
                 <label>Buffet Name</label>
             </div>
             <div className="chatConversation-messages">
-                <div className="chatConversation-messageComponent">
-                    <label className="chatConversation-nameMessage">Nome de quem mando a msg</label>
-                    <label className="chatConversation-messageContent">Mensagem enviada</label>
+                <div className="chatConversation-messagesComponentContainer">
+                    <div className="chatConversation-messageComponentLeft">
+                        <label className="chatConversation-nameMessage">Nome de quem mando a msg</label>
+                        <label className="chatConversation-messageContent">Mensagem enviada</label>
+                    </div>
                 </div>
+                <div className="chatConversation-messagesComponentContainerRight">
+                    <div className="chatConversation-messageComponentRight">
+                        <label className="chatConversation-nameMessage">Nome de quem mando a msg</label>
+                        <label className="chatConversation-messageContent">Mensagem enviada</label>
+                    </div>
+                </div>
+
             </div>
             <div className="chatConversation-SendMessageDiv">
                 <input type="text" placeholder="Escreva sua mensagem" />
