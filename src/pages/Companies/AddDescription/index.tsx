@@ -16,7 +16,7 @@ const AddDescription = () => {
       api
         .put("/companies/me")
         .then((response) => {
-          if (response.status === 201) {
+          if (response.status === 200) {
             toast.success("Descrição atualizada com sucesso");
           }
         })
