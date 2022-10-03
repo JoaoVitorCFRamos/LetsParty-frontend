@@ -20,6 +20,7 @@ import PartyDashboard from "../pages/Customers/PartyDashboard";
 import Payment from "../pages/Customers/Payment";
 import Budgets from "../pages/Companies/Budgets";
 import ChatConversation from "../pages/Customers/ChatConversationCustomer";
+import Personification from "../pages/Companies/Personification";
 
 const Navigation = () => {
   return (
@@ -47,6 +48,7 @@ const Navigation = () => {
         <Route path="/dashboard" element={<DashboardCompany />} />
         <Route path="/chats" element={<ChatCompany />} />
         <Route path="/budgets" element={<Budgets />} />
+        <Route path="/personification" element={<Personification />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -5,6 +5,9 @@ import { BsHouseFill } from "react-icons/bs";
 import { BsFillChatSquareFill } from "react-icons/bs";
 
 import { FaMoneyBillWave } from "react-icons/fa";
+import { FaPaintBrush } from "react-icons/fa";
+
+
 
 import { useAuth } from "../../hooks/useAuth";
 
@@ -43,6 +46,12 @@ const SideBarCompanies = ({ email }: Props) => {
             <div className="sideBarCompanies-divLinkMenu">
               <FaMoneyBillWave color="#0FA958" size={23} />
               <label>Orçamentos</label>
+            </div>
+          </Link>
+          <Link className="sideBarCompanies-links" to="/personification">
+            <div className="sideBarCompanies-divLinkMenu">
+              <FaPaintBrush color="#FF0000" size={23} />
+              <label>Personificação</label>
             </div>
           </Link>
         </div>
