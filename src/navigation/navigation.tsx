@@ -19,6 +19,7 @@ import ContractParty from "../pages/Customers/ContractParty";
 import PartyDashboard from "../pages/Customers/PartyDashboard";
 import Payment from "../pages/Customers/Payment";
 import Budgets from "../pages/Companies/Budgets";
+import ChatConversation from "../pages/Customers/ChatConversationCustomer";
 
 const Navigation = () => {
   return (
@@ -40,6 +41,7 @@ const Navigation = () => {
         />
         <Route path="/party/:partyId/contract" element={<ContractParty />} />
         <Route path="/party/:partyId" element={<PartyDashboard />} />
+        <Route path="/chatConversation" element={<ChatConversation />} />
       </Route>
       <Route element={<CompanyLayout />}>
         <Route path="/dashboard" element={<DashboardCompany />} />

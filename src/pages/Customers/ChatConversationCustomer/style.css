@@ -1,0 +1,80 @@
+.chatConversartion-mainDiv {
+    width: 100%;
+    height: 100vh;
+    /* border: 2px solid #006DAB !important; */
+    padding: 2% 2% 0% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chatConversation-buffetName {
+    width: 100%;
+    padding: 0% 0% 1% 3%;
+    font-size: 23px;
+}
+
+.chatConversation-messages {
+    border: 2px solid #006DAB !important;
+    width: 95%;
+    height: 85%;
+    background-color: rgb(253, 253, 253);
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    padding: 1%;
+}
+
+.chatConversation-messageComponent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 1%;
+    min-height: 5%;
+    /* border: 1px solid black; */
+    background-color: #EBEBEB;
+}
+
+.chatConversation-nameMessage {
+    padding-bottom: 2px;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.chatConversation-messageContent {
+    font-size: 15px;
+
+}
+
+.chatConversation-SendMessageDiv {
+    border: 2px solid #006DAB !important;
+    width: 95%;
+    height: 5%;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top: 0px !important;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.chatConversation-SendMessageDiv input {
+    outline: none;
+    border: 0px solid #006DAB !important;
+    width: 97%;
+    height: 100%;
+    font-size: 16px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding-left: 1%;
+}
+
+.chatConversation-iconSend {
+    width: 3%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
