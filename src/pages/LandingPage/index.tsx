@@ -92,7 +92,7 @@ const LandingPage = () => {
             onClick={() => navigate("/login")}
             className="ladingPage-defaultButton"
           >
-            Entrar
+            Fazer Login
           </button>
           <button
             onClick={() => navigate("/register-customer")}

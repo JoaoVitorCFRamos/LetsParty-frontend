@@ -1,4 +1,3 @@
-import { AxiosError } from "axios";
 import { addDays, format } from "date-fns";
 import { ChangeEvent, useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
@@ -150,6 +149,7 @@ const InvoiceParty = () => {
               eventDate: fields.eventDate,
               pricingId: fields.pricingId,
               eventHourId: fields.eventHourId,
+              price: totalPrice,
             }}
             onChange={onChangeField}
             onChangeSelect={onChangeSelectField}
@@ -170,7 +170,10 @@ const InvoiceParty = () => {
       case 3:
         return (
           <OptionalServices
-            values={{ requestedServicesId: fields.requestedServicesId }}
+            values={{
+              requestedServicesId: fields.requestedServicesId,
+              price: totalPrice,
+            }}
             onChange={onChangeOptionalServicesCheckbox}
             previousStep={handlePrevStep}
             nextStep={handleNextStep}
@@ -186,12 +189,7 @@ const InvoiceParty = () => {
     }
   };
 
-  return (
-    <>
-      {handleShowView()}
-      {step !== 4 ? <h1>{totalPrice}</h1> : undefined}
-    </>
-  );
+  return <>{handleShowView()}</>;
 };
 
 export default InvoiceParty;

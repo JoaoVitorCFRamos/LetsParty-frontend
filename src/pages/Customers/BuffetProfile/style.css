@@ -156,17 +156,19 @@ font-family: 'Roboto', sans-serif;
   /* justify-content: space-around; */
   background-color: #F9F9F9;
   padding: 2%;
+  margin-bottom: 50px;
 }
 
 .buffetProfile-aboutCompanyTitle {
   font-size: 21px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
 }
 
 .buffetProfile-aboutCompanyDescription {
   font-size: 17px;
   font-weight: 400;
+  margin-bottom: 20px;
   text-align: justify;
 }

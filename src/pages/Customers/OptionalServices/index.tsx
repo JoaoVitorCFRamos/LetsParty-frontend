@@ -9,6 +9,7 @@ import "./style.css";
 interface IOptionalServices {
   values: {
     requestedServicesId: string[];
+    price: string;
   };
   previousStep: () => void;
   nextStep: () => void;
@@ -72,11 +73,14 @@ const OptionalServices = ({
           />
         ))}
       </div>
+      <h4>Valor total: {values.price}</h4>
       <div className="optionalServices-divButton">
         <div>
           <BlueButton onClick={handlePreviousStep} title="Voltar" />
         </div>
-        <BlueButton onClick={handleNextStep} title="Enviar" />
+        <div>
+          <BlueButton onClick={handleNextStep} title="Enviar" />
+        </div>
       </div>
     </div>
   );

@@ -8,9 +8,9 @@ interface Chat {
   id: string;
   customerId: string;
   companyId: string;
-  company: {
+  customer: {
     profile: {
-      name: string;
+      fullName: string;
     };
   };
 }
@@ -24,7 +24,7 @@ interface Message {
   sendAt: Date;
 }
 
-const ChatConversationCustomer = () => {
+const ChatConversationCompany = () => {
   const params = useParams();
   const [chat, setChat] = useState<Chat>();
   const [messages, setMessages] = useState<Message[]>();
@@ -38,7 +38,7 @@ const ChatConversationCustomer = () => {
     if (input !== "") {
       api
         .post(`chats/${chat?.id}/send-message`, {
-          ownerId: chat?.customerId,
+          ownerId: chat?.companyId,
           content: input,
         })
         .then(() => {
@@ -55,7 +55,7 @@ const ChatConversationCustomer = () => {
   }, [chat?.id]);
 
   useEffect(() => {
-    api.get("/chats/customer").then((response) => {
+    api.get("/chats/company").then((response) => {
       setChat(response.data.find((chat: any) => chat.id === params.chatId));
     });
   }, [params.chatId]);
@@ -73,16 +73,16 @@ const ChatConversationCustomer = () => {
   return (
     <div className="chatConversartion-mainDiv">
       <div className="chatConversation-buffetName">
-        <label>{chat?.company.profile.name}</label>
+        <label>{chat?.customer.profile.fullName}</label>
       </div>
       <div className="chatConversation-messages">
         {messages?.map((message) => {
-          if (message.owner === chat?.companyId) {
+          if (message.owner === chat?.customerId) {
             return (
               <div className="chatConversation-messagesComponentContainer">
                 <div className="chatConversation-messageComponentLeft">
                   <label className="chatConversation-nameMessage">
-                    {chat.company.profile.name}
+                    {chat.customer.profile.fullName}
                   </label>
                   <label className="chatConversation-messageContent">
                     {message.content}
@@ -124,4 +124,4 @@ const ChatConversationCustomer = () => {
   );
 };
 
-export default ChatConversationCustomer;
+export default ChatConversationCompany;

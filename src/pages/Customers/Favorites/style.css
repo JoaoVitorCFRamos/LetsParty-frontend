@@ -46,3 +46,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.favorites-notFound {
+  padding: 38px;
+}

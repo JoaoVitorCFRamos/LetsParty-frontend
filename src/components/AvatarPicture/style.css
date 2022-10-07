@@ -1,4 +1,4 @@
-.profilePicture-logoCompany {
+.avatarPicture-logoCompany {
   border-radius: 100%;
   width: 90px;
   height: 80px;
@@ -8,10 +8,4 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-.profilePicture-logoCompany:hover {
-  background-color:#000;
-  opacity: 0.5;
-  cursor: pointer;
 }

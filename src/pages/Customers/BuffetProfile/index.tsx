@@ -24,6 +24,7 @@ export interface IBuffetProfile {
 
 export interface IBuffetImage {
   url: string;
+  isThumbnail: boolean;
 }
 
 const BuffetProfile = () => {
@@ -40,15 +41,22 @@ const BuffetProfile = () => {
   };
 
   useEffect(() => {
+    setBuffetImages([]);
+
     api
       .get<IBuffetProfile>(`/companies/${params.buffetId}`)
       .then((response) => {
         setBuffetProfile(response.data);
         response.data.profile.images.forEach((image) => {
-          setBuffetImages((images) => [
-            ...images,
-            { url: `${apiUrl}/companies/images/${image.url}` },
-          ]);
+          if (!image.isThumbnail) {
+            setBuffetImages((images) => [
+              ...images,
+              {
+                url: `${apiUrl}/companies/images/${image.url}`,
+                isThumbnail: image.isThumbnail,
+              },
+            ]);
+          }
         });
       });
   }, [params.buffetId]);
@@ -65,7 +73,7 @@ const BuffetProfile = () => {
         <div className="buffetProfile-content">
           <div className="buffetProfile-topContent">
             <div className="buffetProfile-buffetsInfos">
-              <ProfilePicture />
+              {buffetProfile && <ProfilePicture companyId={buffetProfile.id} />}
               <div className="buffetProfile-nameLocalDiv">
                 <h1>{buffetProfile?.profile.name}</h1>
                 <label>{`${buffetProfile?.profile.neighborhood} - ${buffetProfile?.profile.city}`}</label>

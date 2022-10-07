@@ -4,8 +4,8 @@ import api from "../../../services/api";
 import "./style.css";
 import BlueButton from "../../../components/BlueButton";
 import { addHours, format } from "date-fns";
-import { formatPrice } from "../InvoiceParty";
 import { ptBR } from "date-fns/locale";
+import { formatPrice } from "../../Customers/InvoiceParty";
 
 interface Party {
   id: string;
@@ -41,8 +41,7 @@ interface Party {
   };
 }
 
-const PartyDashboard = () => {
-  const navigate = useNavigate();
+const PartyInfo = () => {
   const params = useParams();
   const [party, setParty] = useState<Party>();
 
@@ -84,7 +83,7 @@ const PartyDashboard = () => {
     <div className="partyDashboard-mainDiv">
       <div className="partyDashboard-topContent">
         <label className="partyDashboard-header">
-          Olá {party?.customer.fullName}, veja as informações de sua festa{" "}
+          Olá {party?.company.name}, estas são as informações desta festa{" "}
         </label>
       </div>
       <div className="partyDashboard-mainContent">
@@ -180,8 +179,8 @@ const PartyDashboard = () => {
           </div>
           <div>
             <label>
-              <span className="partyDashboard-spans">Buffet realizador:</span>{" "}
-              {party?.company.name}
+              <span className="partyDashboard-spans">Contratante:</span>{" "}
+              {party?.customer.fullName}
             </label>
             {party?.status !== "CONFIRMED" ? undefined : (
               <label className="partyDashboard-contact">
@@ -191,16 +190,9 @@ const PartyDashboard = () => {
           </div>
         </div>
       </div>
-      <div className="partyDashboard-buttonDiv">
-        {party && party.status === "APPROVED" ? (
-          <BlueButton
-            onClick={() => navigate(`/party/${party.id}/contract`)}
-            title="Finalizar contrato"
-          />
-        ) : undefined}
-      </div>
+      <div className="partyDashboard-buttonDiv"></div>
     </div>
   );
 };
 
-export default PartyDashboard;
+export default PartyInfo;

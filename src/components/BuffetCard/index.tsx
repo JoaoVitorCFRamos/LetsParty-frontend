@@ -1,6 +1,7 @@
 import "./style.css";
 import exampleBuffet from "../../assets/BuffetInfantil.png";
 import { Link } from "react-router-dom";
+import { apiUrl } from "../../services/api";
 
 type Props = {
   id: string;
@@ -15,7 +16,11 @@ export const BuffetCard = (props: Props) => {
     <div className="buffetCard-mainDiv">
       <label className="buffetCard-nameBuffet">{props.name}</label>
       <img
-        src={(props.thumbnail && props.thumbnail) || exampleBuffet}
+        src={
+          (props.thumbnail &&
+            `${apiUrl}/companies/images/${props.thumbnail}`) ||
+          exampleBuffet
+        }
         className="buffetCard-img"
       ></img>
       <label>{`${props.neighborhood} - ${props.city}`}</label>
