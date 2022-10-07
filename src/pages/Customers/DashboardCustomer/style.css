@@ -144,3 +144,9 @@ font-family: 'Roboto', sans-serif;
 .dashboardCustomer-dropdownChildren-mainDiv input {
   outline: none;
 }
+
+.dashboardCustomer-dropdownChildren-city {
+  padding: 2%;
+  outline: none;
+  border-radius: 6px;
+}

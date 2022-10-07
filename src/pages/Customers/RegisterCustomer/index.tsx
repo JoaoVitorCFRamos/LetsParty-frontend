@@ -4,6 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../../../services/api";
 import { toast } from "react-toastify";
 import { AxiosError } from "axios";
+import LogoLp from "../../../assets/Icon.png";
+import BlueButton from "../../../components/BlueButton";
+
 
 const RegisterCustomer = () => {
   const [fields, setFields] = useState({
@@ -17,9 +20,9 @@ const RegisterCustomer = () => {
 
   const onChangeFields =
     (field: string) =>
-    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFields({ ...fields, [field]: event.target.value });
-    };
+      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFields({ ...fields, [field]: event.target.value });
+      };
 
   const registerCustomer = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -41,12 +44,15 @@ const RegisterCustomer = () => {
   };
 
   return (
-    <div className="register-mainDiv">
-      <div className="register-leftSide">
-        <label className="register-labelSubtitle">
-          Faça seu cadastro de forma rápida e fácil
-        </label>
-        <div className="register-divFormUser">
+    <div className="registerCompany-mainDiv">
+      <div className="registerCompany-registerDiv">
+        <div className="registerCompany-headerDiv">
+          <img src={LogoLp} />
+          <label className="registerCompany-header">
+            Cadastre-se para virar uma empresa parceira
+          </label>
+        </div>
+        <div className="registerCompany-inputsDiv">
           <div>
             <label>Nome:</label>
             <input
@@ -79,22 +85,14 @@ const RegisterCustomer = () => {
               type="password"
             />
           </div>
-          <button
-            className="register-registerButton"
-            onClick={registerCustomer}
-          >
-            Cadastrar
-          </button>
+
+          <div className="registerCompany-divButton">
+            <BlueButton onClick={((e) => registerCustomer(e))} title="Cadastrar" />
+          </div>
         </div>
-        <label>
-          Já possui cadastro?&nbsp;
-          <Link className="register-link" to="/login">
-            Fazer Login
-          </Link>
-        </label>
       </div>
     </div>
-  );
+  )
 };
 
 export default RegisterCustomer;

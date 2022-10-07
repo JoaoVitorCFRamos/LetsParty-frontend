@@ -1,119 +1,135 @@
-.register-mainDiv {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*  
+font-family: 'Dancing Script', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+
+.registerCompany-mainDiv {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 42, 66, 0.8);
+}
+
+.registerCompany-registerDiv {
+  width: 28%;
+  min-height: 65%;
+  display: flex;
+  align-items: center;
   justify-content: space-around;
-  width: 100%;
-  align-items: center;
-}
-
-/*  Css lado de registro de Usuário */
-
-.register-leftSide {
-  width: 49%;
-  height: 80vh;
-  display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 10vh;
+  border: 1px solid #006DAB;
+  background-color: white;
+  border-radius: 9px;
 }
 
-.register-divFormUser {
+.registerCompany-headerDiv {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 5%;
+  padding: 2%;
+
 }
 
-.register-divFormUser div {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
+.registerCompany-headerDiv img {
+  width: 30%;
 }
 
-.register-divFormUser input {
-  width: 100%;
-  padding: 5.5%;
-  border-radius: 6px;
-  border: 1px solid black;
-  margin-bottom: 3%;
-}
-
-.register-divFormUser label {
-  font-weight: 500;
-  margin-top: 2%;
-  font-size: 15px;
-}
-
-/*  Css Barra de divisão Usuário/Estabelecimento */
-
-.register-division {
-  border: 1px solid #00a3ff;
-  height: 80vh;
-  margin-top: 10vh;
-}
-
-/*  Css lado de registro de estabelecimentos */
-
-.register-rightSide {
-  width: 49%;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 10vh;
-}
-
-.register-divFormEstablishment {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 5%;
-}
-
-.register-divFormEstablishment div {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-}
-
-.register-divFormEstablishment input {
-  width: 100%;
-  padding: 5.5%;
-  border-radius: 6px;
-  border: 1px solid black;
-  margin-bottom: 3%;
-}
-
-.register-divFormEstablishment label {
-  font-weight: 500;
-  margin-top: 2%;
-  font-size: 15px;
-}
-
-/* */
-
-.register-labelSubtitle {
-  font-size: 30px;
+.registerCompany-header {
   text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  padding: 2%;
 }
 
-.register-registerButton {
-  width: 19vw;
-  background-color: #00a3ff;
-  color: white;
-  font-size: 18px;
-  border: none;
-  padding: 4%;
-  border-radius: 6px;
+
+.registerCompany-inputsDiv {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registerCompany-inputsDiv input {
+  width: 100%;
+  padding: 5% 3%;
+  margin-bottom: 5vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+
+.registerCompany-divPasswordInput {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.registerCompany-divPasswordInput input {
+  width: 100%;
+  padding: 5% 3%;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 0px solid;
+  font-size: 16px;
+  outline: none;
+}
+
+.registerCompany-divIcon {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid black;
+  border-left: 0px;
+  background-color: rgba(57, 94, 116, 0.8);
   cursor: pointer;
-  margin: 3vh;
-  margin-bottom: 6vh !important;
-  text-align: center;
 }
 
-.register-link {
-  text-decoration: none;
-  color: Blue;
+.registerCompany-divButton {
+  width: 60%;
+  margin-bottom: 1%;
+}
+
+.divNonosLabels {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid black; */
+  min-height: 30vh;
+  justify-content: space-around;
+}
+
+
+.registerCopany-inputsA {
+  width: 100%;
+  padding: 5% 3%;
+  margin-bottom: 5vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+
+.divInputsR {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1%;
 }

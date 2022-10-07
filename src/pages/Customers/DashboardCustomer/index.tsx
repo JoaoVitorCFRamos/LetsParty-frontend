@@ -159,6 +159,7 @@ const DashboardCustomer = () => {
               <select
                 defaultValue=""
                 onChange={(e) => handleChangeCityFilter(e.target.value)}
+                className="dashboardCustomer-dropdownChildren-city"
               >
                 <option value="" disabled hidden>
                   Selecione uma cidade
@@ -178,6 +179,7 @@ const DashboardCustomer = () => {
                 value={query.neighborhood}
                 disabled={disableNeighborhood}
                 onChange={(e) => handleChangeNeighborhoodFilter(e.target.value)}
+                className="dashboardCustomer-dropdownChildren-city"
               >
                 <option value="" disabled hidden>
                   Selecione um bairro
