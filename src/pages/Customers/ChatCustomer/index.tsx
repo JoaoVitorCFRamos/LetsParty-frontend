@@ -37,7 +37,7 @@ const ChatCustomer = () => {
     <div className="chatCustomer-content" >
       <label className="chatCustomer-header">Suas conversas com Buffets</label>
       {chats && chats.length > 0 ? (
-        <div className="chatCustomer-chats" onClick={() => navigate("/chatConversation")}>
+        <div className="chatCustomer-chats">
           {chats.map((chat, index) => (
             <ChatTemplate
               key={index}
