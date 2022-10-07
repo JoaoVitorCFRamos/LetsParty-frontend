@@ -7,7 +7,6 @@ import { BsFillChatSquareFill } from "react-icons/bs";
 import LogoLp from "../../assets/Logo.png";
 
 import { FaMoneyBillWave } from "react-icons/fa";
-import { FaPaintBrush } from "react-icons/fa";
 
 
 
@@ -54,12 +53,6 @@ const SideBarCompanies = ({ email }: Props) => {
             <div className="sideBarCompanies-divLinkMenu">
               <BsFillChatSquareFill color="#0071BE" size={23} />
               <label>Chat</label>
-            </div>
-          </Link>
-          <Link className="sideBarCompanies-links" to="/personification">
-            <div className="sideBarCompanies-divLinkMenu">
-              <FaPaintBrush color="#FF0000" size={23} />
-              <label>Personificação</label>
             </div>
           </Link>
         </div>

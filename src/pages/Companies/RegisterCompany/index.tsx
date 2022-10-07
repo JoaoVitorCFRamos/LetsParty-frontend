@@ -163,8 +163,7 @@ const RegisterCompany = () => {
         {showAddressFields ? (
           <>
             <div className="divNonosLabels">
-
-              <div className="divInputsR">
+              <div className="registerCompany-divInputsR">
                 <label>Logradouro:</label>
                 <input
                   disabled={true}
@@ -173,7 +172,7 @@ const RegisterCompany = () => {
                   className="registerCopany-inputsCEP"
                 />
               </div>
-              <div className="divInputsR">
+              <div className="registerCompany-divInputsR">
                 <label>Número:</label>
                 <input
                   onChange={(e) =>
@@ -190,16 +189,16 @@ const RegisterCompany = () => {
                   className="registerCopany-inputsCEP"
                 />
               </div>
-              <div className="divInputsR">
+              <div className="registerCompany-divInputsR">
 
                 <label>Estado:</label>
                 <input disabled={true} value={fields.address.state} type="text" className="registerCopany-inputsCEP" />
               </div>
-              <div className="divInputsR">
+              <div className="registerCompany-divInputsR">
                 <label>Cidade:</label>
                 <input disabled={true} value={fields.address.city} type="text" className="registerCopany-inputsCEP" />
               </div>
-              <div className="divInputsR">
+              <div className="registerCompany-divInputsR">
                 <label>Bairro:</label>
                 <input
                   disabled={true}

@@ -44,15 +44,15 @@ const RegisterCustomer = () => {
   };
 
   return (
-    <div className="registerCompany-mainDiv">
-      <div className="registerCompany-registerDiv">
-        <div className="registerCompany-headerDiv">
+    <div className="registerCustomer-mainDiv">
+      <div className="registerCustomer-registerDiv">
+        <div className="registerCustomer-headerDiv">
           <img src={LogoLp} />
-          <label className="registerCompany-header">
+          <label className="registerCustomer-header">
             Cadastre-se para virar uma empresa parceira
           </label>
         </div>
-        <div className="registerCompany-inputsDiv">
+        <div className="registerCustomer-inputsDiv">
           <div>
             <label>Nome:</label>
             <input
@@ -86,7 +86,7 @@ const RegisterCustomer = () => {
             />
           </div>
 
-          <div className="registerCompany-divButton">
+          <div className="registerCustomer-divButton">
             <BlueButton onClick={((e) => registerCustomer(e))} title="Cadastrar" />
           </div>
         </div>
